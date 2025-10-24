@@ -16,14 +16,14 @@ const ShopPlaceholder = () => {
           </p>
         </div>
         
-        <Card className="p-8 md:p-12 bg-card mid-century-shadow animate-slide-up">
-          <Heart className="w-16 h-16 mx-auto mb-6 text-rust-clay" />
+        <Card className="p-4 md:p-8 lg:p-12 bg-card mid-century-shadow animate-slide-up">
+          <Heart className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-6 text-rust-clay" />
           
-          <h3 className="text-2xl font-heading font-semibold mb-4">
+          <h3 className="text-xl md:text-2xl font-heading font-semibold mb-4">
             Square Store Integration Coming Soon
           </h3>
           
-          <p className="text-lg mb-8 text-foreground/70">
+          <p className="text-base md:text-lg mb-8 text-foreground/70">
             This section will connect to Rebecca's Square Online Store, where you can 
             browse available dolls, view detailed photos, and complete your adoption 
             with secure checkout.
@@ -32,7 +32,7 @@ const ShopPlaceholder = () => {
           <Button 
             size="lg"
             disabled
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-heading text-lg px-10 py-6 rounded-full"
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-heading text-sm md:text-lg px-4 py-4 md:px-10 md:py-6 rounded-full w-full md:w-auto"
           >
             View Available Dolls (Coming Soon)
           </Button>
