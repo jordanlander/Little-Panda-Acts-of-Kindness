@@ -1,12 +1,22 @@
 import artistPortrait from "@/assets/artist-portrait.jpg";
+import pandaLogo from "@/assets/panda-logo.jpg";
 
 const About = () => {
   return (
     <section className="py-20 px-4 bg-card">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground animate-fade-in">
-          About the Artist
-        </h2>
+        <div className="flex flex-col items-center mb-12 animate-fade-in">
+          <div className="w-48 h-48 mb-6 rounded-2xl overflow-hidden bg-card soft-glow">
+            <img 
+              src={pandaLogo} 
+              alt="Little Panda Acts of Kindness logo by Rebecca Coppock"
+              className="w-full h-full object-contain p-4"
+            />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground">
+            About the Artist
+          </h2>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-up">
