@@ -1,10 +1,26 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
+import ellieImg from "@/assets/dolls/ellie.jpg";
+import bertImg from "@/assets/dolls/bert.jpg";
+import edithImg from "@/assets/dolls/edith.jpg";
+import eddieImg from "@/assets/dolls/eddie.jpg";
+import gingerImg from "@/assets/dolls/ginger.jpg";
+import steveImg from "@/assets/dolls/steve.jpg";
+import earlImg from "@/assets/dolls/earl.jpg";
+import hughImg from "@/assets/dolls/hugh.jpg";
+import scottImg from "@/assets/dolls/scott.jpg";
 
 const randomActsOfLove = [
-  "Ellie", "Bert", "Edith", "Eddie", "Ginger", 
-  "Steve", "Earl", "Hugh", "Scott"
+  { name: "Ellie", image: ellieImg },
+  { name: "Bert", image: bertImg },
+  { name: "Edith", image: edithImg },
+  { name: "Eddie", image: eddieImg },
+  { name: "Ginger", image: gingerImg },
+  { name: "Steve", image: steveImg },
+  { name: "Earl", image: earlImg },
+  { name: "Hugh", image: hughImg },
+  { name: "Scott", image: scottImg }
 ];
 
 const loveHappens = [
@@ -13,11 +29,11 @@ const loveHappens = [
   "Stan", "Mary", "Baily", "Trevor", "Kim", "Ann", "Howard"
 ];
 
-const DollCard = ({ name, available = true }: { name: string; available?: boolean }) => (
+const DollCard = ({ name, image, available = true }: { name: string; image?: string; available?: boolean }) => (
   <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
     <div className="aspect-square overflow-hidden bg-muted">
       <img 
-        src={dollPlaceholder} 
+        src={image || dollPlaceholder} 
         alt={`${name} - handmade doll by Rebecca Coppock`}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
       />
@@ -55,8 +71,8 @@ const Collections = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {randomActsOfLove.map((name) => (
-              <DollCard key={name} name={name} />
+            {randomActsOfLove.map((doll) => (
+              <DollCard key={doll.name} name={doll.name} image={doll.image} />
             ))}
           </div>
         </div>
