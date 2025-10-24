@@ -66,7 +66,7 @@ const loveHappens = [
 
 const DollCard = ({ name, image, available = true }: { name: string; image?: string; available?: boolean }) => (
   <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
-    <div className="aspect-square overflow-hidden bg-muted">
+    <div className="aspect-[3/4] overflow-hidden bg-muted">
       <img 
         src={image || dollPlaceholder} 
         alt={`${name} - handmade doll by Rebecca Coppock`}
