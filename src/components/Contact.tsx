@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook, Mail } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -42,15 +42,33 @@ const Contact = () => {
             
             <div>
               <h3 className="font-heading text-xl font-semibold mb-3">Connect with me</h3>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-                <span className="font-accent">@rebeccacoppockart</span>
-              </a>
+              <div className="space-y-3">
+                <a 
+                  href="mailto:bjcoppock@gmail.com"
+                  className="flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span className="font-accent">bjcoppock@gmail.com</span>
+                </a>
+                <a 
+                  href="https://instagram.com/littlepandaactsofkindness" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span className="font-accent">Little Panda Acts of Kindness</span>
+                </a>
+                <a 
+                  href="https://facebook.com/littlepandaactsofkindness" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
+                >
+                  <Facebook className="w-5 h-5" />
+                  <span className="font-accent">Little Panda Acts of Kindness</span>
+                </a>
+              </div>
             </div>
             
             <div className="p-6 bg-vintage-peach/20 rounded-2xl">
@@ -58,8 +76,8 @@ const Contact = () => {
                 Based in Erie, Pennsylvania
               </p>
               <p className="text-sm mt-2 text-foreground/70">
-                Each doll is handmade with recycled materials and endless love. 
-                Custom commissions may be available — reach out to discuss!
+                I will take orders online and ship free of charge. Each doll is handmade 
+                with recycled materials and endless love.
               </p>
             </div>
           </div>

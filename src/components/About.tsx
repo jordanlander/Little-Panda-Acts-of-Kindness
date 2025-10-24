@@ -21,21 +21,22 @@ const About = () => {
           
           <div className="space-y-6 text-lg leading-relaxed animate-fade-in">
             <p>
-              I am an artist! I paint, draw, and now create fabric dolls. I have always 
-              loved plush animals and dolls since childhood. My mother taught me simple 
-              sewing skills, and every doll I make is hand-stitched from recycled sweaters 
-              and shirts.
+              I am a retired art teacher with years of experience working with PreK through 
+              12th-grade students. I started Little Panda about three years ago after retiring, 
+              wanting to begin creating my own personal art and find a purpose in sharing it 
+              with others.
             </p>
             
             <p>
-              I design each doll to have its own personality and name — they are meant to 
-              bring comfort, joy, and connection. My current work explores fine arts and 
-              spiritual doll-making as a way to create change within myself and inspire others.
+              After my son got me involved with the Erie Pride Festival, I found my purpose 
+              through the creation of semi-ugly dolls, recycled stuffed animals, and now my 
+              closet monsters and inspirational drawings. Each doll is hand-stitched from 
+              recycled sweaters and shirts, designed to have its own personality and name.
             </p>
             
             <p className="text-rust-clay font-semibold italic">
-              Each doll is crafted with intention, love, and a belief that handmade art 
-              can touch hearts and bring people together.
+              I will take orders online and ship free of charge. I try to share a little 
+              "Panda Acts of Kindness" with the world.
             </p>
           </div>
         </div>
