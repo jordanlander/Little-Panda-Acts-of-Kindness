@@ -10,6 +10,16 @@ import steveImg from "@/assets/dolls/steve.jpg";
 import earlImg from "@/assets/dolls/earl.jpg";
 import hughImg from "@/assets/dolls/hugh.jpg";
 import scottImg from "@/assets/dolls/scott.jpg";
+import charlieImg from "@/assets/dolls/charlie.jpg";
+import agnesImg from "@/assets/dolls/agnes.jpg";
+import janeImg from "@/assets/dolls/jane.jpg";
+import timImg from "@/assets/dolls/tim.jpg";
+import leeImg from "@/assets/dolls/lee.jpg";
+import peggyImg from "@/assets/dolls/peggy.jpg";
+import jamesImg from "@/assets/dolls/james.jpg";
+import uliImg from "@/assets/dolls/uli.jpg";
+import sueImg from "@/assets/dolls/sue.jpg";
+import darrellImg from "@/assets/dolls/darrell.jpg";
 
 const randomActsOfLove = [
   { name: "Ellie", image: ellieImg },
@@ -24,9 +34,25 @@ const randomActsOfLove = [
 ];
 
 const loveHappens = [
-  "Charlie", "Agnes", "Jane", "Tim", "Lee", "Peggy", 
-  "James", "Uli", "Sue", "Darrell", "Otis", "Henry", 
-  "Stan", "Mary", "Baily", "Trevor", "Kim", "Ann", "Howard"
+  { name: "Charlie", image: charlieImg },
+  { name: "Agnes", image: agnesImg },
+  { name: "Jane", image: janeImg },
+  { name: "Tim", image: timImg },
+  { name: "Lee", image: leeImg },
+  { name: "Peggy", image: peggyImg },
+  { name: "James", image: jamesImg },
+  { name: "Uli", image: uliImg },
+  { name: "Sue", image: sueImg },
+  { name: "Darrell", image: darrellImg },
+  { name: "Otis" },
+  { name: "Henry" },
+  { name: "Stan" },
+  { name: "Mary" },
+  { name: "Baily" },
+  { name: "Trevor" },
+  { name: "Kim" },
+  { name: "Ann" },
+  { name: "Howard" }
 ];
 
 const DollCard = ({ name, image, available = true }: { name: string; image?: string; available?: boolean }) => (
@@ -89,8 +115,8 @@ const Collections = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {loveHappens.map((name) => (
-              <DollCard key={name} name={name} />
+            {loveHappens.map((doll) => (
+              <DollCard key={doll.name} name={doll.name} image={doll.image} />
             ))}
           </div>
         </div>
