@@ -20,6 +20,15 @@ import jamesImg from "@/assets/dolls/james.jpg";
 import uliImg from "@/assets/dolls/uli.jpg";
 import sueImg from "@/assets/dolls/sue.jpg";
 import darrellImg from "@/assets/dolls/darrell.jpg";
+import otisImg from "@/assets/dolls/otis.jpg";
+import henryImg from "@/assets/dolls/henry.jpg";
+import stanImg from "@/assets/dolls/stan.jpg";
+import maryImg from "@/assets/dolls/mary.jpg";
+import bailyImg from "@/assets/dolls/baily.jpg";
+import trevorImg from "@/assets/dolls/trevor.jpg";
+import kimImg from "@/assets/dolls/kim.jpg";
+import annImg from "@/assets/dolls/ann.jpg";
+import howardImg from "@/assets/dolls/howard.jpg";
 
 const randomActsOfLove = [
   { name: "Ellie", image: ellieImg },
@@ -44,15 +53,15 @@ const loveHappens = [
   { name: "Uli", image: uliImg },
   { name: "Sue", image: sueImg },
   { name: "Darrell", image: darrellImg },
-  { name: "Otis" },
-  { name: "Henry" },
-  { name: "Stan" },
-  { name: "Mary" },
-  { name: "Baily" },
-  { name: "Trevor" },
-  { name: "Kim" },
-  { name: "Ann" },
-  { name: "Howard" }
+  { name: "Otis", image: otisImg },
+  { name: "Henry", image: henryImg },
+  { name: "Stan", image: stanImg },
+  { name: "Mary", image: maryImg },
+  { name: "Baily", image: bailyImg },
+  { name: "Trevor", image: trevorImg },
+  { name: "Kim", image: kimImg },
+  { name: "Ann", image: annImg },
+  { name: "Howard", image: howardImg }
 ];
 
 const DollCard = ({ name, image, available = true }: { name: string; image?: string; available?: boolean }) => (
