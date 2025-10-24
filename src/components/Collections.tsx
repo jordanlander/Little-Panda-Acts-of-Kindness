@@ -1,0 +1,86 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import dollPlaceholder from "@/assets/doll-placeholder.jpg";
+
+const randomActsOfLove = [
+  "Ellie", "Bert", "Edith", "Eddie", "Ginger", 
+  "Steve", "Earl", "Hugh", "Scott"
+];
+
+const loveHappens = [
+  "Charlie", "Agnes", "Jane", "Tim", "Lee", "Peggy", 
+  "James", "Uli", "Sue", "Darrell", "Otis", "Henry", 
+  "Stan", "Mary", "Baily", "Trevor", "Kim", "Ann", "Howard"
+];
+
+const DollCard = ({ name, available = true }: { name: string; available?: boolean }) => (
+  <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
+    <div className="aspect-square overflow-hidden bg-muted">
+      <img 
+        src={dollPlaceholder} 
+        alt={`${name} - handmade doll by Rebecca Coppock`}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+      />
+    </div>
+    <div className="p-4 text-center">
+      <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
+      <p className="text-sm text-muted-foreground mb-3 font-accent">
+        {available ? "Available for Adoption" : "Adopted"}
+      </p>
+      <Button 
+        variant="outline" 
+        size="sm"
+        disabled={!available}
+        className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+      >
+        {available ? "Adopt Me" : "Adopted"}
+      </Button>
+    </div>
+  </Card>
+);
+
+const Collections = () => {
+  return (
+    <section id="collections" className="py-20 px-4 starburst-pattern">
+      <div className="container mx-auto max-w-7xl">
+        {/* Random Acts of Love Collection */}
+        <div className="mb-20 animate-slide-up">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Random Acts of Love Collection
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+              Lovable, huggable plush dolls — each waiting to be adopted.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {randomActsOfLove.map((name) => (
+              <DollCard key={name} name={name} />
+            ))}
+          </div>
+        </div>
+
+        {/* Love Happens Collection */}
+        <div className="animate-slide-up">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Love Happens Collection
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+              A more artsy, display-focused collection exploring individuality and design.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {loveHappens.map((name) => (
+              <DollCard key={name} name={name} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Collections;
