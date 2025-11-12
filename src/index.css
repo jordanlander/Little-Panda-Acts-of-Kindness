@@ -8,10 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* 1950s Modern Revival Color Palette */
+    /* 1950s Pastel Revival Color Palette */
     --cream: 40 57% 88%;
-    --vintage-peach: 18 49% 78%;
-    --seafoam: 168 17% 60%;
+    --blush: 350 65% 85%;
+    --mint: 160 45% 75%;
+    --faded-teal: 180 30% 65%;
     --rust-clay: 14 44% 54%;
     --ink-black: 0 0% 13%;
     
@@ -28,13 +29,13 @@ All colors MUST be HSL.
     --primary: 14 44% 54%; /* rust clay */
     --primary-foreground: 40 57% 88%;
 
-    --secondary: 168 17% 60%; /* seafoam */
+    --secondary: 160 45% 75%; /* mint */
     --secondary-foreground: 0 0% 13%;
 
-    --muted: 18 49% 78%; /* vintage peach */
+    --muted: 350 65% 85%; /* blush */
     --muted-foreground: 0 0% 13%;
 
-    --accent: 18 49% 78%; /* vintage peach */
+    --accent: 180 30% 65%; /* faded teal */
     --accent-foreground: 0 0% 13%;
 
     --destructive: 0 84.2% 60.2%;
@@ -76,14 +77,14 @@ All colors MUST be HSL.
     --primary: 14 44% 54%;
     --primary-foreground: 40 57% 88%;
 
-    --secondary: 168 17% 40%;
+    --secondary: 160 35% 45%;
     --secondary-foreground: 40 57% 88%;
 
-    --muted: 18 30% 30%;
+    --muted: 350 40% 40%;
     --muted-foreground: 40 30% 70%;
 
-    --accent: 18 49% 58%;
-    --accent-foreground: 0 0% 13%;
+    --accent: 180 25% 45%;
+    --accent-foreground: 40 57% 88%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 40 57% 88%;
@@ -97,8 +98,8 @@ All colors MUST be HSL.
 /* 1950s Atomic Starburst Pattern */
 @layer utilities {
   .starburst-pattern {
-    background-image: radial-gradient(circle at 20% 50%, hsl(var(--vintage-peach) / 0.1) 1px, transparent 1px),
-                      radial-gradient(circle at 80% 50%, hsl(var(--seafoam) / 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(circle at 20% 50%, hsl(var(--blush) / 0.15) 1px, transparent 1px),
+                      radial-gradient(circle at 80% 50%, hsl(var(--mint) / 0.15) 1px, transparent 1px);
     background-size: 50px 50px;
   }
   
@@ -107,7 +108,7 @@ All colors MUST be HSL.
   }
   
   .soft-glow {
-    box-shadow: 0 4px 20px hsl(var(--vintage-peach) / 0.3);
+    box-shadow: 0 4px 20px hsl(var(--blush) / 0.3);
   }
 }
 

@@ -30,6 +30,10 @@ const About = () => {
           </div>
           
           <div className="space-y-6 text-lg leading-relaxed animate-fade-in">
+            <blockquote className="text-2xl font-heading italic text-rust-clay border-l-4 border-rust-clay pl-6 mb-8">
+              "Finding comfort and character in handmade art"
+            </blockquote>
+            
             <p>
               I am a retired art teacher with years of experience working with PreK through 
               12th-grade students. I started Little Panda about three years ago after retiring, 

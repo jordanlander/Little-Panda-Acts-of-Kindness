@@ -20,8 +20,9 @@ export default {
       },
       colors: {
         cream: "hsl(var(--cream))",
-        "vintage-peach": "hsl(var(--vintage-peach))",
-        seafoam: "hsl(var(--seafoam))",
+        blush: "hsl(var(--blush))",
+        mint: "hsl(var(--mint))",
+        "faded-teal": "hsl(var(--faded-teal))",
         "rust-clay": "hsl(var(--rust-clay))",
         "ink-black": "hsl(var(--ink-black))",
         border: "hsl(var(--border))",

@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -30,41 +31,50 @@ import kimImg from "@/assets/dolls/kim.jpg";
 import annImg from "@/assets/dolls/ann.jpg";
 import howardImg from "@/assets/dolls/howard.jpg";
 
-const randomActsOfLove = [
-  { name: "Ellie", image: ellieImg },
-  { name: "Bert", image: bertImg },
-  { name: "Edith", image: edithImg },
-  { name: "Eddie", image: eddieImg },
-  { name: "Ginger", image: gingerImg },
-  { name: "Steve", image: steveImg },
-  { name: "Earl", image: earlImg },
-  { name: "Hugh", image: hughImg },
-  { name: "Scott", image: scottImg }
+// Type definition for doll data
+type Doll = {
+  name: string;
+  image: string;
+  story?: string;
+  squareUrl?: string;
+  sold?: boolean;
+};
+
+const randomActsOfLove: Doll[] = [
+  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs." },
+  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure." },
+  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories." },
+  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes." },
+  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through." },
+  { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings." },
+  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all." },
+  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen." },
+  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day." }
 ];
 
-const loveHappens = [
-  { name: "Charlie", image: charlieImg },
-  { name: "Agnes", image: agnesImg },
-  { name: "Jane", image: janeImg },
-  { name: "Tim", image: timImg },
-  { name: "Lee", image: leeImg },
-  { name: "Peggy", image: peggyImg },
-  { name: "James", image: jamesImg },
-  { name: "Uli", image: uliImg },
-  { name: "Sue", image: sueImg },
-  { name: "Darrell", image: darrellImg },
-  { name: "Otis", image: otisImg },
-  { name: "Henry", image: henryImg },
-  { name: "Stan", image: stanImg },
-  { name: "Mary", image: maryImg },
-  { name: "Baily", image: bailyImg },
-  { name: "Trevor", image: trevorImg },
-  { name: "Kim", image: kimImg },
-  { name: "Ann", image: annImg },
-  { name: "Howard", image: howardImg }
+const loveHappens: Doll[] = [
+  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair." },
+  { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art." },
+  { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display." },
+  { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character." },
+  { name: "Lee", image: leeImg, story: "Lee is modern and stylish, a statement piece." },
+  { name: "Peggy", image: peggyImg, story: "Peggy is vintage-inspired and whimsical." },
+  { name: "James", image: jamesImg, story: "James is distinguished and refined." },
+  { name: "Uli", image: uliImg, story: "Uli is artistic and unconventional." },
+  { name: "Sue", image: sueImg, story: "Sue is graceful and poised." },
+  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident." },
+  { name: "Otis", image: otisImg, story: "Otis is fun-loving and spirited." },
+  { name: "Henry", image: henryImg, story: "Henry is classic and timeless." },
+  { name: "Stan", image: stanImg, story: "Stan is unique and memorable." },
+  { name: "Mary", image: maryImg, story: "Mary is sweet and endearing." },
+  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive." },
+  { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited." },
+  { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary." },
+  { name: "Ann", image: annImg, story: "Ann is gentle and artistic." },
+  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind." }
 ];
 
-const DollCard = ({ name, image, available = true }: { name: string; image?: string; available?: boolean }) => (
+const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
   <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
     <div className="aspect-[3/4] overflow-hidden bg-muted">
       <img 
@@ -75,16 +85,26 @@ const DollCard = ({ name, image, available = true }: { name: string; image?: str
     </div>
     <div className="p-4 text-center">
       <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
-      <p className="text-sm text-muted-foreground mb-3 font-accent">
-        {available ? "Available for Adoption" : "Adopted"}
+      {story && (
+        <p className="text-sm text-muted-foreground mb-3 font-body italic min-h-[3rem]">
+          {story}
+        </p>
+      )}
+      <p className="text-xs text-muted-foreground mb-3 font-accent">
+        {sold ? "Adopted" : "Available for Adoption"}
       </p>
       <Button 
         variant="outline" 
         size="sm"
-        disabled={!available}
-        className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+        disabled={!squareUrl || sold}
+        onClick={() => squareUrl && window.open(squareUrl, '_blank')}
+        className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors disabled:opacity-50"
       >
-        {available ? "Adopt Me" : "Adopted"}
+        {sold ? "Adopted" : squareUrl ? (
+          <>
+            Adopt Me <ExternalLink className="ml-2 h-3 w-3" />
+          </>
+        ) : "Coming Soon"}
       </Button>
     </div>
   </Card>
@@ -107,7 +127,7 @@ const Collections = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {randomActsOfLove.map((doll) => (
-              <DollCard key={doll.name} name={doll.name} image={doll.image} />
+              <DollCard key={doll.name} {...doll} />
             ))}
           </div>
         </div>
@@ -125,9 +145,21 @@ const Collections = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {loveHappens.map((doll) => (
-              <DollCard key={doll.name} name={doll.name} image={doll.image} />
+              <DollCard key={doll.name} {...doll} />
             ))}
           </div>
+        </div>
+
+        {/* Instructions for Square Integration */}
+        <div className="mt-16 p-6 bg-card rounded-lg soft-glow max-w-3xl mx-auto">
+          <h3 className="font-heading text-xl font-semibold mb-3 text-center">
+            Ready to Sell?
+          </h3>
+          <p className="text-sm text-muted-foreground text-center font-body">
+            To connect each doll to Square: Add your Square product URLs to the doll data above. 
+            Each "Adopt Me" button will open the Square checkout page in a new tab. 
+            When a doll sells out on Square, mark it as <code className="bg-muted px-1 rounded">sold: true</code> in the code.
+          </p>
         </div>
       </div>
     </section>
