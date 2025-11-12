@@ -42,7 +42,7 @@ type Doll = {
 
 const randomActsOfLove: Doll[] = [
   { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs." },
-  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure." },
+  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://square.link/u/oKqklKbJ" },
   { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories." },
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes." },
   { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through." },
@@ -67,10 +67,10 @@ const loveHappens: Doll[] = [
   { name: "Henry", image: henryImg, story: "Henry is classic and timeless." },
   { name: "Stan", image: stanImg, story: "Stan is unique and memorable." },
   { name: "Mary", image: maryImg, story: "Mary is sweet and endearing." },
-  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive." },
+  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", squareUrl: "https://square.link/u/yAiW1jC3" },
   { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited." },
   { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary." },
-  { name: "Ann", image: annImg, story: "Ann is gentle and artistic." },
+  { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://square.link/u/VDerUtTB" },
   { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind." }
 ];
 
