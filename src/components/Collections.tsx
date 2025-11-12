@@ -54,7 +54,7 @@ const randomActsOfLove: Doll[] = [
 
 const loveHappens: Doll[] = [
   { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair." },
-  { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art." },
+  { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/6g7ixaDY" },
   { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display." },
   { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character." },
   { name: "Lee", image: leeImg, story: "Lee is modern and stylish, a statement piece." },
