@@ -22,6 +22,14 @@ const heroImages = [
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Preload hero images for faster transitions
+  useEffect(() => {
+    heroImages.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);

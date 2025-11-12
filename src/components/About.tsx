@@ -10,6 +10,8 @@ const About = () => {
             <img 
               src={pandaLogo} 
               alt="Little Panda Acts of Kindness logo by Rebecca Coppock"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain p-4"
             />
           </div>
@@ -24,6 +26,8 @@ const About = () => {
               <img 
                 src={artistPortrait} 
                 alt="Rebecca Coppock - doll maker and artist"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover"
               />
             </div>

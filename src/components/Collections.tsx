@@ -80,7 +80,10 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
       <img 
         src={image || dollPlaceholder} 
         alt={`${name} - handmade doll by Rebecca Coppock`}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 blur-0"
+        style={{ contentVisibility: 'auto' }}
       />
     </div>
     <div className="p-4 text-center">
