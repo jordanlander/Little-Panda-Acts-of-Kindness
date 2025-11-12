@@ -1,4 +1,6 @@
-import artistPortrait from "@/assets/artist-portrait.jpg";
+import artistWithDolls from "@/assets/artist-with-dolls.jpg";
+import artistWorkspace1 from "@/assets/artist-workspace-1.jpg";
+import artistWorkspace2 from "@/assets/artist-workspace-2.jpg";
 import pandaLogo from "@/assets/panda-logo.jpg";
 
 const About = () => {
@@ -20,16 +22,37 @@ const About = () => {
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-slide-up">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="space-y-6 animate-slide-up">
             <div className="rounded-3xl overflow-hidden mid-century-shadow">
               <img 
-                src={artistPortrait} 
-                alt="Rebecca Coppock - doll maker and artist"
+                src={artistWithDolls} 
+                alt="Rebecca Coppock with her handmade dolls"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-auto object-cover"
               />
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-2xl overflow-hidden soft-glow">
+                <img 
+                  src={artistWorkspace1} 
+                  alt="Rebecca Coppock at her creative workspace"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover aspect-square"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden soft-glow">
+                <img 
+                  src={artistWorkspace2} 
+                  alt="Rebecca Coppock crafting her unique dolls"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover aspect-square"
+                />
+              </div>
             </div>
           </div>
           
