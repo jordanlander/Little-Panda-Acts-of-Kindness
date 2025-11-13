@@ -42,7 +42,7 @@ type Doll = {
 
 const randomActsOfLove: Doll[] = [
   { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs." },
-  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://square.link/u/oKqklKbJ" },
+  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://square.link/u/dc1hOWOI" },
   { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories." },
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes." },
   { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through." },
@@ -53,7 +53,7 @@ const randomActsOfLove: Doll[] = [
 ];
 
 const loveHappens: Doll[] = [
-  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/HHq9bbVN" },
+  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/rHLp0yxR" },
   { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/csUVf69U" },
   { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display." },
   { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character." },
@@ -62,15 +62,15 @@ const loveHappens: Doll[] = [
   { name: "James", image: jamesImg, story: "James is distinguished and refined." },
   { name: "Uli", image: uliImg, story: "Uli is artistic and unconventional." },
   { name: "Sue", image: sueImg, story: "Sue is graceful and poised." },
-  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", squareUrl: "https://square.link/u/ESvstetA" },
+  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", squareUrl: "https://square.link/u/Tp9qsTw1" },
   { name: "Otis", image: otisImg, story: "Otis is fun-loving and spirited." },
   { name: "Henry", image: henryImg, story: "Henry is classic and timeless." },
   { name: "Stan", image: stanImg, story: "Stan is unique and memorable." },
   { name: "Mary", image: maryImg, story: "Mary is sweet and endearing." },
-  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", squareUrl: "https://square.link/u/yAiW1jC3" },
+  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", squareUrl: "https://square.link/u/OJnud01G" },
   { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited." },
   { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary." },
-  { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://square.link/u/VDerUtTB" },
+  { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://square.link/u/OUzqTUWZ" },
   { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind." }
 ];
 
