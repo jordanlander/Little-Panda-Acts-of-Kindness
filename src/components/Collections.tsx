@@ -47,13 +47,13 @@ const randomActsOfLove: Doll[] = [
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes." },
   { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through." },
   { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings." },
-  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all." },
+  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://square.link/u/QwUBTugj" },
   { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen." },
   { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day." }
 ];
 
 const loveHappens: Doll[] = [
-  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair." },
+  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/HHq9bbVN" },
   { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/6g7ixaDY" },
   { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display." },
   { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character." },
@@ -62,7 +62,7 @@ const loveHappens: Doll[] = [
   { name: "James", image: jamesImg, story: "James is distinguished and refined." },
   { name: "Uli", image: uliImg, story: "Uli is artistic and unconventional." },
   { name: "Sue", image: sueImg, story: "Sue is graceful and poised." },
-  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident." },
+  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", squareUrl: "https://square.link/u/ESvstetA" },
   { name: "Otis", image: otisImg, story: "Otis is fun-loving and spirited." },
   { name: "Henry", image: henryImg, story: "Henry is classic and timeless." },
   { name: "Stan", image: stanImg, story: "Stan is unique and memorable." },
