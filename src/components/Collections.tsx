@@ -153,17 +153,6 @@ const Collections = () => {
           </div>
         </div>
 
-        {/* Instructions for Square Integration */}
-        <div className="mt-16 p-6 bg-card rounded-lg soft-glow max-w-3xl mx-auto">
-          <h3 className="font-heading text-xl font-semibold mb-3 text-center">
-            Ready to Sell?
-          </h3>
-          <p className="text-sm text-muted-foreground text-center font-body">
-            To connect each doll to Square: Add your Square product URLs to the doll data above. 
-            Each "Adopt Me" button will open the Square checkout page in a new tab. 
-            When a doll sells out on Square, mark it as <code className="bg-muted px-1 rounded">sold: true</code> in the code.
-          </p>
-        </div>
       </div>
     </section>
   );
