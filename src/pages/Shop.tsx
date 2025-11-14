@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import ReturnPolicy from "@/components/ReturnPolicy";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -262,6 +263,7 @@ const Shop = () => {
         </div>
       </section>
 
+      <ReturnPolicy />
       <Footer />
     </div>
   );
