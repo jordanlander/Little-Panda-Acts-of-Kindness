@@ -60,7 +60,7 @@ const Contact = () => {
                   <span className="font-accent">Little Panda Acts of Kindness</span>
                 </a>
                 <a 
-                  href="https://facebook.com/littlepandaactsofkindness" 
+                  href="https://www.facebook.com/littlepandaacts" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
