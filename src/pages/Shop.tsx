@@ -153,7 +153,7 @@ const Shop = () => {
     "logo": "https://rebeccacoppock.com/panda-logo.jpg",
     "sameAs": [
       "https://www.instagram.com/littlepandaactsofkindness",
-      "https://www.facebook.com/littlepandaactsofkindness"
+      "https://www.facebook.com/littlepandaacts"
     ],
     "description": "Handmade one-of-a-kind dolls crafted from recycled materials by artist Rebecca Coppock"
   };

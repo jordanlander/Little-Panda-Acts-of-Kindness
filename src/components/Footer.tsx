@@ -16,7 +16,7 @@ const Footer = () => {
             <Instagram className="w-6 h-6" />
           </a>
           <a 
-            href="https://www.facebook.com/rebeccacoppockdolls" 
+            href="https://www.facebook.com/littlepandaacts" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
