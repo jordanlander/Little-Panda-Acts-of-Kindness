@@ -70,14 +70,17 @@ const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => (
 
 const FeaturedDolls = () => {
   return (
-    <section className="py-12 px-4 bg-gradient-to-b from-background to-vintage-peach/10">
+    <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-background to-vintage-peach/10">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Featured Dolls
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Each one-of-a-kind companion waiting for a loving home
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-2">
+            A glimpse into the collection
+          </p>
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
+            Each one-of-a-kind companion is handcrafted with love and waiting for their forever home
           </p>
         </div>
         
@@ -91,10 +94,9 @@ const FeaturedDolls = () => {
           <Link to="/shop">
             <Button 
               size="lg"
-              variant="outline"
-              className="rounded-full border-2 border-rust-clay text-rust-clay hover:bg-rust-clay hover:text-white transition-all px-8 py-6 text-lg font-heading"
+              className="rounded-full bg-rust-clay hover:bg-rust-clay/90 text-white transition-all px-10 py-7 text-xl font-heading shadow-lg hover:shadow-xl hover:scale-105"
             >
-              Shop All Dolls <ArrowRight className="ml-2 h-5 w-5" />
+              Shop All Dolls <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </Link>
         </div>
