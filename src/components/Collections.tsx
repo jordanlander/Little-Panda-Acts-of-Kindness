@@ -48,18 +48,18 @@ const randomActsOfLove: Doll[] = [
   { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://square.link/u/d8DI7QxK" },
   { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings." },
   { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://square.link/u/QwUBTugj" },
-  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen." },
+  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://square.link/u/4yciYxat" },
   { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day." }
 ];
 
 const loveHappens: Doll[] = [
   { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/rHLp0yxR" },
   { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/csUVf69U" },
-  { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display." },
+  { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display.", squareUrl: "https://square.link/u/u3hmJuKm" },
   { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character." },
   { name: "Lee", image: leeImg, story: "Lee is modern and stylish, a statement piece." },
   { name: "Peggy", image: peggyImg, story: "Peggy is vintage-inspired and whimsical." },
-  { name: "James", image: jamesImg, story: "James is distinguished and refined." },
+  { name: "James", image: jamesImg, story: "James is distinguished and refined.", squareUrl: "https://square.link/u/LS5qPbd0" },
   { name: "Uli", image: uliImg, story: "Uli is artistic and unconventional." },
   { name: "Sue", image: sueImg, story: "Sue is graceful and poised." },
   { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", squareUrl: "https://square.link/u/Tp9qsTw1" },
@@ -69,9 +69,9 @@ const loveHappens: Doll[] = [
   { name: "Mary", image: maryImg, story: "Mary is sweet and endearing." },
   { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", squareUrl: "https://square.link/u/OJnud01G" },
   { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited." },
-  { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary." },
+  { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary.", squareUrl: "https://square.link/u/E5neD6UE" },
   { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://square.link/u/OUzqTUWZ" },
-  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind." }
+  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind.", squareUrl: "https://square.link/u/Unu6v1DX" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
