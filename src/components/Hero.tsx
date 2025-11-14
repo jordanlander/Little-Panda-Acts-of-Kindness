@@ -40,7 +40,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Image carousel with fade transitions */}
       {heroImages.map((image, index) => (
         <div
@@ -55,20 +55,20 @@ const Hero = () => {
       ))}
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-foreground">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 text-foreground">
           Rebecca Coppock
         </h1>
-        <p className="text-2xl md:text-3xl mb-4 text-rust-clay font-heading italic">
+        <p className="text-xl sm:text-2xl md:text-3xl mb-3 md:mb-4 text-rust-clay font-heading italic">
           "Hand-stitched souls made from stories and sweaters."
         </p>
-        <p className="text-xl md:text-2xl mb-8 text-foreground/80 font-accent">
+        <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-foreground/80 font-accent">
           Artist • Dollmaker • Storyteller
         </p>
         
         <Link to="/shop">
           <Button 
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-lg px-8 py-6 rounded-full mid-century-shadow transition-all hover:translate-y-[-2px]"
+            className="bg-rust-clay hover:bg-rust-clay/90 text-white font-heading text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-7 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
           >
             Adopt a Doll
           </Button>
