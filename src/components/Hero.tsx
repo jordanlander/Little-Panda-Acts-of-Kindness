@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
 import edithImg from "@/assets/dolls/edith.jpg";
@@ -38,10 +39,6 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToCollections = () => {
-    document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Image carousel with fade transitions */}
@@ -68,13 +65,14 @@ const Hero = () => {
           Artist • Dollmaker • Storyteller
         </p>
         
-        <Button 
-          onClick={scrollToCollections}
-          size="lg"
-          className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-lg px-8 py-6 rounded-full mid-century-shadow transition-all hover:translate-y-[-2px]"
-        >
-          Meet the Collections
-        </Button>
+        <Link to="/shop">
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-lg px-8 py-6 rounded-full mid-century-shadow transition-all hover:translate-y-[-2px]"
+          >
+            Adopt a Doll
+          </Button>
+        </Link>
       </div>
     </section>
   );
