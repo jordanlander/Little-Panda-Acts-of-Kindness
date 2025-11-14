@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -79,7 +80,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
     <div className="aspect-[3/4] overflow-hidden bg-muted">
       <img 
         src={image || dollPlaceholder} 
-        alt={`${name} - handmade doll by Rebecca Coppock`}
+        alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -128,8 +129,63 @@ const Shop = () => {
     ? allDolls 
     : allDolls.filter(doll => doll.collection === filter);
 
+  const getSEOTitle = () => {
+    if (filter === "random") return "Random Acts of Love Collection • Handmade Upcycled Dolls";
+    if (filter === "love") return "Love Happens Collection • Unique Plush Characters by Rebecca Coppock";
+    return "Handmade One-of-a-Kind Dolls for Adoption • Rebecca Coppock Art";
+  };
+
+  const getSEODescription = () => {
+    if (filter === "random") return "Meet the Random Acts of Love Collection — soft, quirky, hand-stitched dolls made from reclaimed sweaters and shirts. Every doll has its own personality and is available for adoption with free U.S. shipping.";
+    if (filter === "love") return "Explore colorful, expressive dolls inspired by stories, nostalgia, and creativity. Each piece is handmade by artist Rebecca Coppock from reclaimed fabrics.";
+    return "Shop all 27 handmade dolls by artist Rebecca Coppock. Each doll is crafted from recycled materials and designed with a unique personality, ready to be adopted and shipped free within the U.S.";
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Little Panda Acts of Kindness",
+    "founder": {
+      "@type": "Person",
+      "name": "Rebecca Coppock"
+    },
+    "url": "https://rebeccacoppock.com",
+    "logo": "https://rebeccacoppock.com/panda-logo.jpg",
+    "sameAs": [
+      "https://www.instagram.com/littlepandaactsofkindness",
+      "https://www.facebook.com/littlepandaactsofkindness"
+    ],
+    "description": "Handmade one-of-a-kind dolls crafted from recycled materials by artist Rebecca Coppock"
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rebeccacoppock.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Shop",
+        "item": "https://rebeccacoppock.com/shop"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title={getSEOTitle()}
+        description={getSEODescription()}
+        keywords="adoptable dolls, handmade plush dolls, soft sculpture art, recycled dolls, eco-friendly gifts, one-of-a-kind plush art, art dolls for sale"
+        canonical="/shop"
+        jsonLd={[organizationSchema, breadcrumbSchema]}
+      />
       {/* Header */}
       <header className="py-4 px-4 border-b border-border/20 sticky top-0 bg-background/95 backdrop-blur-sm z-10">
         <div className="container mx-auto max-w-7xl flex items-center justify-between">

@@ -43,7 +43,7 @@ const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => (
     <div className="aspect-[3/4] overflow-hidden bg-muted">
       <img 
         src={image} 
-        alt={`${name} - handmade doll by Rebecca Coppock`}
+        alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"

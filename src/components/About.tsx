@@ -2,10 +2,38 @@ import artistWithDolls from "@/assets/artist-with-dolls.jpg";
 import artistWorkspace1 from "@/assets/artist-workspace-1.jpg";
 import artistWorkspace2 from "@/assets/artist-workspace-2.jpg";
 import pandaLogo from "@/assets/panda-logo.jpg";
+import SEO from "@/components/SEO";
 
 const About = () => {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rebecca Coppock",
+    "jobTitle": "Artist & Dollmaker",
+    "description": "Retired art teacher and the creative mind behind Little Panda Acts of Kindness. Rebecca transforms recycled fabrics into soulful, quirky dolls with distinct personalities.",
+    "url": "https://rebeccacoppock.com",
+    "image": "https://rebeccacoppock.com/artist-portrait.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Erie",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Art Education"
+    }
+  };
+
   return (
     <section id="about" className="relative py-12 md:py-16 px-4 overflow-hidden">
+      <SEO
+        title="About Rebecca Coppock • Erie, PA Artist & Dollmaker"
+        description="Learn about Rebecca Coppock, a retired art teacher and the creative mind behind Little Panda Acts of Kindness. Rebecca transforms recycled fabrics into soulful, quirky dolls with distinct personalities."
+        keywords="Rebecca Coppock, Erie PA artist, dollmaker, retired art teacher, Little Panda Acts of Kindness, recycled fabric art, handmade doll artist"
+        canonical="/about"
+        jsonLd={aboutSchema}
+      />
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card to-background opacity-60" />
       
@@ -41,7 +69,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
                 <img 
                   src={artistWithDolls} 
-                  alt="Rebecca Coppock with her handmade dolls"
+                  alt="Rebecca Coppock holding several handmade dolls"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover"
@@ -98,7 +126,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
                     src={artistWorkspace1} 
-                    alt="Rebecca Coppock at her creative workspace"
+                    alt="Rebecca Coppock sewing dolls at her workspace"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover aspect-square"
@@ -108,7 +136,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
                     src={artistWorkspace2} 
-                    alt="Rebecca Coppock crafting her unique dolls"
+                    alt="Rebecca Coppock crafting unique handmade dolls at her studio"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover aspect-square"
