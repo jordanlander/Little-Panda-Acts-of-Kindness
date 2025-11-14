@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Collections from "@/components/Collections";
+import FeaturedDolls from "@/components/FeaturedDolls";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
-      <Collections />
+      <FeaturedDolls />
       <About />
       <Contact />
       <Footer />
