@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -122,21 +123,21 @@ const Shop = () => {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="py-6 px-4 border-b border-border/20 sticky top-0 bg-background/95 backdrop-blur-sm z-10">
+      <header className="py-4 px-4 border-b border-border/20 sticky top-0 bg-background/95 backdrop-blur-sm z-10">
         <div className="container mx-auto max-w-7xl flex items-center justify-between">
-          <a href="/" className="text-2xl font-bold text-foreground hover:text-primary transition-colors">
+          <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
             Rebecca Coppock
-          </a>
-          <nav className="flex gap-6 items-center">
-            <a href="/" className="text-foreground/70 hover:text-foreground transition-colors font-heading">
+          </Link>
+          <nav className="flex gap-4 items-center">
+            <Link to="/" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
               Home
-            </a>
-            <a href="/#about" className="text-foreground/70 hover:text-foreground transition-colors font-heading">
+            </Link>
+            <Link to="/#about" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
               About
-            </a>
-            <a href="/#contact" className="text-foreground/70 hover:text-foreground transition-colors font-heading">
+            </Link>
+            <Link to="/#contact" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </header>

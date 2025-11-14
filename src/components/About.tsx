@@ -5,7 +5,7 @@ import pandaLogo from "@/assets/panda-logo.jpg";
 
 const About = () => {
   return (
-    <section className="py-20 px-4 bg-card">
+    <section id="about" className="py-20 px-4 bg-card">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center mb-12 animate-fade-in">
           <div className="w-48 h-48 mb-6 rounded-2xl overflow-hidden bg-card soft-glow">
