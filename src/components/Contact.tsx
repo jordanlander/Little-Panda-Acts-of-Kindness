@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-card">
+    <section id="contact" className="py-12 px-4 bg-card">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground animate-fade-in">
           Get in Touch

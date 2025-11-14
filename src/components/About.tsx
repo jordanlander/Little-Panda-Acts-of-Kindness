@@ -5,7 +5,7 @@ import pandaLogo from "@/assets/panda-logo.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 px-4 overflow-hidden">
+    <section id="about" className="relative py-12 px-4 overflow-hidden">
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card to-background opacity-60" />
       
