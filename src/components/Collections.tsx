@@ -41,11 +41,11 @@ type Doll = {
 };
 
 const randomActsOfLove: Doll[] = [
-  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs." },
+  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://square.link/u/XmB4Rw0x" },
   { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://square.link/u/dc1hOWOI" },
-  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories." },
-  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes." },
-  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through." },
+  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", squareUrl: "https://square.link/u/gKqsfaUb" },
+  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://square.link/u/eZ7eqzV9" },
+  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://square.link/u/d8DI7QxK" },
   { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings." },
   { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://square.link/u/QwUBTugj" },
   { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen." },
@@ -64,7 +64,7 @@ const loveHappens: Doll[] = [
   { name: "Sue", image: sueImg, story: "Sue is graceful and poised." },
   { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", squareUrl: "https://square.link/u/Tp9qsTw1" },
   { name: "Otis", image: otisImg, story: "Otis is fun-loving and spirited." },
-  { name: "Henry", image: henryImg, story: "Henry is classic and timeless." },
+  { name: "Henry", image: henryImg, story: "Henry is classic and timeless.", squareUrl: "https://square.link/u/jq93yQBT" },
   { name: "Stan", image: stanImg, story: "Stan is unique and memorable." },
   { name: "Mary", image: maryImg, story: "Mary is sweet and endearing." },
   { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", squareUrl: "https://square.link/u/OJnud01G" },
