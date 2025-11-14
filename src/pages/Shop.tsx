@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -115,6 +115,14 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
 
 const Shop = () => {
   const [filter, setFilter] = useState<"all" | "random" | "love">("all");
+  const navigate = useNavigate();
+
+  const handleNavigateToSection = (sectionId: string) => {
+    navigate('/');
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   const filteredDolls = filter === "all" 
     ? allDolls 
@@ -132,12 +140,18 @@ const Shop = () => {
             <Link to="/" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
               Home
             </Link>
-            <Link to="/#about" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
+            <button 
+              onClick={() => handleNavigateToSection('about')}
+              className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading"
+            >
               About
-            </Link>
-            <Link to="/#contact" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
+            </button>
+            <button 
+              onClick={() => handleNavigateToSection('contact')}
+              className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading"
+            >
               Contact
-            </Link>
+            </button>
           </nav>
         </div>
       </header>
