@@ -45,7 +45,11 @@ const Footer = () => {
             Hand-stitched with love
           </p>
           <p className="font-accent text-xs opacity-75">
-            rebeccacoppock.com | Managed by Jordan Lander
+            rebeccacoppock.com |{" "}
+            <a href="/#/privacy" className="hover:underline">
+              Privacy Policy
+            </a>
+            {" "}| Managed by Jordan Lander
           </p>
         </div>
       </div>
