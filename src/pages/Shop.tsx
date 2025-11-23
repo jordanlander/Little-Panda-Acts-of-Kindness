@@ -94,49 +94,66 @@ const allDolls: Doll[] = [
   { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", collection: "spirit", price: "$65" }
 ];
 
-const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) => (
-  <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
-    <div className="aspect-[3/4] overflow-hidden bg-muted">
-      <img 
-        src={image || dollPlaceholder} 
-        alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-        style={{ contentVisibility: 'auto' }}
-      />
-    </div>
-    <div className="p-4 text-center">
-      <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
-      {story && (
-        <p className="text-sm text-muted-foreground mb-3 font-body italic min-h-[3rem]">
-          {story}
+const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) => {
+  const originalPrice = price === "$65" ? 65 : 95;
+  const salePrice = (originalPrice * 0.5).toFixed(2);
+  
+  return (
+    <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
+      <div className="aspect-[3/4] overflow-hidden bg-muted relative">
+        <img 
+          src={image || dollPlaceholder} 
+          alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          style={{ contentVisibility: 'auto' }}
+        />
+        {/* Sale Badge */}
+        <div className="absolute top-3 right-3 bg-rust-clay text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+          50% OFF
+        </div>
+      </div>
+      <div className="p-4 text-center">
+        <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
+        {story && (
+          <p className="text-sm text-muted-foreground mb-3 font-body italic min-h-[3rem]">
+            {story}
+          </p>
+        )}
+        {/* Vintage-Inspired Pricing */}
+        <div className="mb-3 flex items-center justify-center gap-3">
+          <div className="relative">
+            <span className="text-lg font-bold text-muted-foreground/50 line-through decoration-2 decoration-rust-clay">
+              ${originalPrice}
+            </span>
+          </div>
+          <div className="bg-gradient-to-r from-mint-fresh to-blush-pink px-3 py-1 rounded-md shadow-sm">
+            <span className="text-2xl font-bold text-foreground font-heading">
+              ${salePrice}
+            </span>
+          </div>
+        </div>
+        <p className="text-xs text-muted-foreground mb-3 font-accent">
+          {sold ? "Adopted" : "Available for Adoption"}
         </p>
-      )}
-      {price && (
-        <p className="text-sm font-semibold text-foreground mb-2">
-          {price}
-        </p>
-      )}
-      <p className="text-xs text-muted-foreground mb-3 font-accent">
-        {sold ? "Adopted" : "Available for Adoption"}
-      </p>
-      <Button 
-        variant="outline" 
-        size="sm"
-        disabled={!squareUrl || sold}
-        onClick={() => squareUrl && window.open(squareUrl, '_blank')}
-        className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors disabled:opacity-50"
-      >
-        {sold ? "Adopted" : squareUrl ? (
-          <>
-            Adopt Me <ExternalLink className="ml-2 h-3 w-3" />
-          </>
-        ) : "Coming Soon"}
-      </Button>
-    </div>
-  </Card>
-);
+        <Button 
+          variant="outline" 
+          size="sm"
+          disabled={!squareUrl || sold}
+          onClick={() => squareUrl && window.open(squareUrl, '_blank')}
+          className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors disabled:opacity-50"
+        >
+          {sold ? "Adopted" : squareUrl ? (
+            <>
+              Adopt Me <ExternalLink className="ml-2 h-3 w-3" />
+            </>
+          ) : "Coming Soon"}
+        </Button>
+      </div>
+    </Card>
+  );
+};
 
 const Shop = () => {
   const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit">("all");
