@@ -84,14 +84,14 @@ const allDolls: Doll[] = [
   { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/kim-love-happens-collection/E2YWBMAHRIWPQSRKFNOLGOHF", collection: "love", price: "$95" },
   { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ann-love-happens-collection/Y3DKZF5NOOSXRDONN2EZH47M", collection: "love", price: "$95" },
   { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/howard-love-happens-collection/K6CQWMDCLD3WMJOH63EUH3AB", collection: "love", price: "$95" },
-  { name: "Willow", image: willowImg, story: "A guardian of tender moments, wrapped in lace and light.", collection: "spirit", price: "$65" },
-  { name: "Raven", image: ravenImg, story: "Keeper of ancient wisdom and midnight magic.", collection: "spirit", price: "$65" },
-  { name: "Luna", image: lunaImg, story: "She holds space between shadow and moonlight, a companion for quiet strength.", collection: "spirit", price: "$65" },
-  { name: "Moss", image: mossImg, story: "Born from earth's whispers, she carries the healing power of wild places.", collection: "spirit", price: "$65" },
-  { name: "Ember", image: emberImg, story: "A talisman of warmth, holding the sacred flame of resilience.", collection: "spirit", price: "$65" },
-  { name: "Astra", image: astraImg, story: "Woven with stardust and memory, a guide through life's deepest passages.", collection: "spirit", price: "$65" },
-  { name: "Solstice", image: solsticeImg, story: "She marks the turning of seasons, a reminder that light returns.", collection: "spirit", price: "$65" },
-  { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", collection: "spirit", price: "$65" }
+  { name: "Willow", image: willowImg, story: "A guardian of tender moments, wrapped in lace and light.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/willow-spirit-doll-collection-/ZE7TQENTFD76VXEY4S6VOFC7", collection: "spirit", price: "$65" },
+  { name: "Raven", image: ravenImg, story: "Keeper of ancient wisdom and midnight magic.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/raven-spirit-doll-collection-/OMQRNZJMYNIBEGAZXHXGB4DM", collection: "spirit", price: "$65" },
+  { name: "Luna", image: lunaImg, story: "She holds space between shadow and moonlight, a companion for quiet strength.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/luna-spirit-doll-collection-/C42E26TDVRV7FTAJAYR3VRCJ", collection: "spirit", price: "$65" },
+  { name: "Moss", image: mossImg, story: "Born from earth's whispers, she carries the healing power of wild places.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/moss-spirit-doll-collection-/KYZRSNXVAE6T3FKXGWDEGKYB", collection: "spirit", price: "$65" },
+  { name: "Ember", image: emberImg, story: "A talisman of warmth, holding the sacred flame of resilience.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ember-spirit-doll-collection-/4AG6KK7OF4KGKN5VDPJU6Q45", collection: "spirit", price: "$65" },
+  { name: "Astra", image: astraImg, story: "Woven with stardust and memory, a guide through life's deepest passages.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/astra-spirit-doll-collection-/TJHGJKA5HSAZKPLVZ3EAOIHM", collection: "spirit", price: "$65" },
+  { name: "Solstice", image: solsticeImg, story: "She marks the turning of seasons, a reminder that light returns.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/solstice-spirit-doll-collection-/H6REGDYT5SDROX42W6AAE3V6", collection: "spirit", price: "$65" },
+  { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/bramble-spirit-doll-collection-/BQH635XA63GUSIZDR35AIO53", collection: "spirit", price: "$65" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) => {
