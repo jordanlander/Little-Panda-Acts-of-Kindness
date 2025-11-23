@@ -142,8 +142,8 @@ const Shop = () => {
   const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit">("all");
   const navigate = useNavigate();
   
-  // Set sale end date (November 29, 2024 at midnight)
-  const saleEndDate = new Date('2024-11-29T23:59:59');
+  // Set sale end date (December 13, 2025 at midnight)
+  const saleEndDate = new Date('2025-12-13T23:59:59');
 
   const handleNavigateToSection = (sectionId: string) => {
     navigate('/');
