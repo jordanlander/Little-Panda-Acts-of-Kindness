@@ -240,6 +240,19 @@ const Shop = () => {
       {/* Shop Content */}
       <section className="py-12 px-4 starburst-pattern">
         <div className="container mx-auto max-w-7xl">
+          {/* Black Friday Sale Banner */}
+          <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
+            <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
+              🎉 Early Black Friday Sale! 🎉
+            </p>
+            <p className="text-lg text-foreground/90 font-semibold">
+              50% OFF All Dolls Site-Wide
+            </p>
+            <p className="text-sm text-foreground/70 mt-2">
+              Limited time only • Free U.S. Shipping
+            </p>
+          </div>
+
           {/* Title & Shipping Info */}
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
@@ -301,14 +314,11 @@ const Shop = () => {
                 <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
                   I believe the spirit/healing dolls have an enchanting exploration of dolls as vessels of magic, memory, and spirit. I find that these dolls hold space for healing, power, and kindred spirits of our childhood past.
                 </p>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
                   We all have that one magic moment or object that we hold dear to help us as we journey through tough moments in our lives. As Clarissa Pinkola Estes writes, "Dolls are believed to be infused with life by their makers. They are used as markers of authority and talismans to remind one of one's own power."
                 </p>
-                <p className="text-xs text-muted-foreground mt-6 font-accent">
+                <p className="text-sm text-foreground/80 leading-relaxed">
                   Each Spirit Doll is handmade from natural materials including twigs, fabrics, beads, and intuitive design. Free Story Card Included.
-                </p>
-                <p className="text-sm font-semibold text-rust-clay mt-4">
-                  Part of the Early Black Friday Event — $65 (Regular $95)
                 </p>
               </div>
             </div>
