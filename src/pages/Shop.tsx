@@ -264,7 +264,7 @@ const Shop = () => {
           {/* Black Friday Sale Banner */}
           <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
-              🎉 Early Black Friday Sale! 🎉
+              🎉 Early Black Friday & Holiday Sale! 🎉
             </p>
             <p className="text-lg text-foreground/90 font-semibold mb-4">
               50% OFF All Dolls Site-Wide
