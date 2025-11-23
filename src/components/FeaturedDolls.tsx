@@ -4,7 +4,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import charlieImg from "@/assets/dolls/charlie.jpg";
-import hughImg from "@/assets/dolls/hugh.jpg";
+import willowImg from "@/assets/dolls/spirit/willow.jpg";
 
 type Doll = {
   name: string;
@@ -19,22 +19,22 @@ const featuredDolls: Doll[] = [
     name: "Ellie", 
     image: ellieImg, 
     story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", 
-    squareUrl: "https://square.link/u/XmB4Rw0x",
+    squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ellie-random-acts-of-love-collection/T6MF3TMPBTWKSZPEGD5DOVTC",
     collection: "Random Acts of Love"
   },
   { 
     name: "Charlie", 
     image: charlieImg, 
     story: "An artsy soul with a bold personality and unique flair.", 
-    squareUrl: "https://square.link/u/rHLp0yxR",
+    squareUrl: "https://little-panda-acts-of-kindness.square.site/product/charlie-love-happens-collection/KFM54CIZNBC2MP4RQZCI2S7H",
     collection: "Love Happens"
   },
   { 
-    name: "Hugh", 
-    image: hughImg, 
-    story: "Hugh is gentle and caring, always ready to listen.", 
-    squareUrl: "https://square.link/u/4yciYxat",
-    collection: "Random Acts of Love"
+    name: "Willow", 
+    image: willowImg, 
+    story: "A guardian of tender moments, wrapped in lace and light.", 
+    squareUrl: "https://little-panda-acts-of-kindness.square.site/product/willow-spirit-doll-collection-/ZE7TQENTFD76VXEY4S6VOFC7",
+    collection: "Spirit Dolls"
   }
 ];
 
