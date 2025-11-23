@@ -35,6 +35,14 @@ import trevorImg from "@/assets/dolls/trevor.jpg";
 import kimImg from "@/assets/dolls/kim.jpg";
 import annImg from "@/assets/dolls/ann.jpg";
 import howardImg from "@/assets/dolls/howard.jpg";
+import willowImg from "@/assets/dolls/spirit/willow.jpg";
+import ravenImg from "@/assets/dolls/spirit/raven.jpg";
+import lunaImg from "@/assets/dolls/spirit/luna.jpg";
+import mossImg from "@/assets/dolls/spirit/moss.jpg";
+import emberImg from "@/assets/dolls/spirit/ember.jpg";
+import astraImg from "@/assets/dolls/spirit/astra.jpg";
+import solsticeImg from "@/assets/dolls/spirit/solstice.jpg";
+import brambleImg from "@/assets/dolls/spirit/bramble.jpg";
 
 type Doll = {
   name: string;
@@ -42,7 +50,8 @@ type Doll = {
   story?: string;
   squareUrl?: string;
   sold?: boolean;
-  collection: "random" | "love";
+  collection: "random" | "love" | "spirit";
+  price?: string;
 };
 
 const allDolls: Doll[] = [
@@ -73,10 +82,18 @@ const allDolls: Doll[] = [
   { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited.", squareUrl: "https://square.link/u/fin2BaBd", collection: "love" },
   { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary.", squareUrl: "https://square.link/u/E5neD6UE", collection: "love" },
   { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://square.link/u/OUzqTUWZ", collection: "love" },
-  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind.", squareUrl: "https://square.link/u/Unu6v1DX", collection: "love" }
+  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind.", squareUrl: "https://square.link/u/Unu6v1DX", collection: "love" },
+  { name: "Willow", image: willowImg, story: "A guardian of tender moments, wrapped in lace and light.", collection: "spirit", price: "$65" },
+  { name: "Raven", image: ravenImg, story: "Keeper of ancient wisdom and midnight magic.", collection: "spirit", price: "$65" },
+  { name: "Luna", image: lunaImg, story: "She holds space between shadow and moonlight, a companion for quiet strength.", collection: "spirit", price: "$65" },
+  { name: "Moss", image: mossImg, story: "Born from earth's whispers, she carries the healing power of wild places.", collection: "spirit", price: "$65" },
+  { name: "Ember", image: emberImg, story: "A talisman of warmth, holding the sacred flame of resilience.", collection: "spirit", price: "$65" },
+  { name: "Astra", image: astraImg, story: "Woven with stardust and memory, a guide through life's deepest passages.", collection: "spirit", price: "$65" },
+  { name: "Solstice", image: solsticeImg, story: "She marks the turning of seasons, a reminder that light returns.", collection: "spirit", price: "$65" },
+  { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", collection: "spirit", price: "$65" }
 ];
 
-const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
+const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) => (
   <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
     <div className="aspect-[3/4] overflow-hidden bg-muted">
       <img 
@@ -93,6 +110,11 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
       {story && (
         <p className="text-sm text-muted-foreground mb-3 font-body italic min-h-[3rem]">
           {story}
+        </p>
+      )}
+      {price && (
+        <p className="text-sm font-semibold text-foreground mb-2">
+          {price}
         </p>
       )}
       <p className="text-xs text-muted-foreground mb-3 font-accent">
@@ -116,7 +138,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => (
 );
 
 const Shop = () => {
-  const [filter, setFilter] = useState<"all" | "random" | "love">("all");
+  const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit">("all");
   const navigate = useNavigate();
 
   const handleNavigateToSection = (sectionId: string) => {
@@ -133,13 +155,15 @@ const Shop = () => {
   const getSEOTitle = () => {
     if (filter === "random") return "Random Acts of Love Collection • Handmade Upcycled Dolls";
     if (filter === "love") return "Love Happens Collection • Unique Plush Characters by Rebecca Coppock";
+    if (filter === "spirit") return "Spirit & Healing Dolls • Mystical Handmade Companions by Rebecca Coppock";
     return "Handmade One-of-a-Kind Dolls for Adoption • Rebecca Coppock Art";
   };
 
   const getSEODescription = () => {
     if (filter === "random") return "Meet the Random Acts of Love Collection — soft, quirky, hand-stitched dolls made from reclaimed sweaters and shirts. Every doll has its own personality and is available for adoption with free U.S. shipping.";
     if (filter === "love") return "Explore colorful, expressive dolls inspired by stories, nostalgia, and creativity. Each piece is handmade by artist Rebecca Coppock from reclaimed fabrics.";
-    return "Shop all 27 handmade dolls by artist Rebecca Coppock. Each doll is crafted from recycled materials and designed with a unique personality, ready to be adopted and shipped free within the U.S.";
+    if (filter === "spirit") return "Spiritual and healing dolls created during moments of life's deepest tenderness—each one holding space for magic, memory, and inner strength. Handcrafted from natural materials, twigs, fabrics, and beads.";
+    return "Shop all handmade dolls by artist Rebecca Coppock. Each doll is crafted from recycled materials and designed with a unique personality, ready to be adopted and shipped free within the U.S.";
   };
 
   const organizationSchema = {
@@ -252,7 +276,43 @@ const Shop = () => {
             >
               Love Happens
             </Button>
+            <Button
+              onClick={() => setFilter("spirit")}
+              variant={filter === "spirit" ? "default" : "outline"}
+              className="rounded-full"
+            >
+              Spirit Dolls
+            </Button>
           </div>
+
+          {/* Spirit Dolls Collection Intro */}
+          {filter === "spirit" && (
+            <div className="max-w-3xl mx-auto mb-12 text-center animate-fade-in">
+              <h2 className="text-3xl font-heading font-bold mb-6 text-foreground">
+                🌿 Spirit & Healing Dolls 🌿
+              </h2>
+              <p className="text-lg text-foreground/90 mb-6 font-body italic">
+                Spiritual and healing dolls created during moments of life's deepest tenderness—each one holding space for magic, memory, and inner strength.
+              </p>
+              <div className="text-left bg-card/50 p-6 rounded-lg border border-border/20 soft-glow">
+                <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
+                  I began creating these dolls when my husband went into the hospital for major surgery. I worked on a doll during his stay in the hospital, it is titled "You got this" spirit doll. When I finished this doll, my husband took a turn for the better.
+                </p>
+                <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
+                  I believe the spirit/healing dolls have an enchanting exploration of dolls as vessels of magic, memory, and spirit. I find that these dolls hold space for healing, power, and kindred spirits of our childhood past.
+                </p>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  We all have that one magic moment or object that we hold dear to help us as we journey through tough moments in our lives. As Clarissa Pinkola Estes writes, "Dolls are believed to be infused with life by their makers. They are used as markers of authority and talismans to remind one of one's own power."
+                </p>
+                <p className="text-xs text-muted-foreground mt-6 font-accent">
+                  Each Spirit Doll is handmade from natural materials including twigs, fabrics, beads, and intuitive design. Free Story Card Included.
+                </p>
+                <p className="text-sm font-semibold text-rust-clay mt-4">
+                  Part of the Early Black Friday Event — $65 (Regular $95)
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Dolls Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-slide-up">
