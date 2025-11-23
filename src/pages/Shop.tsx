@@ -63,7 +63,7 @@ const allDolls: Doll[] = [
   { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://square.link/u/d8DI7QxK", collection: "random", price: "$95" },
   { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", squareUrl: "https://square.link/u/sLM2YmE3", collection: "random", price: "$95" },
   { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://square.link/u/QwUBTugj", collection: "random", price: "$95" },
-  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://square.link/u/4yciYxat", collection: "random", price: "$95" },
+  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/hugh-random-acts-of-love-collection/ZG36FZQB4S4GCNMESTXEYHZZ", collection: "random", price: "$95" },
   { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://square.link/u/5innkTKy", collection: "random", price: "$95" },
   { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/rHLp0yxR", collection: "love", price: "$95" },
   { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/csUVf69U", collection: "love", price: "$95" },
