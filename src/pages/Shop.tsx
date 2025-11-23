@@ -6,6 +6,7 @@ import { ExternalLink } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
+import CountdownTimer from "@/components/CountdownTimer";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -140,6 +141,9 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) 
 const Shop = () => {
   const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit">("all");
   const navigate = useNavigate();
+  
+  // Set sale end date (November 29, 2024 at midnight)
+  const saleEndDate = new Date('2024-11-29T23:59:59');
 
   const handleNavigateToSection = (sectionId: string) => {
     navigate('/');
@@ -245,11 +249,12 @@ const Shop = () => {
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
               🎉 Early Black Friday Sale! 🎉
             </p>
-            <p className="text-lg text-foreground/90 font-semibold">
+            <p className="text-lg text-foreground/90 font-semibold mb-4">
               50% OFF All Dolls Site-Wide
             </p>
-            <p className="text-sm text-foreground/70 mt-2">
-              Limited time only • Free U.S. Shipping
+            <CountdownTimer targetDate={saleEndDate} />
+            <p className="text-sm text-foreground/70 mt-4">
+              Free U.S. Shipping
             </p>
           </div>
 
