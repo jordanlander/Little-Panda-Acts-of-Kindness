@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 const ReturnPolicy = () => {
   return (
-    <section className="py-12 px-4 bg-background">
+    <section id="return-policy" className="py-12 px-4 bg-background">
       <div className="container mx-auto max-w-3xl">
         <Card className="p-8 bg-vintage-peach/10 border-rust-clay/20">
           <div className="flex items-start gap-4">
