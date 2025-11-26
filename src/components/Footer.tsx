@@ -49,6 +49,10 @@ const Footer = () => {
             <a href="/#/privacy" className="hover:underline">
               Privacy Policy
             </a>
+            {" "}|{" "}
+            <a href="/#/shop#return-policy" className="hover:underline">
+              Return Policy
+            </a>
             {" "}| Managed by Jordan Lander
           </p>
         </div>
