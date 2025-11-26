@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import CountdownTimer from "@/components/CountdownTimer";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
 import edithImg from "@/assets/dolls/edith.jpg";
@@ -22,6 +23,9 @@ const heroImages = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Set sale end date (December 13, 2025 at midnight)
+  const saleEndDate = new Date('2025-12-13T23:59:59');
 
   // Preload hero images for faster transitions
   useEffect(() => {
@@ -40,7 +44,20 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+      {/* Sale Banner */}
+      <div className="relative z-10 w-full py-3 bg-gradient-to-r from-rust-clay via-blush-pink to-rust-clay animate-slide-down">
+        <div className="container mx-auto text-center">
+          <p className="text-white font-heading text-sm sm:text-base md:text-lg font-bold mb-1">
+            🎉 Early Black Friday & Holiday Sale! 🎉
+          </p>
+          <p className="text-white/90 text-xs sm:text-sm mb-2">
+            50% off all dolls — sale ends in:
+          </p>
+          <CountdownTimer targetDate={saleEndDate} />
+        </div>
+      </div>
+      
       {/* Image carousel with fade transitions */}
       {heroImages.map((image, index) => (
         <div
