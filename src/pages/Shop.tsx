@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -158,9 +158,23 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) 
 const Shop = () => {
   const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit">("all");
   const navigate = useNavigate();
+  const location = useLocation();
   
   // Set sale end date (December 13, 2025 at midnight)
   const saleEndDate = new Date('2025-12-13T23:59:59');
+
+  // Handle hash navigation on page load and when hash changes
+  useEffect(() => {
+    const hash = window.location.hash.split('#').pop();
+    if (hash && hash !== 'shop') {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  }, [location]);
 
   const handleNavigateToSection = (sectionId: string) => {
     navigate('/');
