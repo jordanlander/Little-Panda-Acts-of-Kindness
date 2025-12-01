@@ -1,10 +1,22 @@
 import { Heart, Instagram, Facebook, Mail } from "lucide-react";
+import SocialShare from "./SocialShare";
 
 const Footer = () => {
   return (
     <footer className="py-10 px-4 bg-rust-clay text-primary-foreground">
       <div className="container mx-auto max-w-4xl">
-        {/* Social Links */}
+        {/* Share Buttons */}
+        <div className="mb-8 pb-6 border-b border-primary-foreground/20">
+          <SocialShare 
+            title="Little Panda Acts of Kindness - Handmade Dolls by Rebecca Coppock"
+            description="Discover one-of-a-kind, hand-stitched dolls made with love from recycled fabrics. Each doll has its own unique personality!"
+          />
+        </div>
+
+        {/* Follow Links */}
+        <p className="text-center text-sm font-heading font-semibold uppercase tracking-wider mb-4 opacity-90">
+          Follow Along
+        </p>
         <div className="flex items-center justify-center gap-6 mb-6">
           <a 
             href="https://www.instagram.com/littlepandaactsofkindness" 
