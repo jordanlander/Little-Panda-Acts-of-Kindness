@@ -1,6 +1,6 @@
-import artistWithDolls from "@/assets/artist-with-dolls.jpg";
-import artistWorkspace1 from "@/assets/artist-workspace-1.jpg";
-import artistWorkspace2 from "@/assets/artist-workspace-2.jpg";
+import artistWithDolls from "@/assets/artist-with-dolls-captioned.webp";
+import artistWorkspace1 from "@/assets/artist-workspace-captioned.webp";
+import artistWorkspace2 from "@/assets/artist-stitching-captioned.webp";
 import pandaLogo from "@/assets/panda-logo.jpg";
 import SEO from "@/components/SEO";
 
@@ -66,10 +66,9 @@ const About = () => {
           <div className="grid md:grid-cols-5 gap-8 items-center animate-fade-in">
             <div className="md:col-span-3 order-2 md:order-1">
               <div className="relative rounded-3xl overflow-hidden mid-century-shadow transform hover:scale-[1.02] transition-transform duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
                 <img 
                   src={artistWithDolls} 
-                  alt="Rebecca Coppock holding several handmade dolls"
+                  alt="Rebecca Coppock holding several handmade dolls - Adopt a friend, spread a little kindness"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover"
@@ -122,21 +121,19 @@ const About = () => {
             
             <div className="md:col-span-3">
               <div className="grid grid-cols-2 gap-6">
-                <div className="relative rounded-3xl overflow-hidden soft-glow transform hover:scale-105 transition-all duration-500 group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative rounded-3xl overflow-hidden soft-glow transform hover:scale-105 transition-all duration-500">
                   <img 
                     src={artistWorkspace1} 
-                    alt="Rebecca Coppock sewing dolls at her workspace"
+                    alt="Rebecca Coppock at her workspace - Handmade with heart and hope"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover aspect-square"
                   />
                 </div>
-                <div className="relative rounded-3xl overflow-hidden soft-glow transform hover:scale-105 transition-all duration-500 group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative rounded-3xl overflow-hidden soft-glow transform hover:scale-105 transition-all duration-500">
                   <img 
                     src={artistWorkspace2} 
-                    alt="Rebecca Coppock crafting unique handmade dolls at her studio"
+                    alt="Rebecca Coppock crafting dolls - Every stitch tells a story"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover aspect-square"
