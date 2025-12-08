@@ -39,33 +39,39 @@ const featuredDolls: Doll[] = [
 ];
 
 const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => (
-  <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
-    <div className="aspect-[3/4] overflow-hidden bg-muted">
-      <img 
-        src={image} 
-        alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-        style={{ contentVisibility: 'auto' }}
-      />
-    </div>
-    <div className="p-4 text-center">
-      <p className="text-xs text-rust-clay font-accent mb-1">{collection}</p>
-      <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
-      <p className="text-sm text-muted-foreground mb-4 font-body italic min-h-[3rem]">
-        {story}
-      </p>
-      <Button 
-        variant="outline" 
-        size="sm"
-        onClick={() => window.open(squareUrl, '_blank')}
-        className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors"
-      >
-        Adopt Me <ExternalLink className="ml-2 h-3 w-3" />
-      </Button>
-    </div>
-  </Card>
+  <a 
+    href={squareUrl} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="block cursor-pointer"
+  >
+    <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
+      <div className="aspect-[3/4] overflow-hidden bg-muted">
+        <img 
+          src={image} 
+          alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          style={{ contentVisibility: 'auto' }}
+        />
+      </div>
+      <div className="p-4 text-center">
+        <p className="text-xs text-rust-clay font-accent mb-1">{collection}</p>
+        <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
+        <p className="text-sm text-muted-foreground mb-4 font-body italic min-h-[3rem]">
+          {story}
+        </p>
+        <Button 
+          variant="outline" 
+          size="sm"
+          className="w-full rounded-full border-2 bg-rust-clay text-white hover:bg-rust-clay/90 transition-colors"
+        >
+          Buy Now <ExternalLink className="ml-2 h-3 w-3" />
+        </Button>
+      </div>
+    </Card>
+  </a>
 );
 
 const FeaturedDolls = () => {

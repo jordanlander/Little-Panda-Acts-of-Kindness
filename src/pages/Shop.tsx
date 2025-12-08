@@ -98,7 +98,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) 
   const originalPrice = price === "$65" ? 65 : 95;
   const salePrice = (originalPrice * 0.5).toFixed(2);
   
-  return (
+  const CardContent = (
     <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
       <div className="aspect-[3/4] overflow-hidden bg-muted relative">
         <img 
@@ -135,24 +135,33 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) 
           </div>
         </div>
         <p className="text-xs text-muted-foreground mb-3 font-accent">
-          {sold ? "Adopted" : "Available for Adoption"}
+          {sold ? "Adopted ❤️" : "Available"}
         </p>
         <Button 
           variant="outline" 
           size="sm"
           disabled={!squareUrl || sold}
-          onClick={() => squareUrl && window.open(squareUrl, '_blank')}
-          className="w-full rounded-full border-2 hover:bg-primary hover:text-primary-foreground transition-colors disabled:opacity-50"
+          className="w-full rounded-full border-2 bg-rust-clay text-white hover:bg-rust-clay/90 transition-colors disabled:opacity-50"
         >
           {sold ? "Adopted" : squareUrl ? (
             <>
-              Adopt Me <ExternalLink className="ml-2 h-3 w-3" />
+              Buy Now <ExternalLink className="ml-2 h-3 w-3" />
             </>
           ) : "Coming Soon"}
         </Button>
       </div>
     </Card>
   );
+
+  if (squareUrl && !sold) {
+    return (
+      <a href={squareUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
+        {CardContent}
+      </a>
+    );
+  }
+  
+  return CardContent;
 };
 
 const Shop = () => {
