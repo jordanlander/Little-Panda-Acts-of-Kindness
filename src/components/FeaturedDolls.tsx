@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackProductClick } from "@/lib/analytics";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import charlieImg from "@/assets/dolls/charlie.jpg";
 import willowImg from "@/assets/dolls/spirit/willow.jpg";
@@ -38,12 +39,22 @@ const featuredDolls: Doll[] = [
   }
 ];
 
-const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => (
+const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => {
+  const handleClick = () => {
+    trackProductClick({
+      dollName: name,
+      collection: collection,
+      url: squareUrl
+    });
+  };
+
+  return (
   <a 
     href={squareUrl} 
     target="_blank" 
     rel="noopener noreferrer"
     className="block cursor-pointer"
+    onClick={handleClick}
   >
     <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
       <div className="aspect-[3/4] overflow-hidden bg-muted">
@@ -72,7 +83,8 @@ const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => (
       </div>
     </Card>
   </a>
-);
+  );
+};
 
 const FeaturedDolls = () => {
   return (

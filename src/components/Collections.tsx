@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -114,8 +115,16 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => {
   );
 
   if (squareUrl && !sold) {
+    const handleClick = () => {
+      trackProductClick({
+        dollName: name,
+        collection: 'Collections',
+        url: squareUrl
+      });
+    };
+    
     return (
-      <a href={squareUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
+      <a href={squareUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer" onClick={handleClick}>
         {CardContent}
       </a>
     );
