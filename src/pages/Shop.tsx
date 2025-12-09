@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
 import CountdownTimer from "@/components/CountdownTimer";
+import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -94,7 +95,7 @@ const allDolls: Doll[] = [
   { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/bramble-spirit-doll-collection-/BQH635XA63GUSIZDR35AIO53", collection: "spirit", price: "$65" }
 ];
 
-const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) => {
+const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
   const originalPrice = price === "$65" ? 65 : 95;
   const salePrice = (originalPrice * 0.5).toFixed(2);
   
@@ -154,8 +155,17 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price }: Doll) 
   );
 
   if (squareUrl && !sold) {
+    const handleClick = () => {
+      trackProductClick({
+        dollName: name,
+        collection: collection,
+        price: price === "$65" ? 32.5 : 47.5,
+        url: squareUrl
+      });
+    };
+    
     return (
-      <a href={squareUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
+      <a href={squareUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer" onClick={handleClick}>
         {CardContent}
       </a>
     );
