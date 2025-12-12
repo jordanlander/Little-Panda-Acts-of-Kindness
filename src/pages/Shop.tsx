@@ -89,7 +89,7 @@ const allDolls: Doll[] = [
   { name: "Raven", image: ravenImg, story: "Keeper of ancient wisdom and midnight magic.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/raven-spirit-doll-collection-/OMQRNZJMYNIBEGAZXHXGB4DM", collection: "spirit", price: "$65" },
   { name: "Luna", image: lunaImg, story: "She holds space between shadow and moonlight, a companion for quiet strength.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/luna-spirit-doll-collection-/C42E26TDVRV7FTAJAYR3VRCJ", collection: "spirit", price: "$65" },
   { name: "Moss", image: mossImg, story: "Born from earth's whispers, she carries the healing power of wild places.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/moss-spirit-doll-collection-/KYZRSNXVAE6T3FKXGWDEGKYB", collection: "spirit", price: "$65" },
-  { name: "Ember", image: emberImg, story: "A talisman of warmth, holding the sacred flame of resilience.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ember-spirit-doll-collection-/4AG6KK7OF4KGKN5VDPJU6Q45", collection: "spirit", price: "$65" },
+  { name: "Ember", image: emberImg, story: "A talisman of warmth, holding the sacred flame of resilience.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ember-spirit-doll-collection-/4AG6KK7OF4KGKN5VDPJU6Q45", collection: "spirit", price: "$65", sold: true },
   { name: "Astra", image: astraImg, story: "Woven with stardust and memory, a guide through life's deepest passages.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/astra-spirit-doll-collection-/TJHGJKA5HSAZKPLVZ3EAOIHM", collection: "spirit", price: "$65" },
   { name: "Solstice", image: solsticeImg, story: "She marks the turning of seasons, a reminder that light returns.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/solstice-spirit-doll-collection-/H6REGDYT5SDROX42W6AAE3V6", collection: "spirit", price: "$65" },
   { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/bramble-spirit-doll-collection-/BQH635XA63GUSIZDR35AIO53", collection: "spirit", price: "$65" }
@@ -100,20 +100,30 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
   const salePrice = (originalPrice * 0.5).toFixed(2);
   
   const CardContent = (
-    <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
+    <Card className={`overflow-hidden group transition-transform duration-300 soft-glow bg-card ${sold ? 'opacity-90' : 'hover:scale-105'}`}>
       <div className="aspect-[3/4] overflow-hidden bg-muted relative">
         <img 
           src={image || dollPlaceholder} 
           alt={`Handmade upcycled doll named ${name} by artist Rebecca Coppock`}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          className={`w-full h-full object-cover transition-transform duration-300 ${sold ? 'grayscale-[40%]' : 'group-hover:scale-110'}`}
           style={{ contentVisibility: 'auto' }}
         />
+        {/* Sold Overlay */}
+        {sold && (
+          <div className="absolute inset-0 bg-gradient-to-t from-blush-pink/60 to-transparent flex items-center justify-center">
+            <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg transform -rotate-12 border-2 border-blush-pink">
+              <span className="text-xl font-heading font-bold text-rust-clay">Found Her Home! 💕</span>
+            </div>
+          </div>
+        )}
         {/* Sale Badge */}
-        <div className="absolute top-3 right-3 bg-rust-clay text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-          50% OFF
-        </div>
+        {!sold && (
+          <div className="absolute top-3 right-3 bg-rust-clay text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+            50% OFF
+          </div>
+        )}
       </div>
       <div className="p-4 text-center">
         <h3 className="font-heading text-xl font-semibold mb-2">{name}</h3>
