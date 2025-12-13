@@ -189,8 +189,8 @@ const Shop = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
-  // Set sale end date (December 13, 2025 at midnight)
-  const saleEndDate = new Date('2025-12-13T23:59:59');
+  // Set sale end date (New Year's Day 2026)
+  const saleEndDate = new Date('2026-01-01T23:59:59');
 
   // Handle hash navigation on page load and when hash changes
   useEffect(() => {
@@ -304,13 +304,13 @@ const Shop = () => {
       {/* Shop Content */}
       <section className="py-12 px-4 starburst-pattern">
         <div className="container mx-auto max-w-7xl">
-          {/* Black Friday Sale Banner */}
+          {/* Holiday Sale Banner */}
           <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
-              🎉 Early Black Friday & Holiday Sale! 🎉
+              🎄 Holiday Sale — 50% Off! 🎄
             </p>
             <p className="text-lg text-foreground/90 font-semibold mb-4">
-              50% OFF All Dolls Site-Wide
+              Celebrate the Season — All Dolls Half Price
             </p>
             <CountdownTimer targetDate={saleEndDate} />
             <p className="text-sm text-foreground/70 mt-4">
