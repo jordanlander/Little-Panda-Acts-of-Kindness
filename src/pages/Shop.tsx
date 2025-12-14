@@ -114,7 +114,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
         {sold && (
           <div className="absolute inset-0 bg-gradient-to-t from-blush-pink/60 to-transparent flex items-center justify-center">
             <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg transform -rotate-12 border-2 border-blush-pink">
-              <span className="text-xl font-heading font-bold text-rust-clay">Found Her Home! 💕</span>
+              <span className="text-xl font-heading font-bold text-rust-clay">Found a Home! 💕</span>
             </div>
           </div>
         )}
