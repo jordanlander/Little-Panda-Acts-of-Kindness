@@ -34,7 +34,7 @@ const featuredDolls: Doll[] = [
     name: "Willow", 
     image: willowImg, 
     story: "A guardian of tender moments, wrapped in lace and light.", 
-    squareUrl: "https://littlepandaacts.etsy.com/listing/4407587802/willow-spirit-doll-collection-handmade",
+    squareUrl: "https://littlepandaacts.etsy.com/listing/4415531725/willow-spirit-doll-handmade-folk-art",
     collection: "Spirit Dolls"
   }
 ];
