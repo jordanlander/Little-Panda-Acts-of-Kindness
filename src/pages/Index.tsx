@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import AdoptedGallery from "@/components/AdoptedGallery";
 
 const Index = () => {
   const homeSchema = {
@@ -30,6 +31,7 @@ const Index = () => {
       <Hero />
       <FeaturedDolls />
       <About />
+      <AdoptedGallery compact />
       <Contact />
       <Footer />
     </div>
