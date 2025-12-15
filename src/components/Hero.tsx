@@ -49,7 +49,7 @@ const Hero = () => {
       <div className="relative z-10 w-full py-3 bg-gradient-to-r from-rust-clay via-blush-pink to-rust-clay animate-slide-down">
         <div className="container mx-auto text-center">
           <p className="text-white font-heading text-sm sm:text-base md:text-lg font-bold mb-1">
-            🎄 Holiday Sale — 50% Off! 🎄
+            🎄 Holiday Sale — 45% Off! 🎄
           </p>
           <p className="text-white/90 text-xs sm:text-sm mb-2">
             Celebrate the season — sale ends New Year's Day:
