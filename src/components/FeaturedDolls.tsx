@@ -20,7 +20,7 @@ const featuredDolls: Doll[] = [
     name: "Ellie", 
     image: ellieImg, 
     story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", 
-    squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ellie-random-acts-of-love-collection/T6MF3TMPBTWKSZPEGD5DOVTC",
+    squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled",
     collection: "Random Acts of Love"
   },
   { 
@@ -34,7 +34,7 @@ const featuredDolls: Doll[] = [
     name: "Willow", 
     image: willowImg, 
     story: "A guardian of tender moments, wrapped in lace and light.", 
-    squareUrl: "https://little-panda-acts-of-kindness.square.site/product/willow-spirit-doll-collection-/ZE7TQENTFD76VXEY4S6VOFC7",
+    squareUrl: "https://littlepandaacts.etsy.com/listing/4407587802/willow-spirit-doll-collection-handmade",
     collection: "Spirit Dolls"
   }
 ];
