@@ -42,15 +42,15 @@ type Doll = {
 };
 
 const randomActsOfLove: Doll[] = [
-  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://square.link/u/XmB4Rw0x" },
-  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://square.link/u/dc1hOWOI" },
-  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", squareUrl: "https://square.link/u/gKqsfaUb" },
-  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://square.link/u/eZ7eqzV9" },
-  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://square.link/u/d8DI7QxK" },
-  { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", squareUrl: "https://square.link/u/sLM2YmE3" },
-  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://square.link/u/QwUBTugj" },
-  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://square.link/u/4yciYxat" },
-  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://square.link/u/5innkTKy" }
+  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled" },
+  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424748861/bert-handmade-one-of-a-kind-art-doll" },
+  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424759918/edith-random-acts-of-love-collection" },
+  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection" },
+  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407640841/ginger-hand-stitched-art-plush-from" },
+  { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424762336/steve-random-acts-of-love-collection" },
+  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424750889/earl-handmade-one-of-a-kind-art-doll" },
+  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424761252/hugh-random-acts-of-love-collection" },
+  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407648465/scott-hand-stitched-soft-sculpture-from" }
 ];
 
 const loveHappens: Doll[] = [
