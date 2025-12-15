@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
 import CountdownTimer from "@/components/CountdownTimer";
+import AdoptedGallery from "@/components/AdoptedGallery";
 import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
@@ -398,6 +399,7 @@ const Shop = () => {
         </div>
       </section>
 
+      <AdoptedGallery />
       <ReturnPolicy />
       <Footer />
     </div>
