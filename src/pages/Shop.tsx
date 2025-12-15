@@ -186,7 +186,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
 };
 
 const Shop = () => {
-  const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit">("all");
+  const [filter, setFilter] = useState<"all" | "random" | "love" | "spirit" | "adopted">("all");
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -215,12 +215,15 @@ const Shop = () => {
 
   const filteredDolls = filter === "all" 
     ? allDolls 
+    : filter === "adopted"
+    ? allDolls.filter(doll => doll.sold)
     : allDolls.filter(doll => doll.collection === filter);
 
   const getSEOTitle = () => {
     if (filter === "random") return "Random Acts of Love Collection • Handmade Upcycled Dolls";
     if (filter === "love") return "Love Happens Collection • Unique Plush Characters by Rebecca Coppock";
     if (filter === "spirit") return "Spirit & Healing Dolls • Mystical Handmade Companions by Rebecca Coppock";
+    if (filter === "adopted") return "Adopted Dolls • These Friends Found Their Forever Homes";
     return "Handmade One-of-a-Kind Dolls for Adoption • Rebecca Coppock Art";
   };
 
@@ -228,6 +231,7 @@ const Shop = () => {
     if (filter === "random") return "Meet the Random Acts of Love Collection — soft, quirky, hand-stitched dolls made from reclaimed sweaters and shirts. Every doll has its own personality and is available for adoption with free U.S. shipping.";
     if (filter === "love") return "Explore colorful, expressive dolls inspired by stories, nostalgia, and creativity. Each piece is handmade by artist Rebecca Coppock from reclaimed fabrics.";
     if (filter === "spirit") return "Spiritual and healing dolls created during moments of life's deepest tenderness—each one holding space for magic, memory, and inner strength. Handcrafted from natural materials, twigs, fabrics, and beads.";
+    if (filter === "adopted") return "These handmade dolls have found their forever homes. Each one-of-a-kind creation by Rebecca Coppock is now bringing joy to their new families.";
     return "Shop all handmade dolls by artist Rebecca Coppock. Each doll is crafted from recycled materials and designed with a unique personality, ready to be adopted and shipped free within the U.S.";
   };
 
@@ -361,6 +365,13 @@ const Shop = () => {
               className="rounded-full"
             >
               Spirit Dolls
+            </Button>
+            <Button
+              onClick={() => setFilter("adopted")}
+              variant={filter === "adopted" ? "default" : "outline"}
+              className="rounded-full"
+            >
+              Adopted 💕
             </Button>
           </div>
 
