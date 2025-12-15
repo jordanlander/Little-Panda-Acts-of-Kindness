@@ -98,7 +98,7 @@ const allDolls: Doll[] = [
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
   const originalPrice = price === "$65" ? 65 : 95;
-  const salePrice = (originalPrice * 0.5).toFixed(2);
+  const salePrice = (originalPrice * 0.55).toFixed(2);
   
   const CardContent = (
     <Card className={`overflow-hidden group transition-transform duration-300 soft-glow bg-card ${sold ? 'opacity-90' : 'hover:scale-105'}`}>
@@ -122,7 +122,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
         {/* Sale Badge */}
         {!sold && (
           <div className="absolute top-3 right-3 bg-rust-clay text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-            50% OFF
+            45% OFF
           </div>
         )}
       </div>
@@ -170,7 +170,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
       trackProductClick({
         dollName: name,
         collection: collection,
-        price: price === "$65" ? 32.5 : 47.5,
+        price: price === "$65" ? 35.75 : 52.25,
         url: squareUrl
       });
     };
@@ -312,7 +312,7 @@ const Shop = () => {
           {/* Holiday Sale Banner */}
           <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
-              🎄 Holiday Sale — 50% Off! 🎄
+              🎄 Holiday Sale — 45% Off! 🎄
             </p>
             <p className="text-lg text-foreground/90 font-semibold mb-4">
               Celebrate the Season — All Dolls Half Price
