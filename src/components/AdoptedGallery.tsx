@@ -6,6 +6,7 @@ import { Heart } from "lucide-react";
 import peggyImg from "@/assets/dolls/peggy.jpg";
 import sueImg from "@/assets/dolls/sue.jpg";
 import stanImg from "@/assets/dolls/stan.jpg";
+import otisImg from "@/assets/dolls/otis.jpg";
 import emberImg from "@/assets/dolls/spirit/ember.jpg";
 import solsticeImg from "@/assets/dolls/spirit/solstice.jpg";
 
@@ -19,6 +20,7 @@ const adoptedDolls: AdoptedDoll[] = [
   { name: "Peggy", image: peggyImg, collection: "Love Happens" },
   { name: "Sue", image: sueImg, collection: "Love Happens" },
   { name: "Stan", image: stanImg, collection: "Love Happens" },
+  { name: "Otis", image: otisImg, collection: "Love Happens" },
   { name: "Ember", image: emberImg, collection: "Spirit" },
   { name: "Solstice", image: solsticeImg, collection: "Spirit" },
 ];
