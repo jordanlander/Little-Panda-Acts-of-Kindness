@@ -27,7 +27,7 @@ const featuredDolls: Doll[] = [
     name: "Charlie", 
     image: charlieImg, 
     story: "An artsy soul with a bold personality and unique flair.", 
-    squareUrl: "https://little-panda-acts-of-kindness.square.site/product/charlie-love-happens-collection/KFM54CIZNBC2MP4RQZCI2S7H",
+    squareUrl: "https://littlepandaacts.etsy.com/listing/4412102380/charlie-handmade-primitive-folk-art-soft",
     collection: "Love Happens"
   },
   { 
