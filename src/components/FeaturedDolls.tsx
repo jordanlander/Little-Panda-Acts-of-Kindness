@@ -95,7 +95,7 @@ const FeaturedDolls = () => {
             Featured Dolls
           </h2>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-2">
-            A glimpse into the collection
+            A glimpse into the collections
           </p>
           <p className="text-base text-muted-foreground max-w-xl mx-auto">
             Each one-of-a-kind companion is handcrafted with love and waiting for their forever home
