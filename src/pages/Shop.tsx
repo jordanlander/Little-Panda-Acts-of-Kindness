@@ -46,6 +46,8 @@ import emberImg from "@/assets/dolls/spirit/ember.jpg";
 import astraImg from "@/assets/dolls/spirit/astra.jpg";
 import solsticeImg from "@/assets/dolls/spirit/solstice.jpg";
 import brambleImg from "@/assets/dolls/spirit/bramble.jpg";
+import rootboundImg from "@/assets/dolls/spirit/rootbound.jpg";
+import thistlewingImg from "@/assets/dolls/spirit/thistlewing.jpg";
 
 type Doll = {
   name: string;
@@ -93,7 +95,9 @@ const allDolls: Doll[] = [
   { name: "Ember", image: emberImg, story: "A talisman of warmth, holding the sacred flame of resilience.", squareUrl: "https://little-panda-acts-of-kindness.square.site/product/ember-spirit-doll-collection-/4AG6KK7OF4KGKN5VDPJU6Q45", collection: "spirit", price: "$65", sold: true },
   { name: "Astra", image: astraImg, story: "Woven with stardust and memory, a guide through life's deepest passages.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424479727/astra-spirit-doll-collection-handmade", collection: "spirit", price: "$65" },
   { name: "Solstice", image: solsticeImg, story: "She marks the turning of seasons, a reminder that light returns.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424492833/solstice-spirit-doll-collection-handmade", collection: "spirit", price: "$65", sold: true },
-  { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424495423/bramble-spirit-doll-collection-handmade", collection: "spirit", price: "$65" }
+  { name: "Bramble", image: brambleImg, story: "Wild and unbound, she teaches us to embrace our beautiful imperfections.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424495423/bramble-spirit-doll-collection-handmade", collection: "spirit", price: "$65" },
+  { name: "Rootbound", image: rootboundImg, story: "A quiet talisman of earth and breath, grounding you in the present moment.", squareUrl: "https://littlepandaacts.etsy.com/listing/4432872532", collection: "spirit", price: "$65" },
+  { name: "Thistlewing", image: thistlewingImg, story: "A charm of air and becoming, she carries the lightness of transformation.", squareUrl: "https://littlepandaacts.etsy.com/listing/4432889516", collection: "spirit", price: "$65" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
