@@ -102,7 +102,7 @@ const allDolls: Doll[] = [
   { name: "Rootbound", image: rootboundImg, story: "A quiet talisman of earth and breath, grounding you in the present moment.", squareUrl: "https://littlepandaacts.etsy.com/listing/4432872532", collection: "spirit", price: "$65" },
   { name: "Thistlewing", image: thistlewingImg, story: "A charm of air and becoming, she carries the lightness of transformation.", squareUrl: "https://littlepandaacts.etsy.com/listing/4432889516", collection: "spirit", price: "$65" },
   { name: "Breathkeeper", image: breathkeeperImg, story: "A charm of fire, air and staying alive—she holds the sacred rhythm of breath.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433452248", collection: "spirit", price: "$65" },
-  { name: "Mended", image: mendedImg, story: "A charm of memory and repair—she honors the beauty in what's been broken and restored.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433454310", collection: "spirit", price: "$65" },
+  { name: "Mended", image: mendedImg, story: "A charm of memory and repair—she honors the beauty in what's been broken and restored.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433454310", collection: "spirit", price: "$65", sold: true },
   { name: "Reach", image: reachImg, story: "A charm of growth and claiming space—she encourages you to stretch toward the light.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433456764", collection: "spirit", price: "$65" }
 ];
 
