@@ -51,6 +51,8 @@ import thistlewingImg from "@/assets/dolls/spirit/thistlewing.jpg";
 import breathkeeperImg from "@/assets/dolls/spirit/breathkeeper.jpg";
 import mendedImg from "@/assets/dolls/spirit/mended.jpg";
 import reachImg from "@/assets/dolls/spirit/reach.jpg";
+import keeperImg from "@/assets/dolls/spirit/keeper.jpg";
+import stitchwiseImg from "@/assets/dolls/spirit/stitchwise.jpg";
 
 type Doll = {
   name: string;
@@ -103,7 +105,9 @@ const allDolls: Doll[] = [
   { name: "Thistlewing", image: thistlewingImg, story: "A charm of air and becoming, she carries the lightness of transformation.", squareUrl: "https://littlepandaacts.etsy.com/listing/4432889516", collection: "spirit", price: "$65" },
   { name: "Breathkeeper", image: breathkeeperImg, story: "A charm of fire, air and staying alive—she holds the sacred rhythm of breath.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433452248", collection: "spirit", price: "$65" },
   { name: "Mended", image: mendedImg, story: "A charm of memory and repair—she honors the beauty in what's been broken and restored.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433454310", collection: "spirit", price: "$65", sold: true },
-  { name: "Reach", image: reachImg, story: "A charm of growth and claiming space—she encourages you to stretch toward the light.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433456764", collection: "spirit", price: "$65" }
+  { name: "Reach", image: reachImg, story: "A charm of growth and claiming space—she encourages you to stretch toward the light.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433456764", collection: "spirit", price: "$65" },
+  { name: "Keeper", image: keeperImg, story: "A charm of endurance and care—she guards the tender work of showing up, again and again.", squareUrl: "https://littlepandaacts.etsy.com/listing/4434065695", collection: "spirit", price: "$65" },
+  { name: "Stitchwise", image: stitchwiseImg, story: "A charm of attention and continuance—she honors the quiet wisdom found in mending.", squareUrl: "https://littlepandaacts.etsy.com/listing/4434069507", collection: "spirit", price: "$65" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
