@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import CountdownTimer from "@/components/CountdownTimer";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
 import edithImg from "@/assets/dolls/edith.jpg";
@@ -23,9 +22,6 @@ const heroImages = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Set sale end date (New Year's Day 2026)
-  const saleEndDate = new Date('2026-01-01T23:59:59');
 
   // Preload hero images for faster transitions
   useEffect(() => {
@@ -49,12 +45,11 @@ const Hero = () => {
       <div className="relative z-10 w-full py-3 bg-gradient-to-r from-rust-clay via-blush-pink to-rust-clay animate-slide-down">
         <div className="container mx-auto text-center">
           <p className="text-white font-heading text-sm sm:text-base md:text-lg font-bold mb-1">
-            🎄 Holiday Sale — 45% Off! 🎄
+            ✨ Early Adopters Sale — 45% Off! ✨
           </p>
-          <p className="text-white/90 text-xs sm:text-sm mb-2">
-            Celebrate the season — sale ends New Year's Day:
+          <p className="text-white/90 text-xs sm:text-sm">
+            Be one of the first 100 online adopters to save!
           </p>
-          <CountdownTimer targetDate={saleEndDate} />
         </div>
       </div>
       
