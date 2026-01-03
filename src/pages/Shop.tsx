@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
-import CountdownTimer from "@/components/CountdownTimer";
+
 import AdoptedGallery from "@/components/AdoptedGallery";
 import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
@@ -204,8 +204,6 @@ const Shop = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
-  // Set sale end date (New Year's Day 2026)
-  const saleEndDate = new Date('2026-01-01T23:59:59');
 
   // Handle hash navigation on page load and when hash changes
   useEffect(() => {
@@ -323,16 +321,15 @@ const Shop = () => {
       {/* Shop Content */}
       <section className="py-12 px-4 starburst-pattern">
         <div className="container mx-auto max-w-7xl">
-          {/* Holiday Sale Banner */}
+          {/* Early Adopters Sale Banner */}
           <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
-              🎄 Holiday Sale — 45% Off! 🎄
+              ✨ Early Adopters Sale — 45% Off! ✨
             </p>
-            <p className="text-lg text-foreground/90 font-semibold mb-4">
-              Celebrate the Season — All Dolls Half Price
+            <p className="text-lg text-foreground/90 font-semibold mb-2">
+              Be one of the first 100 online adopters to save!
             </p>
-            <CountdownTimer targetDate={saleEndDate} />
-            <p className="text-sm text-foreground/70 mt-4">
+            <p className="text-sm text-foreground/70">
               Free U.S. Shipping
             </p>
           </div>
