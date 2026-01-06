@@ -12,6 +12,7 @@ import emberImg from "@/assets/dolls/spirit/ember.jpg";
 import solsticeImg from "@/assets/dolls/spirit/solstice.jpg";
 import mossImg from "@/assets/dolls/spirit/moss.jpg";
 import mendedImg from "@/assets/dolls/spirit/mended.jpg";
+import rootboundImg from "@/assets/dolls/spirit/rootbound.jpg";
 
 type AdoptedDoll = {
   name: string;
@@ -29,6 +30,7 @@ const adoptedDolls: AdoptedDoll[] = [
   { name: "Solstice", image: solsticeImg, collection: "Spirit" },
   { name: "Moss", image: mossImg, collection: "Spirit" },
   { name: "Mended", image: mendedImg, collection: "Spirit" },
+  { name: "Rootbound", image: rootboundImg, collection: "Spirit" },
 ];
 
 interface AdoptedGalleryProps {
