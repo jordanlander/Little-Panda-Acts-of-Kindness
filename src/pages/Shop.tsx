@@ -53,6 +53,7 @@ import mendedImg from "@/assets/dolls/spirit/mended.jpg";
 import reachImg from "@/assets/dolls/spirit/reach.jpg";
 import keeperImg from "@/assets/dolls/spirit/keeper.jpg";
 import stitchwiseImg from "@/assets/dolls/spirit/stitchwise.jpg";
+import hearthImg from "@/assets/dolls/spirit/hearth.jpg";
 
 type Doll = {
   name: string;
@@ -107,7 +108,8 @@ const allDolls: Doll[] = [
   { name: "Mended", image: mendedImg, story: "A charm of memory and repair—she honors the beauty in what's been broken and restored.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433454310", collection: "spirit", price: "$65", sold: true },
   { name: "Reach", image: reachImg, story: "A charm of growth and claiming space—she encourages you to stretch toward the light.", squareUrl: "https://littlepandaacts.etsy.com/listing/4433456764", collection: "spirit", price: "$65" },
   { name: "Keeper", image: keeperImg, story: "A charm of endurance and care—she guards the tender work of showing up, again and again.", squareUrl: "https://littlepandaacts.etsy.com/listing/4434065695", collection: "spirit", price: "$65" },
-  { name: "Stitchwise", image: stitchwiseImg, story: "A charm of attention and continuance—she honors the quiet wisdom found in mending.", squareUrl: "https://littlepandaacts.etsy.com/listing/4434069507", collection: "spirit", price: "$65" }
+  { name: "Stitchwise", image: stitchwiseImg, story: "A charm of attention and continuance—she honors the quiet wisdom found in mending.", squareUrl: "https://littlepandaacts.etsy.com/listing/4434069507", collection: "spirit", price: "$65" },
+  { name: "Hearth", image: hearthImg, story: "A talisman of home and holding—she embodies the warmth and comfort of belonging.", squareUrl: "https://littlepandaacts.etsy.com/listing/4436987330/hearth-folk-art-spirit-doll-a-talisman", collection: "spirit", price: "$65" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
