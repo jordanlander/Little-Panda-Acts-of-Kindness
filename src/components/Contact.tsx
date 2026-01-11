@@ -76,8 +76,11 @@ const Contact = () => {
                 Based in Erie, Pennsylvania
               </p>
               <p className="text-sm mt-2 text-foreground/70">
-                I will take orders online and ship free of charge. Each doll is handmade 
+                I take orders online and ship free within the U.S. Each doll is handmade 
                 with recycled materials and endless love.
+              </p>
+              <p className="text-xs mt-2 text-foreground/60">
+                International collectors welcome — <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-rust-clay">email for a custom shipping quote</a>
               </p>
             </div>
           </div>

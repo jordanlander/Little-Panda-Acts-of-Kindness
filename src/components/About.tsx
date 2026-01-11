@@ -153,8 +153,11 @@ const About = () => {
                 <h3 className="text-3xl font-bold text-foreground font-heading mb-6">
                   Spreading Kindness, One Doll at a Time
                 </h3>
-                <p className="text-xl text-muted-foreground mb-2">
-                  Custom orders are welcome, and every doll ships free of charge.
+                <p className="text-xl text-muted-foreground mb-1">
+                  Custom orders are welcome, and every doll ships free within the U.S.
+                </p>
+                <p className="text-sm text-muted-foreground mb-2">
+                  International collectors welcome — <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-primary">email for a custom shipping quote</a>
                 </p>
                 <p className="text-2xl font-semibold text-primary italic font-heading">
                   Because every creation is a little "Panda Act of Kindness"
