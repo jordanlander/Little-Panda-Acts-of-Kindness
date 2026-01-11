@@ -97,8 +97,11 @@ const FeaturedDolls = () => {
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-2">
             A glimpse into the collections
           </p>
-          <p className="text-base text-muted-foreground max-w-xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-xl mx-auto mb-2">
             Each one-of-a-kind companion is handcrafted with love and waiting for their forever home
+          </p>
+          <p className="text-sm text-rust-clay font-heading">
+            Free U.S. Shipping • <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-rust-clay/80">International collectors welcome</a>
           </p>
         </div>
         
