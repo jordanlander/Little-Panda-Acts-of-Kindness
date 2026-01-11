@@ -242,7 +242,7 @@ const Shop = () => {
   };
 
   const getSEODescription = () => {
-    if (filter === "random") return "Meet the Random Acts of Love Collection — soft, quirky, hand-stitched dolls made from reclaimed sweaters and shirts. Every doll has its own personality and is available for adoption with free U.S. shipping.";
+    if (filter === "random") return "Meet the Random Acts of Love Collection — soft, quirky, hand-stitched dolls made from reclaimed sweaters and shirts. Every doll has its own personality and is available for adoption with free U.S. shipping. International collectors welcome.";
     if (filter === "love") return "Explore colorful, expressive dolls inspired by stories, nostalgia, and creativity. Each piece is handmade by artist Rebecca Coppock from reclaimed fabrics.";
     if (filter === "spirit") return "Spiritual and healing dolls created during moments of life's deepest tenderness—each one holding space for magic, memory, and inner strength. Handcrafted from natural materials, twigs, fabrics, and beads.";
     if (filter === "adopted") return "These handmade dolls have found their forever homes. Each one-of-a-kind creation by Rebecca Coppock is now bringing joy to their new families.";
@@ -332,7 +332,7 @@ const Shop = () => {
               Be one of the first 100 online adopters to save!
             </p>
             <p className="text-sm text-foreground/70">
-              Free U.S. Shipping
+              Free U.S. Shipping • International collectors welcome — message for a custom quote
             </p>
           </div>
 
@@ -345,7 +345,10 @@ const Shop = () => {
               Each doll is one-of-a-kind, handmade with love
             </p>
             <p className="text-sm text-rust-clay font-heading">
-              Free Shipping (U.S.) • Ships from Pennsylvania by the artist
+              Free U.S. Shipping • Ships from Pennsylvania
+            </p>
+            <p className="text-xs text-foreground/60 mt-1">
+              International collectors welcome — please message for a custom shipping quote before purchase
             </p>
           </div>
 
