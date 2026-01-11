@@ -332,7 +332,7 @@ const Shop = () => {
               Be one of the first 100 online adopters to save!
             </p>
             <p className="text-sm text-foreground/70">
-              Free U.S. Shipping • International collectors welcome — message for a custom quote
+              Free U.S. Shipping • International collectors welcome — <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-rust-clay">message for a custom quote</a>
             </p>
           </div>
 
@@ -348,7 +348,7 @@ const Shop = () => {
               Free U.S. Shipping • Ships from Pennsylvania
             </p>
             <p className="text-xs text-foreground/60 mt-1">
-              International collectors welcome — please message for a custom shipping quote before purchase
+              International collectors welcome — please <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-rust-clay">email littlepandaacts@gmail.com</a> for a custom shipping quote before purchase
             </p>
           </div>
 
