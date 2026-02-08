@@ -116,7 +116,7 @@ const allDolls: Doll[] = [
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
   const originalPrice = price === "$65" ? 65 : 95;
-  const salePrice = (originalPrice * 0.55).toFixed(2);
+  const salePrice = (originalPrice * 0.70).toFixed(2);
   
   const CardContent = (
     <Card className={`overflow-hidden group transition-transform duration-300 soft-glow bg-card ${sold ? 'opacity-90' : 'hover:scale-105'}`}>
@@ -140,7 +140,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
         {/* Sale Badge */}
         {!sold && (
           <div className="absolute top-3 right-3 bg-rust-clay text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-            45% OFF
+            30% OFF
           </div>
         )}
       </div>
@@ -188,7 +188,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
       trackProductClick({
         dollName: name,
         collection: collection,
-        price: price === "$65" ? 35.75 : 52.25,
+        price: price === "$65" ? 45.50 : 66.50,
         url: squareUrl
       });
     };
@@ -328,10 +328,17 @@ const Shop = () => {
           {/* Early Adopters Sale Banner */}
           <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
-              ✨ Early Adopters Sale — 45% Off! ✨
+              ✨ Early Adopters Sale — Save Up to 60%! ✨
             </p>
-            <p className="text-lg text-foreground/90 font-semibold mb-2">
-              Be one of the first 100 online adopters to save!
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mb-3">
+              <span className="text-foreground/90 font-semibold font-heading">🏷️ 30% off any doll</span>
+              <span className="hidden sm:inline text-rust-clay">•</span>
+              <span className="text-foreground/90 font-semibold font-heading">🎁 45% off when you buy 2+</span>
+              <span className="hidden sm:inline text-rust-clay">•</span>
+              <span className="text-foreground/90 font-semibold font-heading">🌟 Up to 60% off curated bundles</span>
+            </div>
+            <p className="text-xs text-foreground/60 mb-2">
+              Multi-buy and bundle discounts applied at checkout on our Etsy shop
             </p>
             <p className="text-sm text-foreground/70">
               Free U.S. Shipping • International collectors welcome — <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-rust-clay">message for a custom quote</a>
