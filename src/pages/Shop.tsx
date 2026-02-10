@@ -56,6 +56,7 @@ import stitchwiseImg from "@/assets/dolls/spirit/stitchwise.jpg";
 import hearthImg from "@/assets/dolls/spirit/hearth.jpg";
 import aurielleImg from "@/assets/dolls/spirit/aurielle.jpg";
 import mirelleImg from "@/assets/dolls/spirit/mirelle.jpg";
+import rowenaImg from "@/assets/dolls/spirit/rowena.jpg";
 
 type Doll = {
   name: string;
@@ -113,7 +114,8 @@ const allDolls: Doll[] = [
   { name: "Stitchwise", image: stitchwiseImg, story: "A charm of attention and continuance—she honors the quiet wisdom found in mending.", squareUrl: "https://littlepandaacts.etsy.com/listing/4434069507", collection: "spirit", price: "$65" },
   { name: "Hearth", image: hearthImg, story: "A talisman of home and holding—she embodies the warmth and comfort of belonging.", squareUrl: "https://littlepandaacts.etsy.com/listing/4436987330/hearth-folk-art-spirit-doll-a-talisman", collection: "spirit", price: "$65" },
   { name: "Aurielle", image: aurielleImg, story: "A guardian of becoming, marked by the spiral—she guides you through transformation and growth.", squareUrl: "https://littlepandaacts.etsy.com/listing/4439438758", collection: "spirit", price: "$65" },
-  { name: "Mirelle", image: mirelleImg, story: "A charm of courage and authenticity—she whispers the quiet power of being unapologetically you.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455298625/mirelle-folk-art-spirit-doll-be-you", collection: "spirit", price: "$65" }
+  { name: "Mirelle", image: mirelleImg, story: "A charm of courage and authenticity—she whispers the quiet power of being unapologetically you.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455298625/mirelle-folk-art-spirit-doll-be-you", collection: "spirit", price: "$65" },
+  { name: "Rowena", image: rowenaImg, story: "A charm of resilience and strength—she carries the fierce grace of standing tall through every storm.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455311638/rowena-folk-art-spirit-doll-strong", collection: "spirit", price: "$65" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
