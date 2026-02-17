@@ -117,7 +117,7 @@ const allDolls: Doll[] = [
   { name: "Aurielle", image: aurielleImg, story: "A guardian of becoming, marked by the spiral—she guides you through transformation and growth.", squareUrl: "https://littlepandaacts.etsy.com/listing/4439438758", collection: "spirit", price: "$65" },
   { name: "Mirelle", image: mirelleImg, story: "A charm of courage and authenticity—she whispers the quiet power of being unapologetically you.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455298625/mirelle-folk-art-spirit-doll-be-you", collection: "spirit", price: "$65" },
   { name: "Rowena", image: rowenaImg, story: "A charm of resilience and strength—she carries the fierce grace of standing tall through every storm.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455311638/rowena-folk-art-spirit-doll-strong", collection: "spirit", price: "$65" },
-  { name: "Lenora", image: lenoraImg, story: "A talisman of grace and quiet knowing—she holds the wisdom that comes from walking your own path.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455307089/lenora-folk-art-spirit-doll-talisman-of", collection: "spirit", price: "$65" }
+  { name: "Lenora", image: lenoraImg, story: "A talisman of grace and quiet knowing—she holds the wisdom that comes from walking your own path.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455307089/lenora-folk-art-spirit-doll-talisman-of", collection: "spirit", price: "$65", sold: true }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
