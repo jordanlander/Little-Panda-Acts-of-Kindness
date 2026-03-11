@@ -196,7 +196,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
       trackProductClick({
         dollName: name,
         collection: collection,
-        price: price === "$65" ? 45.50 : 66.50,
+        price: parseFloat((originalPrice * 0.70).toFixed(2)),
         url: squareUrl
       });
     };
