@@ -123,7 +123,7 @@ const allDolls: Doll[] = [
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
-  const originalPrice = price === "$65" ? 65 : 95;
+  const originalPrice = parseFloat((price || "$95").replace('$', ''));
   const salePrice = (originalPrice * 0.70).toFixed(2);
   
   const CardContent = (
