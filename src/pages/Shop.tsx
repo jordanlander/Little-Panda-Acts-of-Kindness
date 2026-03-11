@@ -58,6 +58,7 @@ import aurielleImg from "@/assets/dolls/spirit/aurielle.jpg";
 import mirelleImg from "@/assets/dolls/spirit/mirelle.jpg";
 import rowenaImg from "@/assets/dolls/spirit/rowena.jpg";
 import lenoraImg from "@/assets/dolls/spirit/lenora.jpg";
+import pocketSpiritsImg from "@/assets/dolls/spirit/pocket-spirits.jpg";
 
 type Doll = {
   name: string;
@@ -117,11 +118,12 @@ const allDolls: Doll[] = [
   { name: "Aurielle", image: aurielleImg, story: "A guardian of becoming, marked by the spiral—she guides you through transformation and growth.", squareUrl: "https://littlepandaacts.etsy.com/listing/4439438758", collection: "spirit", price: "$65" },
   { name: "Mirelle", image: mirelleImg, story: "A charm of courage and authenticity—she whispers the quiet power of being unapologetically you.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455298625/mirelle-folk-art-spirit-doll-be-you", collection: "spirit", price: "$65" },
   { name: "Rowena", image: rowenaImg, story: "A charm of resilience and strength—she carries the fierce grace of standing tall through every storm.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455311638/rowena-folk-art-spirit-doll-strong", collection: "spirit", price: "$65" },
-  { name: "Lenora", image: lenoraImg, story: "A talisman of grace and quiet knowing—she holds the wisdom that comes from walking your own path.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455307089/lenora-folk-art-spirit-doll-talisman-of", collection: "spirit", price: "$65", sold: true }
+  { name: "Lenora", image: lenoraImg, story: "A talisman of grace and quiet knowing—she holds the wisdom that comes from walking your own path.", squareUrl: "https://littlepandaacts.etsy.com/listing/4455307089/lenora-folk-art-spirit-doll-talisman-of", collection: "spirit", price: "$65", sold: true },
+  { name: "Pocket Spirit Dolls", image: pocketSpiritsImg, story: "Tiny talismans of intention — each ~2 inch handmade folk art doll comes with a fabric pouch, chakra worry stone, and handwritten inspirational message. Choose your one-of-a-kind spirit (A–F) on Etsy.", squareUrl: "https://littlepandaacts.etsy.com/listing/4470017968/pocket-spirit-dolls-handmade-folk-art", collection: "spirit", price: "$35.70" }
 ];
 
 const DollCard = ({ name, image, story, squareUrl, sold = false, price, collection }: Doll) => {
-  const originalPrice = price === "$65" ? 65 : 95;
+  const originalPrice = parseFloat((price || "$95").replace('$', ''));
   const salePrice = (originalPrice * 0.70).toFixed(2);
   
   const CardContent = (
@@ -194,7 +196,7 @@ const DollCard = ({ name, image, story, squareUrl, sold = false, price, collecti
       trackProductClick({
         dollName: name,
         collection: collection,
-        price: price === "$65" ? 45.50 : 66.50,
+        price: parseFloat((originalPrice * 0.70).toFixed(2)),
         url: squareUrl
       });
     };
