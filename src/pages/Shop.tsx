@@ -58,6 +58,7 @@ import aurielleImg from "@/assets/dolls/spirit/aurielle.jpg";
 import mirelleImg from "@/assets/dolls/spirit/mirelle.jpg";
 import rowenaImg from "@/assets/dolls/spirit/rowena.jpg";
 import lenoraImg from "@/assets/dolls/spirit/lenora.jpg";
+import pocketSpiritsImg from "@/assets/dolls/spirit/pocket-spirits.jpg";
 
 type Doll = {
   name: string;
