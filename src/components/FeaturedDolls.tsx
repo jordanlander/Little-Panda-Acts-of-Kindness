@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { trackProductClick } from "@/lib/analytics";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import charlieImg from "@/assets/dolls/charlie.jpg";
-import willowImg from "@/assets/dolls/spirit/willow.jpg";
+import astraImg from "@/assets/dolls/spirit/astra.jpg";
 
 type Doll = {
   name: string;
@@ -31,10 +31,10 @@ const featuredDolls: Doll[] = [
     collection: "Love Happens"
   },
   { 
-    name: "Willow", 
-    image: willowImg, 
-    story: "A guardian of tender moments, wrapped in lace and light.", 
-    squareUrl: "https://littlepandaacts.etsy.com/listing/4415531725/willow-spirit-doll-handmade-folk-art",
+    name: "Astra", 
+    image: astraImg, 
+    story: "Woven with stardust and memory, a guide through life's deepest passages.", 
+    squareUrl: "https://littlepandaacts.etsy.com/listing/4424479727/astra-spirit-doll-collection-handmade",
     collection: "Spirit Dolls"
   }
 ];
