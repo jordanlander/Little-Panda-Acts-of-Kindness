@@ -4,7 +4,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackProductClick } from "@/lib/analytics";
 import ellieImg from "@/assets/dolls/ellie.jpg";
-import charlieImg from "@/assets/dolls/charlie.jpg";
+import agnesImg from "@/assets/dolls/agnes.jpg";
 import astraImg from "@/assets/dolls/spirit/astra.jpg";
 
 type Doll = {
@@ -24,10 +24,10 @@ const featuredDolls: Doll[] = [
     collection: "Random Acts of Love"
   },
   { 
-    name: "Charlie", 
-    image: charlieImg, 
-    story: "An artsy soul with a bold personality and unique flair.", 
-    squareUrl: "https://littlepandaacts.etsy.com/listing/4412102380/charlie-handmade-primitive-folk-art-soft",
+    name: "Agnes", 
+    image: agnesImg, 
+    story: "Agnes is creative and expressive, a true work of art.", 
+    squareUrl: "https://littlepandaacts.etsy.com/listing/4427367211/agnes-love-happens-collection-upcycled",
     collection: "Love Happens"
   },
   { 
