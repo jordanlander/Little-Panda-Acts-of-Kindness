@@ -21,6 +21,11 @@ import willowImg from "@/assets/dolls/spirit/willow.jpg";
 import reachImg from "@/assets/dolls/spirit/reach.jpg";
 import charlieImg from "@/assets/dolls/charlie.jpg";
 import henryImg from "@/assets/dolls/henry.jpg";
+import janeImg from "@/assets/dolls/jane.jpg";
+import leeImg from "@/assets/dolls/lee.jpg";
+import maryImg from "@/assets/dolls/mary.jpg";
+import bailyImg from "@/assets/dolls/baily.jpg";
+import trevorImg from "@/assets/dolls/trevor.jpg";
 
 type AdoptedDoll = {
   name: string;
