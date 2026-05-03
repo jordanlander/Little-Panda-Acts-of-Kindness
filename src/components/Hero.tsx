@@ -69,6 +69,44 @@ const Hero = () => {
       ))}
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in pt-6 md:pt-10">
+        {/* Trust strip: Becky portrait + Etsy review */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7 mb-8 md:mb-10">
+          <div className="relative shrink-0">
+            <img
+              src={beckyPortrait}
+              alt="Rebecca 'Becky' Coppock — handmade doll artist in Erie, PA"
+              loading="eager"
+              className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover ring-4 ring-blush-pink/70 shadow-xl border-4 border-cream-canvas"
+            />
+            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-cream-canvas/95 px-3 py-0.5 rounded-full text-[10px] md:text-xs font-heading font-bold text-rust-clay shadow-md whitespace-nowrap border border-blush-pink/40">
+              Meet Becky
+            </span>
+          </div>
+
+          <div className="bg-cream-canvas/95 backdrop-blur-sm rounded-2xl p-4 md:p-5 max-w-md shadow-xl border border-blush-pink/40 md:-rotate-1">
+            <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-rust-clay text-rust-clay" />
+              ))}
+            </div>
+            <p className="text-sm md:text-base text-foreground/90 font-body italic leading-snug mb-2">
+              "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Excellent customer service & communication from this shop."
+            </p>
+            <p className="text-xs font-heading text-rust-clay">
+              ★ Verified Etsy buyer • <span className="italic">Henry, Love Happens Collection</span>
+            </p>
+            <a
+              href="https://littlepandaacts.etsy.com/reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 text-xs font-heading text-rust-clay underline hover:text-rust-clay/80"
+            >
+              Read more reviews on Etsy →
+            </a>
+          </div>
+        </div>
+
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 text-foreground">
           Rebecca Coppock
         </h1>
