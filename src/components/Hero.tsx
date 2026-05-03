@@ -137,28 +137,32 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="relative bg-cream-canvas rounded-2xl p-5 md:p-6 max-w-md shadow-2xl ring-1 ring-rust-clay/20 border-2 border-blush-pink/60 md:-rotate-1">
+          <div className="relative bg-cream-canvas rounded-2xl px-6 py-7 md:px-8 md:py-8 max-w-md shadow-2xl ring-1 ring-rust-clay/20 border-2 border-rust-clay/40 md:-rotate-1">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 bg-rust-clay text-white text-[10px] md:text-xs font-heading font-bold tracking-wider uppercase px-3 py-0.5 rounded-full shadow">
               ★ Verified Etsy Review
             </span>
-            <div className="flex items-center justify-center md:justify-start gap-1 mb-2 mt-1">
+
+            {/* Decorative open quote */}
+            <span aria-hidden className="absolute top-2 left-3 md:top-3 md:left-4 font-heading text-5xl md:text-6xl leading-none text-rust-clay/25 select-none">“</span>
+
+            <div className="flex items-center justify-center md:justify-start gap-1 mb-3 mt-1 relative">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-rust-clay text-rust-clay" />
               ))}
             </div>
-            <div className={`transition-opacity duration-300 ${reviewVisible ? 'opacity-100' : 'opacity-0'}`}>
-              <p className="text-[15px] md:text-base text-foreground font-body italic leading-relaxed mb-2 min-h-[6rem] md:min-h-[6.5rem]">
-                "{review.quote}"
+            <div className={`relative transition-opacity duration-300 ${reviewVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="text-[17px] md:text-[18px] text-ink-black font-body font-medium leading-[1.55] mb-3 min-h-[6.5rem] md:min-h-[7rem]">
+                {review.quote}
               </p>
-              <p className="text-xs font-heading text-rust-clay">
-                ★ Verified Etsy buyer • <span className="italic">{review.doll}, {review.collection}</span>
+              <p className="text-sm font-heading font-bold text-rust-clay tracking-wide">
+                — {review.doll} <span className="font-normal text-foreground/70 italic">· {review.collection}</span>
               </p>
             </div>
             <a
               href="https://littlepandaacts.etsy.com/reviews"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-2 text-xs font-heading text-rust-clay underline hover:text-rust-clay/80"
+              className="inline-block mt-3 text-xs font-heading font-bold text-rust-clay underline underline-offset-2 hover:text-rust-clay/80"
             >
               Read more reviews on Etsy →
             </a>
