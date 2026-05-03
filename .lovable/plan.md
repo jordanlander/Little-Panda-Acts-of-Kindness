@@ -1,33 +1,52 @@
-## Mark Newly Adopted Dolls
+## Add Trust-Building Hero: Becky Portrait + Etsy Review
 
-Charlie and Henry are already marked sold. Need to update the rest and ensure all 7 appear in the Adopted Gallery with celebration vibes.
+Mirror the Integrity EV Solutions / Cody Lander hero pattern — owner photo + 5-star testimonial right at the top to create instant credibility.
 
-### 1. `src/pages/Shop.tsx`
-Add `sold: true` to:
-- Jane (line 85)
-- Lee (line 87)
-- Mary (line 96)
-- Baily (line 97)
-- Trevor (line 98)
+### Design (mobile-first)
 
-(Charlie and Henry already marked.)
+```text
+┌─────────────────────────────────────────┐
+│ [Sale Banner — unchanged]               │
+├─────────────────────────────────────────┤
+│                                         │
+│   [Becky photo]   ★★★★★                 │
+│    (rounded,      "Henry is such a      │
+│     vintage       delightful guy with   │
+│     frame)        all of his amazing    │
+│                   details... Couldn't   │
+│                   love him more!"       │
+│                   — Etsy buyer, Henry   │
+│                                         │
+│         Rebecca Coppock                 │
+│   "Hand-stitched souls..."              │
+│         [Adopt a Doll]                  │
+└─────────────────────────────────────────┘
+```
 
-### 2. `src/components/AdoptedGallery.tsx`
-Already has Charlie + Henry. Add 5 more:
-- Jane, Lee, Mary, Baily, Trevor (all "Love Happens" collection)
+On mobile: photo stacks above the review card. On desktop: photo left, rotating review right, name/CTA centered below.
 
-Import their images from `@/assets/dolls/`.
+### Implementation — `src/components/Hero.tsx`
 
-### 3. `src/components/FeaturedDolls.tsx`
-No sold dolls currently featured (Ellie, Agnes, Astra) — leave as-is.
+1. Add a new **trust strip** between the sale banner and the existing name/CTA block:
+   - Round/oval-framed Becky portrait (`@/assets/artist-portrait.jpg`) with a cream-canvas border and soft shadow (1950s vintage frame feel)
+   - Adjacent "review card": cream/blush background, 5 gold stars (lucide `Star` filled with `rust-clay`), italic quote, attribution line
+2. Add a **rotating reviews array** so the testimonial cycles every ~6 seconds (3 reviews to start). Use the Henry review as #1, plus two short ones placeholder until user supplies more — but since user only sent the Henry screenshot, start with just **one verified review** and leave a TODO comment listing the easy place to paste more.
+3. Keep the existing rotating doll background carousel and CTA — they still work.
+4. Slightly reduce hero `min-h` since there's more content (`min-h-[90vh] md:min-h-[95vh]`).
 
-### 4. Hype / "before" celebration
-The Adopted Gallery already shows a "These Friends Found Their Forever Homes" section on the homepage (compact mode shows first 4). With 7 newly-added dolls, the rotation feels fresh. Update the compact subtitle copy on `AdoptedGallery.tsx` to reinforce momentum:
+### Copy (from screenshot)
 
-- Change `"They found love first... will you be next?"` → `"7 new friends just found homes this week — your kindred soul might be next."`
+> ★★★★★
+> "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Shipped quickly. Excellent customer service & communication from this shop."
+> — Verified Etsy buyer • *Henry, Love Happens Collection*
 
-That's it — single, focused update across 2 files.
+Add a small text link below: **"Read more reviews on Etsy →"** linking to `https://littlepandaacts.etsy.com/reviews`.
+
+### Visual style notes
+
+- Use existing tokens: `bg-cream-canvas/90 backdrop-blur`, `border-blush-pink`, `text-rust-clay`, `font-heading` for stars + name, `font-body italic` for quote.
+- Portrait: 96px mobile / 128px desktop, `rounded-full` with `ring-4 ring-blush-pink/60` and `shadow-xl`.
+- Review card: `rounded-2xl`, max-width ~28rem, slight rotation on desktop (`md:-rotate-1`) for handcrafted feel.
 
 ### Files Changed
-- `src/pages/Shop.tsx` (5 sold flags)
-- `src/components/AdoptedGallery.tsx` (5 new entries + subtitle copy)
+- `src/components/Hero.tsx` — add trust strip + rotating review state
