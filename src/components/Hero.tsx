@@ -28,11 +28,31 @@ const etsyReviews = [
     doll: "Henry",
     collection: "Love Happens Collection",
   },
-  // {
-  //   quote: "...",
-  //   doll: "...",
-  //   collection: "...",
-  // },
+  {
+    quote: "Charlie is all good vibes! He's colorful, well-made and has plenty of charm. The seller/artist shipped quickly and was good with communication too. I would 100% buy from this shop again!",
+    doll: "Charlie",
+    collection: "Love Happens Collection",
+  },
+  {
+    quote: "Quick shipping! I love her so much, I unwrapped her and gasped. Thank you!",
+    doll: "Hearth",
+    collection: "Spirit Doll Collection",
+  },
+  {
+    quote: "Lenora, the spirit doll, is quite lovely. A wonderful addition to my collection — well made, with care and soul.",
+    doll: "Lenora",
+    collection: "Spirit Doll Collection",
+  },
+  {
+    quote: "The Ember spirit doll is well made and very expressive.",
+    doll: "Ember",
+    collection: "Spirit Doll Collection",
+  },
+  {
+    quote: "This doll is beautifully made with care. I'm glad she is in my home. I have been feeling the spirit of the Raven lately and am attracted to their wisdom.",
+    doll: "Raven",
+    collection: "Spirit Doll Collection",
+  },
 ];
 
 
@@ -100,28 +120,34 @@ const Hero = () => {
       ))}
       
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in pt-6 md:pt-10">
+        {/* Soft vignette behind trust strip to calm the busy doll carousel */}
+        <div className="absolute inset-x-0 -top-4 h-[280px] md:h-[260px] -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,_hsl(var(--cream))_0%,_hsl(var(--cream)/0.85)_45%,_transparent_75%)]" />
+
         {/* Trust strip: Becky portrait + Etsy review */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7 mb-8 md:mb-10">
-          <div className="relative shrink-0">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-7 mb-8 md:mb-10">
+          <div className="relative shrink-0 pb-4">
             <img
               src={beckyPortrait}
               alt="Rebecca 'Becky' Coppock — handmade doll artist in Erie, PA"
               loading="eager"
-              className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover ring-4 ring-blush-pink/70 shadow-xl border-4 border-cream-canvas"
+              className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover ring-4 ring-rust-clay/80 shadow-2xl border-4 border-cream-canvas"
             />
-            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-cream-canvas/95 px-3 py-0.5 rounded-full text-[10px] md:text-xs font-heading font-bold text-rust-clay shadow-md whitespace-nowrap border border-blush-pink/40">
+            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-rust-clay px-4 py-1 rounded-full text-[11px] md:text-xs font-heading font-bold text-white shadow-lg whitespace-nowrap tracking-wide uppercase">
               Meet Becky
             </span>
           </div>
 
-          <div className="bg-cream-canvas/95 backdrop-blur-sm rounded-2xl p-4 md:p-5 max-w-md shadow-xl border border-blush-pink/40 md:-rotate-1">
-            <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
+          <div className="relative bg-cream-canvas rounded-2xl p-5 md:p-6 max-w-md shadow-2xl ring-1 ring-rust-clay/20 border-2 border-blush-pink/60 md:-rotate-1">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 bg-rust-clay text-white text-[10px] md:text-xs font-heading font-bold tracking-wider uppercase px-3 py-0.5 rounded-full shadow">
+              ★ Verified Etsy Review
+            </span>
+            <div className="flex items-center justify-center md:justify-start gap-1 mb-2 mt-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-rust-clay text-rust-clay" />
               ))}
             </div>
             <div className={`transition-opacity duration-300 ${reviewVisible ? 'opacity-100' : 'opacity-0'}`}>
-              <p className="text-sm md:text-base text-foreground/90 font-body italic leading-snug mb-2 min-h-[5.5rem] md:min-h-[6rem]">
+              <p className="text-[15px] md:text-base text-foreground font-body italic leading-relaxed mb-2 min-h-[6rem] md:min-h-[6.5rem]">
                 "{review.quote}"
               </p>
               <p className="text-xs font-heading text-rust-clay">

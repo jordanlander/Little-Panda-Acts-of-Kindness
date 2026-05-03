@@ -1,52 +1,30 @@
-## Add Trust-Building Hero: Becky Portrait + Etsy Review
+## Improve Hero Trust Strip — More Reviews + Better Readability
 
-Mirror the Integrity EV Solutions / Cody Lander hero pattern — owner photo + 5-star testimonial right at the top to create instant credibility.
+### Readability fixes
+The carousel of doll backgrounds bleeds through behind the review card and the "Meet Becky" pill, making them hard to read.
 
-### Design (mobile-first)
+**Changes to `src/components/Hero.tsx`:**
 
-```text
-┌─────────────────────────────────────────┐
-│ [Sale Banner — unchanged]               │
-├─────────────────────────────────────────┤
-│                                         │
-│   [Becky photo]   ★★★★★                 │
-│    (rounded,      "Henry is such a      │
-│     vintage       delightful guy with   │
-│     frame)        all of his amazing    │
-│                   details... Couldn't   │
-│                   love him more!"       │
-│                   — Etsy buyer, Henry   │
-│                                         │
-│         Rebecca Coppock                 │
-│   "Hand-stitched souls..."              │
-│         [Adopt a Doll]                  │
-└─────────────────────────────────────────┘
-```
+1. **Review card** — make it solid + sturdier:
+   - Replace `bg-cream-canvas/95 backdrop-blur-sm` with a fully opaque cream background and a subtle vintage paper feel.
+   - Add a heavier shadow + a thin double-border ring (like a 1950s polaroid card).
+   - Bump quote text from `text-foreground/90` → `text-foreground` and slightly increase line-height for legibility.
+   - Tighten the rotated/handcrafted look so it still feels stitched but doesn't compete visually.
 
-On mobile: photo stacks above the review card. On desktop: photo left, rotating review right, name/CTA centered below.
+2. **"Meet Becky" pill** — replace the floating cream chip with a solid rust-clay banner (white text, bold heading font) anchored under the portrait. High contrast over any background.
 
-### Implementation — `src/components/Hero.tsx`
+3. **Background dim under trust strip** — add a soft cream-canvas radial glow / vignette behind just the trust strip area so the dolls fade out where the card sits, without losing the carousel everywhere else.
 
-1. Add a new **trust strip** between the sale banner and the existing name/CTA block:
-   - Round/oval-framed Becky portrait (`@/assets/artist-portrait.jpg`) with a cream-canvas border and soft shadow (1950s vintage frame feel)
-   - Adjacent "review card": cream/blush background, 5 gold stars (lucide `Star` filled with `rust-clay`), italic quote, attribution line
-2. Add a **rotating reviews array** so the testimonial cycles every ~6 seconds (3 reviews to start). Use the Henry review as #1, plus two short ones placeholder until user supplies more — but since user only sent the Henry screenshot, start with just **one verified review** and leave a TODO comment listing the easy place to paste more.
-3. Keep the existing rotating doll background carousel and CTA — they still work.
-4. Slightly reduce hero `min-h` since there's more content (`min-h-[90vh] md:min-h-[95vh]`).
+### More reviews
+Add 5 new verified 5-star Etsy reviews to the `etsyReviews` array (rotation already wired):
 
-### Copy (from screenshot)
+- **Charlie** (Love Happens) — Michelle: "Charlie is all good vibes! He's colorful, well-made and has plenty of charm. The seller/artist shipped quickly and was good with communication too. I would 100% buy from this shop again!"
+- **Hearth** (Spirit) — justine: "Quick shipping! I love her so much, I unwrapped her and gasped. Thank you!"
+- **Lenora** (Spirit) — Sheryl: "Lenora, the spirit doll, is quite lovely. A wonderful addition to my collection — well made, with care and soul."
+- **Ember** (Spirit) — Sheryl: "The Ember spirit doll is well made and very expressive." *(typo "cery" corrected)*
+- **Raven** (Spirit) — Matilda: "This doll is beautifully made with care. I'm glad she is in my home. I have been feeling the spirit of the Raven lately and am attracted to their wisdom."
 
-> ★★★★★
-> "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Shipped quickly. Excellent customer service & communication from this shop."
-> — Verified Etsy buyer • *Henry, Love Happens Collection*
-
-Add a small text link below: **"Read more reviews on Etsy →"** linking to `https://littlepandaacts.etsy.com/reviews`.
-
-### Visual style notes
-
-- Use existing tokens: `bg-cream-canvas/90 backdrop-blur`, `border-blush-pink`, `text-rust-clay`, `font-heading` for stars + name, `font-body italic` for quote.
-- Portrait: 96px mobile / 128px desktop, `rounded-full` with `ring-4 ring-blush-pink/60` and `shadow-xl`.
-- Review card: `rounded-2xl`, max-width ~28rem, slight rotation on desktop (`md:-rotate-1`) for handcrafted feel.
+(Henry stays as #1.)
 
 ### Files Changed
-- `src/components/Hero.tsx` — add trust strip + rotating review state
+- `src/components/Hero.tsx` — append reviews, opaque card styling, solid Meet Becky banner, vignette behind trust strip.
