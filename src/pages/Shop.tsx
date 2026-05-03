@@ -336,17 +336,15 @@ const Shop = () => {
           {/* Early Adopters Sale Banner */}
           <div className="max-w-4xl mx-auto mb-8 bg-rust-clay/10 border-2 border-rust-clay rounded-lg p-6 text-center animate-fade-in">
             <p className="text-2xl md:text-3xl font-bold text-rust-clay mb-2 font-heading">
-              ✨ Early Adopters Sale — Save Up to 60%! ✨
+              ✨ Early Adopters Sale — Now On! ✨
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mb-3">
-              <span className="text-foreground/90 font-semibold font-heading">🏷️ 30% off any doll</span>
+              <span className="text-foreground/90 font-semibold font-heading">🏷️ Every doll already marked down</span>
               <span className="hidden sm:inline text-rust-clay">•</span>
-              <span className="text-foreground/90 font-semibold font-heading">🎁 45% off when you buy 2+</span>
-              <span className="hidden sm:inline text-rust-clay">•</span>
-              <span className="text-foreground/90 font-semibold font-heading">🌟 Up to 60% off curated bundles</span>
+              <span className="text-foreground/90 font-semibold font-heading">🎁 Discover bundle deals on Etsy</span>
             </div>
             <p className="text-xs text-foreground/60 mb-2">
-              Multi-buy and bundle discounts applied at checkout on our Etsy shop
+              Bundle discounts applied at checkout on our Etsy shop
             </p>
             <p className="text-sm text-foreground/70">
               Free U.S. Shipping • International collectors welcome — <a href="mailto:littlepandaacts@gmail.com" className="underline hover:text-rust-clay">message for a custom quote</a>
