@@ -1,30 +1,25 @@
-## Improve Hero Trust Strip — More Reviews + Better Readability
+## Make Etsy Review Quote More Readable
 
-### Readability fixes
-The carousel of doll backgrounds bleeds through behind the review card and the "Meet Becky" pill, making them hard to read.
+The review card frame is great — the quote text inside is the weak link. It's small, italic, light-weight serif on cream, which strains the eye.
 
-**Changes to `src/components/Hero.tsx`:**
+### Changes — `src/components/Hero.tsx` (review card only)
 
-1. **Review card** — make it solid + sturdier:
-   - Replace `bg-cream-canvas/95 backdrop-blur-sm` with a fully opaque cream background and a subtle vintage paper feel.
-   - Add a heavier shadow + a thin double-border ring (like a 1950s polaroid card).
-   - Bump quote text from `text-foreground/90` → `text-foreground` and slightly increase line-height for legibility.
-   - Tighten the rotated/handcrafted look so it still feels stitched but doesn't compete visually.
+1. **Quote text**: drop italic, bump size + weight + line-height
+   - Size: `text-[15px] md:text-base` → **`text-[17px] md:text-[18px]`**
+   - Weight: add **`font-medium`**
+   - Color: `text-foreground` → **`text-ink-black`** (true high-contrast)
+   - Style: remove `italic`, remove the surrounding `"..."` quotes from the string and use a large decorative open-quote glyph in the corner instead
+   - Line-height: `leading-relaxed` → **`leading-[1.55]`** for better rhythm
 
-2. **"Meet Becky" pill** — replace the floating cream chip with a solid rust-clay banner (white text, bold heading font) anchored under the portrait. High contrast over any background.
+2. **Decorative open quote** in top-left corner (`"` at ~5xl, `text-rust-clay/25`) — gives editorial weight without competing with the quote.
 
-3. **Background dim under trust strip** — add a soft cream-canvas radial glow / vignette behind just the trust strip area so the dolls fade out where the card sits, without losing the carousel everywhere else.
+3. **Attribution line** — currently small + same color as the badge above. Make it scannable:
+   - `— Doll Name` in **bold rust-clay heading**, then `· Collection Name` in lighter italic body.
 
-### More reviews
-Add 5 new verified 5-star Etsy reviews to the `etsyReviews` array (rotation already wired):
+4. **Card padding + border**:
+   - Bump padding `p-5 md:p-6` → `px-6 py-7 md:px-8 md:py-8` so text breathes
+   - Border `border-blush-pink/60` → `border-rust-clay/40` (matches the verified pill, less pastel-on-pastel mush)
 
-- **Charlie** (Love Happens) — Michelle: "Charlie is all good vibes! He's colorful, well-made and has plenty of charm. The seller/artist shipped quickly and was good with communication too. I would 100% buy from this shop again!"
-- **Hearth** (Spirit) — justine: "Quick shipping! I love her so much, I unwrapped her and gasped. Thank you!"
-- **Lenora** (Spirit) — Sheryl: "Lenora, the spirit doll, is quite lovely. A wonderful addition to my collection — well made, with care and soul."
-- **Ember** (Spirit) — Sheryl: "The Ember spirit doll is well made and very expressive." *(typo "cery" corrected)*
-- **Raven** (Spirit) — Matilda: "This doll is beautifully made with care. I'm glad she is in my home. I have been feeling the spirit of the Raven lately and am attracted to their wisdom."
+5. **Read-more link** — add `font-bold` and `underline-offset-2` so it reads as a clear CTA.
 
-(Henry stays as #1.)
-
-### Files Changed
-- `src/components/Hero.tsx` — append reviews, opaque card styling, solid Meet Becky banner, vignette behind trust strip.
+That's it — no structural changes, no new components. Same rotation logic.
