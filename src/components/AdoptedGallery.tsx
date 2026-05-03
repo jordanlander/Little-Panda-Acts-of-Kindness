@@ -21,6 +21,11 @@ import willowImg from "@/assets/dolls/spirit/willow.jpg";
 import reachImg from "@/assets/dolls/spirit/reach.jpg";
 import charlieImg from "@/assets/dolls/charlie.jpg";
 import henryImg from "@/assets/dolls/henry.jpg";
+import janeImg from "@/assets/dolls/jane.jpg";
+import leeImg from "@/assets/dolls/lee.jpg";
+import maryImg from "@/assets/dolls/mary.jpg";
+import bailyImg from "@/assets/dolls/baily.jpg";
+import trevorImg from "@/assets/dolls/trevor.jpg";
 
 type AdoptedDoll = {
   name: string;
@@ -47,6 +52,11 @@ const adoptedDolls: AdoptedDoll[] = [
   { name: "Reach", image: reachImg, collection: "Spirit" },
   { name: "Charlie", image: charlieImg, collection: "Love Happens" },
   { name: "Henry", image: henryImg, collection: "Love Happens" },
+  { name: "Jane", image: janeImg, collection: "Love Happens" },
+  { name: "Lee", image: leeImg, collection: "Love Happens" },
+  { name: "Mary", image: maryImg, collection: "Love Happens" },
+  { name: "Baily", image: bailyImg, collection: "Love Happens" },
+  { name: "Trevor", image: trevorImg, collection: "Love Happens" },
 ];
 
 interface AdoptedGalleryProps {
@@ -64,7 +74,7 @@ const AdoptedGallery = ({ compact = false }: AdoptedGalleryProps) => {
             These Friends Found Their Forever Homes 💕
           </h2>
           <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto">
-            They found love first... will you be next?
+            7 new friends just found homes this week — your kindred soul might be next.
           </p>
           
           <div className="flex justify-center gap-4 flex-wrap mb-8">
