@@ -38,6 +38,8 @@ const etsyReviews = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviewVisible, setReviewVisible] = useState(true);
 
   // Preload hero images for faster transitions
   useEffect(() => {
