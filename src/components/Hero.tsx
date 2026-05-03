@@ -57,6 +57,21 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Rotate reviews every 7s with a quick fade transition
+  useEffect(() => {
+    if (etsyReviews.length <= 1) return;
+    const interval = setInterval(() => {
+      setReviewVisible(false);
+      setTimeout(() => {
+        setReviewIndex((prev) => (prev + 1) % etsyReviews.length);
+        setReviewVisible(true);
+      }, 350);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const review = etsyReviews[reviewIndex];
+
   return (
     <section className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
       {/* Sale Banner */}
