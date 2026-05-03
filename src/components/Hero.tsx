@@ -21,6 +21,20 @@ const heroImages = [
   charlieImg, agnesImg, janeImg, timImg, leeImg, peggyImg
 ];
 
+// Etsy 5-star reviews — paste more verified quotes here to add to the rotation.
+const etsyReviews = [
+  {
+    quote: "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Excellent customer service & communication from this shop.",
+    doll: "Henry",
+    collection: "Love Happens Collection",
+  },
+  // {
+  //   quote: "...",
+  //   doll: "...",
+  //   collection: "...",
+  // },
+];
+
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
