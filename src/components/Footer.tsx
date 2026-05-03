@@ -65,7 +65,15 @@ const Footer = () => {
             <a href="/#/shop#return-policy" className="hover:underline">
               Return Policy
             </a>
-            {" "}| Managed by Jordan Lander
+            {" "}| Managed by{" "}
+            <a
+              href="https://oneweekendwebsites.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Jordan Lander
+            </a>
           </p>
         </div>
       </div>
