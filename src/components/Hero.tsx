@@ -120,12 +120,14 @@ const Hero = () => {
                 <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-rust-clay text-rust-clay" />
               ))}
             </div>
-            <p className="text-sm md:text-base text-foreground/90 font-body italic leading-snug mb-2">
-              "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Excellent customer service & communication from this shop."
-            </p>
-            <p className="text-xs font-heading text-rust-clay">
-              ★ Verified Etsy buyer • <span className="italic">Henry, Love Happens Collection</span>
-            </p>
+            <div className={`transition-opacity duration-300 ${reviewVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="text-sm md:text-base text-foreground/90 font-body italic leading-snug mb-2 min-h-[5.5rem] md:min-h-[6rem]">
+                "{review.quote}"
+              </p>
+              <p className="text-xs font-heading text-rust-clay">
+                ★ Verified Etsy buyer • <span className="italic">{review.doll}, {review.collection}</span>
+              </p>
+            </div>
             <a
               href="https://littlepandaacts.etsy.com/reviews"
               target="_blank"
