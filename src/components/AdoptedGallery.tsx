@@ -74,7 +74,7 @@ const AdoptedGallery = ({ compact = false }: AdoptedGalleryProps) => {
             These Friends Found Their Forever Homes 💕
           </h2>
           <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto">
-            They found love first... will you be next?
+            7 new friends just found homes this week — your kindred soul might be next.
           </p>
           
           <div className="flex justify-center gap-4 flex-wrap mb-8">
