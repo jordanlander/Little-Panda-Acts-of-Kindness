@@ -121,7 +121,7 @@ const Hero = () => {
       
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in pt-6 md:pt-10">
         {/* Soft vignette behind trust strip to calm the busy doll carousel */}
-        <div className="absolute inset-x-0 -top-4 h-[280px] md:h-[260px] -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,_hsl(var(--cream-canvas))_0%,_hsl(var(--cream-canvas)/0.85)_45%,_transparent_75%)]" />
+        <div className="absolute inset-x-0 -top-4 h-[280px] md:h-[260px] -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,_hsl(var(--cream))_0%,_hsl(var(--cream)/0.85)_45%,_transparent_75%)]" />
 
         {/* Trust strip: Becky portrait + Etsy review */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-7 mb-8 md:mb-10">
