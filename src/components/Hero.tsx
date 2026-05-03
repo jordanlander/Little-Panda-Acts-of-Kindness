@@ -21,9 +21,25 @@ const heroImages = [
   charlieImg, agnesImg, janeImg, timImg, leeImg, peggyImg
 ];
 
+// Etsy 5-star reviews — paste more verified quotes here to add to the rotation.
+const etsyReviews = [
+  {
+    quote: "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Excellent customer service & communication from this shop.",
+    doll: "Henry",
+    collection: "Love Happens Collection",
+  },
+  // {
+  //   quote: "...",
+  //   doll: "...",
+  //   collection: "...",
+  // },
+];
+
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviewVisible, setReviewVisible] = useState(true);
 
   // Preload hero images for faster transitions
   useEffect(() => {
@@ -40,6 +56,21 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Rotate reviews every 7s with a quick fade transition
+  useEffect(() => {
+    if (etsyReviews.length <= 1) return;
+    const interval = setInterval(() => {
+      setReviewVisible(false);
+      setTimeout(() => {
+        setReviewIndex((prev) => (prev + 1) % etsyReviews.length);
+        setReviewVisible(true);
+      }, 350);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const review = etsyReviews[reviewIndex];
 
   return (
     <section className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
@@ -89,12 +120,14 @@ const Hero = () => {
                 <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-rust-clay text-rust-clay" />
               ))}
             </div>
-            <p className="text-sm md:text-base text-foreground/90 font-body italic leading-snug mb-2">
-              "Henry is such a delightful guy with all of his amazing details. So much personality to appreciate in him. Couldn't love him more! Excellent customer service & communication from this shop."
-            </p>
-            <p className="text-xs font-heading text-rust-clay">
-              ★ Verified Etsy buyer • <span className="italic">Henry, Love Happens Collection</span>
-            </p>
+            <div className={`transition-opacity duration-300 ${reviewVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="text-sm md:text-base text-foreground/90 font-body italic leading-snug mb-2 min-h-[5.5rem] md:min-h-[6rem]">
+                "{review.quote}"
+              </p>
+              <p className="text-xs font-heading text-rust-clay">
+                ★ Verified Etsy buyer • <span className="italic">{review.doll}, {review.collection}</span>
+              </p>
+            </div>
             <a
               href="https://littlepandaacts.etsy.com/reviews"
               target="_blank"
