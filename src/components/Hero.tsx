@@ -68,7 +68,6 @@ const Hero = () => {
         </div>
       ))}
       
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in pt-6 md:pt-10">
         {/* Trust strip: Becky portrait + Etsy review */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7 mb-8 md:mb-10">
