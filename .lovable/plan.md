@@ -1,54 +1,33 @@
+## Mark Newly Adopted Dolls
 
-## Three-Tier Discount Structure: Safe to Implement
+Charlie and Henry are already marked sold. Need to update the rest and ensure all 7 appear in the Adopted Gallery with celebration vibes.
 
-ChatGPT confirmed that Etsy applies only the **best single discount** per item -- no stacking. Your three tiers work cleanly:
+### 1. `src/pages/Shop.tsx`
+Add `sold: true` to:
+- Jane (line 85)
+- Lee (line 87)
+- Mary (line 96)
+- Baily (line 97)
+- Trevor (line 98)
 
-- **30% off** a single doll
-- **45% off** when buying 2+
-- **60% off** on specific curated bundles
+(Charlie and Henry already marked.)
 
-### Changes Overview
+### 2. `src/components/AdoptedGallery.tsx`
+Already has Charlie + Henry. Add 5 more:
+- Jane, Lee, Mary, Baily, Trevor (all "Love Happens" collection)
 
-**1. Hero Banner** (`src/components/Hero.tsx`, lines 47-52)
-- Change "Early Adopters Sale -- 45% Off!" to: **"Early Adopters Sale -- Save Up to 60%!"**
-- Update subtitle to: **"30% off any doll | 45% off 2+ | Exclusive bundles on Etsy!"**
+Import their images from `@/assets/dolls/`.
 
-**2. Shop Page Sale Banner** (`src/pages/Shop.tsx`, lines 328-339)
-- Update to show all three tiers clearly with a visual layout:
-  - "30% off any doll"
-  - "45% off when you buy 2+"
-  - "Up to 60% off curated bundles on Etsy"
-- Keep the shipping info and international email link
+### 3. `src/components/FeaturedDolls.tsx`
+No sold dolls currently featured (Ellie, Agnes, Astra) — leave as-is.
 
-**3. Doll Card Pricing** (`src/pages/Shop.tsx`, lines 117-166)
-- Update the sale calculation from 45% off (multiply by 0.55) to **30% off** (multiply by 0.70):
-  - Spirit Dolls: ~~$65~~ **$45.50**
-  - Love collections: ~~$95~~ **$66.50**
-- Change the badge from **"45% OFF"** to **"30% OFF"** (lines 141-145)
-- Keep the crossed-out original price and sale price display -- it still works great for showing the individual deal
-- Update analytics tracking price to reflect 30% discount (line 191): $45.50 for Spirit, $66.50 for Love
+### 4. Hype / "before" celebration
+The Adopted Gallery already shows a "These Friends Found Their Forever Homes" section on the homepage (compact mode shows first 4). With 7 newly-added dolls, the rotation feels fresh. Update the compact subtitle copy on `AdoptedGallery.tsx` to reinforce momentum:
 
-**4. Collections Page** (`src/components/Collections.tsx`)
-- No changes needed -- this page doesn't show pricing or sale badges
+- Change `"They found love first... will you be next?"` → `"7 new friends just found homes this week — your kindred soul might be next."`
 
-**5. Featured Dolls** (`src/components/FeaturedDolls.tsx`)
-- No changes needed -- doesn't show pricing
+That's it — single, focused update across 2 files.
 
-### What Stays the Same
-- All Etsy links remain as-is
-- "Buy Now" button text and clickable card behavior unchanged
-- Sold/adopted doll styling unchanged
-- Free shipping messaging unchanged
-
-### Technical Details
-
-| Item | Current | Updated |
-|------|---------|---------|
-| Sale badge text | "45% OFF" | "30% OFF" |
-| Price multiplier | 0.55 (45% off) | 0.70 (30% off) |
-| Spirit sale price | $35.75 | $45.50 |
-| Love sale price | $52.25 | $66.50 |
-| Hero banner | "45% Off!" | "Save Up to 60%!" |
-| Shop banner | Single tier (45%) | Three tiers (30% / 45% / 60%) |
-| Analytics price (Spirit) | 35.75 | 45.50 |
-| Analytics price (Love) | 52.25 | 66.50 |
+### Files Changed
+- `src/pages/Shop.tsx` (5 sold flags)
+- `src/components/AdoptedGallery.tsx` (5 new entries + subtitle copy)
