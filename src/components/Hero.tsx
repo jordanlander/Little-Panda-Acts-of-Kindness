@@ -28,11 +28,31 @@ const etsyReviews = [
     doll: "Henry",
     collection: "Love Happens Collection",
   },
-  // {
-  //   quote: "...",
-  //   doll: "...",
-  //   collection: "...",
-  // },
+  {
+    quote: "Charlie is all good vibes! He's colorful, well-made and has plenty of charm. The seller/artist shipped quickly and was good with communication too. I would 100% buy from this shop again!",
+    doll: "Charlie",
+    collection: "Love Happens Collection",
+  },
+  {
+    quote: "Quick shipping! I love her so much, I unwrapped her and gasped. Thank you!",
+    doll: "Hearth",
+    collection: "Spirit Doll Collection",
+  },
+  {
+    quote: "Lenora, the spirit doll, is quite lovely. A wonderful addition to my collection — well made, with care and soul.",
+    doll: "Lenora",
+    collection: "Spirit Doll Collection",
+  },
+  {
+    quote: "The Ember spirit doll is well made and very expressive.",
+    doll: "Ember",
+    collection: "Spirit Doll Collection",
+  },
+  {
+    quote: "This doll is beautifully made with care. I'm glad she is in my home. I have been feeling the spirit of the Raven lately and am attracted to their wisdom.",
+    doll: "Raven",
+    collection: "Spirit Doll Collection",
+  },
 ];
 
 
