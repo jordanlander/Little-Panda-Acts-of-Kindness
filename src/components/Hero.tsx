@@ -45,10 +45,10 @@ const Hero = () => {
       <div className="relative z-10 w-full py-3 bg-gradient-to-r from-rust-clay via-blush-pink to-rust-clay animate-slide-down">
         <div className="container mx-auto text-center">
           <p className="text-white font-heading text-sm sm:text-base md:text-lg font-bold mb-1">
-            ✨ Early Adopters Sale — Save Up to 60%! ✨
+            ✨ Early Adopters Sale — Now On! ✨
           </p>
           <p className="text-white/90 text-xs sm:text-sm">
-            30% off any doll | 45% off 2+ | Exclusive bundles on Etsy!
+            Marked-down prices on every doll | Bundle deals in the shop
           </p>
         </div>
       </div>
