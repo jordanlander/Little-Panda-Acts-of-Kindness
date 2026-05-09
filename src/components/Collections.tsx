@@ -48,7 +48,7 @@ const randomActsOfLove: Doll[] = [
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection" },
   { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407640841/ginger-hand-stitched-art-plush-from" },
   { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424762336/steve-random-acts-of-love-collection" },
-  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424750889/earl-handmade-one-of-a-kind-art-doll" },
+  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424750889/earl-handmade-one-of-a-kind-art-doll", sold: true },
   { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424761252/hugh-random-acts-of-love-collection" },
   { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407648465/scott-hand-stitched-soft-sculpture-from" }
 ];
@@ -57,7 +57,7 @@ const loveHappens: Doll[] = [
   { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/rHLp0yxR" },
   { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/csUVf69U" },
   { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display.", squareUrl: "https://square.link/u/u3hmJuKm" },
-  { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character.", squareUrl: "https://square.link/u/k865p4uB" },
+  { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character.", squareUrl: "https://square.link/u/k865p4uB", sold: true },
   { name: "Lee", image: leeImg, story: "Lee is modern and stylish, a statement piece.", squareUrl: "https://square.link/u/E6mQx6CF" },
   { name: "Peggy", image: peggyImg, story: "Peggy is vintage-inspired and whimsical.", squareUrl: "https://square.link/u/lC5jDu9C" },
   { name: "James", image: jamesImg, story: "James is distinguished and refined.", squareUrl: "https://square.link/u/LS5qPbd0" },

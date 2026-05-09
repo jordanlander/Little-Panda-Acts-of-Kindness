@@ -26,6 +26,8 @@ import leeImg from "@/assets/dolls/lee.jpg";
 import maryImg from "@/assets/dolls/mary.jpg";
 import bailyImg from "@/assets/dolls/baily.jpg";
 import trevorImg from "@/assets/dolls/trevor.jpg";
+import timImg from "@/assets/dolls/tim.jpg";
+import earlImg from "@/assets/dolls/earl.jpg";
 
 type AdoptedDoll = {
   name: string;
@@ -57,6 +59,8 @@ const adoptedDolls: AdoptedDoll[] = [
   { name: "Mary", image: maryImg, collection: "Love Happens" },
   { name: "Baily", image: bailyImg, collection: "Love Happens" },
   { name: "Trevor", image: trevorImg, collection: "Love Happens" },
+  { name: "Tim", image: timImg, collection: "Love Happens" },
+  { name: "Earl", image: earlImg, collection: "Random Acts of Love" },
 ];
 
 interface AdoptedGalleryProps {
@@ -74,7 +78,7 @@ const AdoptedGallery = ({ compact = false }: AdoptedGalleryProps) => {
             These Friends Found Their Forever Homes 💕
           </h2>
           <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto">
-            7 new friends just found homes this week — your kindred soul might be next.
+            Tim & Earl just found their forever homes! Your kindred soul is waiting.
           </p>
           
           <div className="flex justify-center gap-4 flex-wrap mb-8">
