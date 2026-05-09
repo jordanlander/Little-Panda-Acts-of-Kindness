@@ -26,6 +26,8 @@ import leeImg from "@/assets/dolls/lee.jpg";
 import maryImg from "@/assets/dolls/mary.jpg";
 import bailyImg from "@/assets/dolls/baily.jpg";
 import trevorImg from "@/assets/dolls/trevor.jpg";
+import timImg from "@/assets/dolls/tim.jpg";
+import earlImg from "@/assets/dolls/earl.jpg";
 
 type AdoptedDoll = {
   name: string;
