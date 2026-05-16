@@ -1,25 +1,18 @@
-## Make Etsy Review Quote More Readable
+## Add 3 New Etsy Reviews to Hero Rotation
 
-The review card frame is great — the quote text inside is the weak link. It's small, italic, light-weight serif on cream, which strains the eye.
+Append three verified 5-star reviews to the `etsyReviews` array in `src/components/Hero.tsx` so they join the existing fade rotation. No structural changes.
 
-### Changes — `src/components/Hero.tsx` (review card only)
+### New entries
 
-1. **Quote text**: drop italic, bump size + weight + line-height
-   - Size: `text-[15px] md:text-base` → **`text-[17px] md:text-[18px]`**
-   - Weight: add **`font-medium`**
-   - Color: `text-foreground` → **`text-ink-black`** (true high-contrast)
-   - Style: remove `italic`, remove the surrounding `"..."` quotes from the string and use a large decorative open-quote glyph in the corner instead
-   - Line-height: `leading-relaxed` → **`leading-[1.55]`** for better rhythm
+1. **Earl** — Random Acts of Love Collection
+   > "Earl is simply perfect & super stuffed with love. He's always ready to give a smile or hug when needed. Great addition to my collection."
 
-2. **Decorative open quote** in top-left corner (`"` at ~5xl, `text-rust-clay/25`) — gives editorial weight without competing with the quote.
+2. **Lee & Trevor** — Love Happens Collection
+   > "Lee & Trevor are a great pair & enjoy hanging out together. These charming homemade dolls are so much fun to decorate with. Fast shipping & great customer service from this shop."
+   - `doll: "Lee & Trevor"`
 
-3. **Attribution line** — currently small + same color as the badge above. Make it scannable:
-   - `— Doll Name` in **bold rust-clay heading**, then `· Collection Name` in lighter italic body.
+3. **Mary & Charlie** — Love Happens Collection
+   > "Mary & Charlie were happy to be reunited. My daughter loves this pair together & enjoys seeing them every day. This shop puts so much heart into their dolls spreading happiness to anyone who purchases one. Highly recommend this seller."
+   - `doll: "Mary & Charlie"`
 
-4. **Card padding + border**:
-   - Bump padding `p-5 md:p-6` → `px-6 py-7 md:px-8 md:py-8` so text breathes
-   - Border `border-blush-pink/60` → `border-rust-clay/40` (matches the verified pill, less pastel-on-pastel mush)
-
-5. **Read-more link** — add `font-bold` and `underline-offset-2` so it reads as a clear CTA.
-
-That's it — no structural changes, no new components. Same rotation logic.
+Total reviews in rotation goes from 6 → 9. Existing min-height on the quote container already accommodates the longest one.
