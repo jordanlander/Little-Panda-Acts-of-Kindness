@@ -1,30 +1,25 @@
-# Plan: Embed Becky's Introduction Video in the About Section
+# Plan: Add YouTube Channel Link
 
 ## Summary
-Add a YouTube embed of Becky's introduction video (`ucbl3Dm3Yvk`) into the About section on the landing page. Place it as a new story block between the quote block and the call-to-action, styled to match the 1950s vintage aesthetic.
+Add the YouTube channel link (`https://youtube.com/@littlepandaacts`) to the two existing social link areas on the site.
 
-## Placement
-Insert a new story block inside the `.space-y-16` story timeline in `src/components/About.tsx`, positioned **after the quote block and before the call-to-action block**.
+## Changes
 
-## Layout
-- A centered, rounded-3xl container with a cream/muted background and a subtle vintage border (`ring-1 ring-rust-clay/20 border-2 border-rust-clay/40` — consistent with the Hero review card styling).
-- A pill badge above the video reading "Hear From Becky" in the vintage heading style.
-- A responsive 16:9 iframe embed using `aspect-video` from Tailwind.
-- The iframe uses the standard YouTube embed URL: `https://www.youtube.com/embed/ucbl3Dm3Yvk`.
-- The iframe includes `title`, `allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"`, and `allowFullScreen` for accessibility and functionality.
+### 1. Footer — "Follow Along" icons
+**File:** `src/components/Footer.tsx`
+- Import `Youtube` from `lucide-react` alongside existing icons.
+- Add a fourth icon link in the "Follow Along" row, between Facebook and Mail, linking to `https://youtube.com/@littlepandaacts`.
+- Set `aria-label="Follow on YouTube"`.
 
-## Styling Details
-- Background: `bg-cream-canvas` or `bg-card` to blend with the page.
-- Shadow: `shadow-2xl` and `mid-century-shadow` for depth.
-- Padding: comfortable padding around the iframe (`p-2` or `p-4` inside the container).
-- Responsive: full width up to `max-w-4xl`, centered with `mx-auto`.
-- Animation: `animate-fade-in` class for consistency with other blocks.
-
-## Files to Change
-- `src/components/About.tsx` — add the new video block.
+### 2. Contact — "Connect with me" links
+**File:** `src/components/Contact.tsx`
+- Import `Youtube` from `lucide-react` alongside existing icons.
+- Add a fourth link in the "Connect with me" list, between Facebook and the location card, linking to `https://youtube.com/@littlepandaacts`.
+- Display label: "Little Panda Acts of Kindness" (matching the other social links).
 
 ## No New Dependencies
-Standard YouTube iframe embed; no packages needed.
+Uses the existing `lucide-react` `Youtube` icon already available in the project.
 
-## SEO Consideration
-The iframe `title` attribute will read "Rebecca Coppock introduces Little Panda Acts of Kindness" for screen readers and search indexing.
+## SEO / Accessibility
+- All links open in a new tab (`target="_blank"`, `rel="noopener noreferrer"`).
+- Proper `aria-label` on the Footer icon.
