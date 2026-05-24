@@ -1,4 +1,4 @@
-import { Heart, Instagram, Facebook, Mail } from "lucide-react";
+import { Heart, Instagram, Facebook, Mail, Youtube } from "lucide-react";
 import SocialShare from "./SocialShare";
 
 const Footer = () => {
@@ -35,6 +35,15 @@ const Footer = () => {
             aria-label="Follow on Facebook"
           >
             <Facebook className="w-6 h-6" />
+          </a>
+          <a
+            href="https://youtube.com/@littlepandaacts"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+            aria-label="Subscribe on YouTube"
+          >
+            <Youtube className="w-6 h-6" />
           </a>
           <a 
             href="mailto:contact@rebeccacoppock.com"

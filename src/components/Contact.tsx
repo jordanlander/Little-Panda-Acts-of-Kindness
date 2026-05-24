@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Instagram, Facebook, Mail } from "lucide-react";
+import { Instagram, Facebook, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -66,6 +66,15 @@ const Contact = () => {
                   className="flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
                 >
                   <Facebook className="w-5 h-5" />
+                  <span className="font-accent">Little Panda Acts of Kindness</span>
+                </a>
+                <a
+                  href="https://youtube.com/@littlepandaacts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 transition-colors"
+                >
+                  <Youtube className="w-5 h-5" />
                   <span className="font-accent">Little Panda Acts of Kindness</span>
                 </a>
               </div>
