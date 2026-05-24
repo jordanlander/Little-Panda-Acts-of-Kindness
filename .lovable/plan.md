@@ -1,18 +1,30 @@
-## Add 3 New Etsy Reviews to Hero Rotation
+# Plan: Embed Becky's Introduction Video in the About Section
 
-Append three verified 5-star reviews to the `etsyReviews` array in `src/components/Hero.tsx` so they join the existing fade rotation. No structural changes.
+## Summary
+Add a YouTube embed of Becky's introduction video (`ucbl3Dm3Yvk`) into the About section on the landing page. Place it as a new story block between the quote block and the call-to-action, styled to match the 1950s vintage aesthetic.
 
-### New entries
+## Placement
+Insert a new story block inside the `.space-y-16` story timeline in `src/components/About.tsx`, positioned **after the quote block and before the call-to-action block**.
 
-1. **Earl** — Random Acts of Love Collection
-   > "Earl is simply perfect & super stuffed with love. He's always ready to give a smile or hug when needed. Great addition to my collection."
+## Layout
+- A centered, rounded-3xl container with a cream/muted background and a subtle vintage border (`ring-1 ring-rust-clay/20 border-2 border-rust-clay/40` — consistent with the Hero review card styling).
+- A pill badge above the video reading "Hear From Becky" in the vintage heading style.
+- A responsive 16:9 iframe embed using `aspect-video` from Tailwind.
+- The iframe uses the standard YouTube embed URL: `https://www.youtube.com/embed/ucbl3Dm3Yvk`.
+- The iframe includes `title`, `allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"`, and `allowFullScreen` for accessibility and functionality.
 
-2. **Lee & Trevor** — Love Happens Collection
-   > "Lee & Trevor are a great pair & enjoy hanging out together. These charming homemade dolls are so much fun to decorate with. Fast shipping & great customer service from this shop."
-   - `doll: "Lee & Trevor"`
+## Styling Details
+- Background: `bg-cream-canvas` or `bg-card` to blend with the page.
+- Shadow: `shadow-2xl` and `mid-century-shadow` for depth.
+- Padding: comfortable padding around the iframe (`p-2` or `p-4` inside the container).
+- Responsive: full width up to `max-w-4xl`, centered with `mx-auto`.
+- Animation: `animate-fade-in` class for consistency with other blocks.
 
-3. **Mary & Charlie** — Love Happens Collection
-   > "Mary & Charlie were happy to be reunited. My daughter loves this pair together & enjoys seeing them every day. This shop puts so much heart into their dolls spreading happiness to anyone who purchases one. Highly recommend this seller."
-   - `doll: "Mary & Charlie"`
+## Files to Change
+- `src/components/About.tsx` — add the new video block.
 
-Total reviews in rotation goes from 6 → 9. Existing min-height on the quote container already accommodates the longest one.
+## No New Dependencies
+Standard YouTube iframe embed; no packages needed.
+
+## SEO Consideration
+The iframe `title` attribute will read "Rebecca Coppock introduces Little Panda Acts of Kindness" for screen readers and search indexing.
