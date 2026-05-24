@@ -102,6 +102,30 @@ const About = () => {
             </blockquote>
           </div>
 
+          {/* Video block - Hear from Becky */}
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <div className="flex flex-col items-center mb-6">
+              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full">
+                <span className="text-sm font-semibold text-primary">Hear From Becky</span>
+              </div>
+              <h3 className="mt-4 text-3xl md:text-4xl font-bold text-foreground font-heading text-center">
+                A little hello, in her own words
+              </h3>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden bg-cream-canvas p-2 md:p-3 shadow-2xl mid-century-shadow ring-1 ring-rust-clay/20 border-2 border-rust-clay/40">
+              <div className="aspect-video rounded-2xl overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/ucbl3Dm3Yvk"
+                  title="Rebecca Coppock introduces Little Panda Acts of Kindness"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="w-full h-full border-0"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Second story block - The Purpose */}
           <div className="grid md:grid-cols-5 gap-8 items-center animate-fade-in">
             <div className="md:col-span-2 space-y-4">
