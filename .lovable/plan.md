@@ -1,7 +1,6 @@
-Fix Hero "Request a Custom Doll" button — currently `href="#custom"` is captured by HashRouter as route `/custom` and 404s.
+The "See the Spirit Dolls →" link in `src/components/SpiritStory.tsx` currently points to an incorrect Etsy section URL (`/section/52988996`). Update it to the Pocket Spirit Dolls product listing the user requested.
 
-**Edit `src/components/Hero.tsx`:**
-- Add `const CUSTOM_MAILTO = "mailto:littlepandaacts@gmail.com?subject=Custom%20Doll%20Request";`
-- Change the secondary CTA anchor from `href="#custom"` to `href={CUSTOM_MAILTO}` (mirrors `FinalCTA.tsx`).
-
-No other files touched.
+**Change:**
+- File: `src/components/SpiritStory.tsx`
+- Replace `href={`${ETSY_SHOP_URL}/section/52988996`}` with `href="https://littlepandaacts.etsy.com/listing/4470017968"`
+- CTA label stays "See the Spirit Dolls →" — the Pocket Spirit Dolls listing is the entry point they want to promote.
