@@ -1,92 +1,68 @@
-## Homepage rewrite — simpler, emotional, Etsy-forward
+## 1. Hero — remove scrolling dolls background
+File: `src/components/Hero.tsx`
 
-### New homepage order
-```
-Hero → Available Now → About → Spirit Doll Story → Recently Adopted → Custom Doll CTA → Contact → Final CTA → Footer
-```
-`/shop` page is untouched. `FeaturedDolls.tsx` is unmounted (file kept in repo).
+- Delete the `heroImages` array, the `currentImageIndex` state, the preload effect, the rotation interval, and the absolute-positioned image layers.
+- Replace background with a solid `bg-cream-canvas` plus a very subtle radial cream→blush wash for warmth (no imagery).
+- Remove the vignette behind the trust strip (it existed to mask the busy carousel).
+- Keep: sale banner, Becky portrait, rotating Etsy review card, H1, paragraph, CTAs, scarcity line.
 
----
+## 2. Brand hierarchy — Rebecca leads, Etsy supports
 
-### 1. Shared doll data + rename `squareUrl` → `etsyUrl`
-- Create `src/data/dolls.ts` exporting `allDolls` and the `Doll` type, lifted verbatim from `src/pages/Shop.tsx`.
-- Rename the field `squareUrl` → `etsyUrl` everywhere it's referenced:
-  - `src/data/dolls.ts` (new)
-  - `src/pages/Shop.tsx` (now imports `allDolls` instead of defining it)
-  - `src/components/Collections.tsx`
-  - `src/components/FeaturedDolls.tsx`
-  - `src/lib/analytics.ts` (if it references the field name)
-- Single source of truth: marking a doll `sold: true` removes it from Available Now, removes it from Shop's main grid, and adds it to Recently Adopted automatically.
+**Principle:** `Rebecca Coppock · Little Panda Acts of Kindness` is the brand. Etsy is the shelf, shown as a small trust tag at the point of action — never co-headlined.
 
-### 2. Hero (`src/components/Hero.tsx`)
-Keep carousel, Becky portrait, rotating Etsy review, Early Adopters Sale banner, and `Rebecca Coppock` H1.
+### New reusable component: `src/components/EtsyTag.tsx`
+Small inline lockup: tiny Etsy-orange dot + `on Etsy` in uppercase, tracked, 10–11px, 70% opacity, heading font. One source of truth, dropped under every shop CTA and on shop-bound sections.
 
-Replace the tagline area + single CTA with:
-- Emotional paragraph: *"Rebecca's dolls are handmade one at a time from reclaimed fabrics, memory, humor, grief, hope, and whatever strange little spark makes a face feel alive. Some are soft and silly. Some are spiritual. Some are deeply personal. The right one usually knows before you do."*
-- Two CTAs side-by-side:
-  - Primary — **See Available Dolls on Etsy** → `https://littlepandaacts.etsy.com` (new tab)
-  - Secondary — **Request a Custom Doll** → smooth-scrolls to `#custom`
-- Scarcity line: *"Each doll is handmade, one-of-a-kind, and gone once adopted."*
+### Brand lockup (header, footer, hero)
+- **Header** (`src/components/Header.tsx`): wordmark becomes two lines — `Rebecca Coppock` (display) + `Little Panda Acts of Kindness` (small subtitle, tracked uppercase). No Etsy in the lockup.
+- **Footer** (`src/components/Footer.tsx`): same two-line lockup, plus one quiet sentence: "Shop available as *Little Panda Acts of Kindness* on Etsy."
+- **Hero H1** (`Hero.tsx`): keep `Rebecca Coppock` as the large H1; add a small line beneath: `Little Panda Acts of Kindness` (heading font, rust-clay, tracked uppercase, smaller). No Etsy here.
 
-### 3. Available Now — new component
-File: `src/components/AvailableNow.tsx`. Replaces `<FeaturedDolls />` in `Index.tsx`.
+### CTA language rules
+Every shop-bound button uses **your verb on top, `<EtsyTag />` underneath**, never "Shop on Etsy" as the headline.
 
-- Pulls from `allDolls.filter(d => !d.sold).slice(0, 6)` — never hardcoded.
-- Responsive grid: 1 / 2 / 3 cols.
-- Each card uses the existing card styling (image, name, story, "View on Etsy" button) and tracks via `trackProductClick`.
-- Headline: **Available Now**
-- Sub: *"A small peek at Rebecca's current handmade dolls. The full Etsy shop is organized by collection — Spirit Dolls, Art Plush Dolls, and other one-of-a-kind characters."*
-- CTA below grid: **Browse the Full Etsy Shop** → `https://littlepandaacts.etsy.com`.
+| Location | Button label | Sub-tag |
+|---|---|---|
+| Hero primary | `See Available Dolls →` | `on Etsy` |
+| Hero secondary | `Request a Custom Doll` (mailto) | *(none — different action)* |
+| Available Now card | `View [Doll]` | `on Etsy` |
+| Available Now section | `Browse the Full Collection →` | `Little Panda Acts of Kindness on Etsy` |
+| Spirit Story | `See Spirit Dolls →` | `on Etsy` |
+| Adopted gallery | `See Available Dolls →` | `on Etsy` |
+| Final CTA primary | `See Available Dolls →` | `on Etsy` |
+| Final CTA secondary | `Request a Custom Doll` (mailto) | *(none)* |
 
-### 4. About — unchanged
-No edits in this pass.
+Files touched for this pass: `Hero.tsx`, `AvailableNow.tsx`, `SpiritStory.tsx`, `AdoptedGallery.tsx`, `FinalCTA.tsx`, `Shop.tsx` (card CTAs).
 
-### 5. Spirit Doll Story — new component
-File: `src/components/SpiritStory.tsx`. Placed after About.
+### Where Etsy stays loud (intentional)
+- The "★ Verified Etsy Review" badge on the review card — that's the right place for Etsy prominence, because the trust transfers without competing with CTAs.
 
-- Lifts the Spirit Doll origin paragraphs already on the Shop page (`"I began creating these dolls when my husband went into the hospital..."`).
-- Headline: **The Story Behind the Spirit Dolls**
-- Lead: *"The Spirit Dolls began during one of Rebecca's hardest seasons, while her husband was in the hospital for major surgery. Stitch by stitch, they became small companions for courage, healing, memory, and hope."*
-- One Spirit Doll image (Hearth or Lenora) beside the text.
-- Soft text link: *"See the Spirit Dolls on Etsy →"*.
+## 3. Custom Doll CTA — fix mobile button overflow
+File: `src/components/CustomDollCTA.tsx`
 
-### 6. Recently Adopted — update existing `<AdoptedGallery compact />`
-- Headline: **Recently Adopted**
-- Sub: *"These handmade friends have already found their homes."*
-- Add: *"Every Rebecca Coppock doll is one-of-a-kind. Once a doll is adopted, that exact face, fabric, story, and strange little spark is gone for good."*
-- Replace existing "Visit Shop" link with CTA button: **See Available Dolls on Etsy** → Etsy shop.
-- Keep current compact thumb styling.
+- Button: `w-full sm:w-auto`, padding `px-5 sm:px-8`, text `text-base sm:text-lg`, add `whitespace-normal leading-tight` as safety.
+- Anchor: wrap with `block w-full sm:inline-block sm:w-auto` so the full-width mobile button anchors cleanly.
+- Card padding: `p-6 sm:p-12` (down from `p-8 md:p-12`) for more breathing room on mobile.
+- Label stays "Ask About a Custom Doll" — fits once the button is responsive.
 
-### 7. Custom Doll CTA — new component
-File: `src/components/CustomDollCTA.tsx`. ID `#custom`. Placed after Recently Adopted.
+## 4. SEO updates
+File: `src/pages/Index.tsx`
 
-- Headline: **Have an idea for a custom doll?**
-- Body: *"Rebecca occasionally accepts custom character requests — personal, symbolic, funny, memorial, political, or gift-inspired. Each request depends on timing, materials, and whether the idea feels like a good fit."*
-- Button: **Ask About a Custom Doll** → `mailto:littlepandaacts@gmail.com?subject=Custom%20Doll%20Request`.
+- `Organization` JSON-LD: `name: "Rebecca Coppock"`, `alternateName: "Little Panda Acts of Kindness"`.
+- Update `<title>` and meta description to include both names once, e.g. `Rebecca Coppock — Little Panda Acts of Kindness | Handmade Spirit Dolls`.
 
-### 8. Contact — unchanged, stays before the final beat
-No edits in this pass.
+## Out of scope
+- Doll data, Available Now grid logic, Spirit Story copy, Adopted gallery logic, pricing, header nav structure, color palette.
 
-### 9. Final CTA — new component
-File: `src/components/FinalCTA.tsx`. Placed between Contact and Footer.
-
-- Two buttons:
-  - Primary — **Browse Available Dolls on Etsy**
-  - Secondary — **Ask About a Custom Doll** (mailto)
-- Closing line: *"New dolls appear in small batches, and adopted dolls are gone for good."*
-
-### 10. SEO schema
-Yes — the site already ships JSON-LD: `WebSite` on Index, `Person` on About, `Organization` + `BreadcrumbList` on Shop.
-
-Improvements in this pass:
-- On Index, ship a bundle: `WebSite` (kept) + `Organization` with `sameAs` for Etsy + Instagram + Facebook + YouTube + `Person` for Rebecca + `ItemList` of the Available Now dolls (each item links to its Etsy URL — tells Google this is a curated preview, not a duplicate shop).
-- Confirm all Etsy outbound links use `target="_blank" rel="noopener noreferrer"` and descriptive anchor text.
-
----
-
-### Maintenance after this ships
-- **Mark adopted:** flip `sold: true` on the entry in `src/data/dolls.ts` → vanishes from homepage, vanishes from Shop grid, appears in Recently Adopted. One edit.
-- **Add a new doll:** add a new entry + import its image. Auto-eligible for Available Now.
-
-### Out of scope
-- `/shop` page layout, pricing logic, header/nav, About copy, YouTube embed.
+## Files touched
+- `src/components/Hero.tsx`
+- `src/components/Header.tsx`
+- `src/components/Footer.tsx`
+- `src/components/CustomDollCTA.tsx`
+- `src/components/EtsyTag.tsx` *(new)*
+- `src/components/AvailableNow.tsx`
+- `src/components/SpiritStory.tsx`
+- `src/components/AdoptedGallery.tsx`
+- `src/components/FinalCTA.tsx`
+- `src/pages/Shop.tsx`
+- `src/pages/Index.tsx`
