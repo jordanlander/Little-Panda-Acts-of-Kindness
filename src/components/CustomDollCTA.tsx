@@ -8,7 +8,7 @@ const CustomDollCTA = () => {
   return (
     <section id="custom" className="py-14 md:py-20 px-4">
       <div className="container mx-auto max-w-3xl">
-        <div className="bg-cream-canvas/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 text-center mid-century-shadow border-2 border-rust-clay/30 animate-fade-in">
+        <div className="bg-cream-canvas/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 md:p-12 text-center mid-century-shadow border-2 border-rust-clay/30 animate-fade-in">
           <p className="inline-block text-xs font-heading font-bold tracking-widest uppercase text-rust-clay bg-rust-clay/10 px-3 py-1 rounded-full mb-4">
             By Request
           </p>
@@ -18,12 +18,12 @@ const CustomDollCTA = () => {
           <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl mx-auto leading-relaxed font-body">
             Rebecca occasionally accepts custom character requests — personal, symbolic, funny, memorial, political, or gift-inspired. Each request depends on timing, materials, and whether the idea feels like a good fit.
           </p>
-          <a href={CUSTOM_MAILTO}>
+          <a href={CUSTOM_MAILTO} className="block w-full sm:inline-block sm:w-auto">
             <Button
               size="lg"
-              className="rounded-full bg-rust-clay hover:bg-rust-clay/90 text-white px-8 py-6 text-lg font-heading shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+              className="rounded-full bg-rust-clay hover:bg-rust-clay/90 text-white px-5 sm:px-8 py-6 text-base sm:text-lg font-heading shadow-lg hover:shadow-xl hover:scale-105 transition-all w-full sm:w-auto whitespace-normal leading-tight"
             >
-              <Mail className="mr-2 h-5 w-5" /> Ask About a Custom Doll
+              <Mail className="mr-2 h-5 w-5 shrink-0" /> Ask About a Custom Doll
             </Button>
           </a>
         </div>
@@ -31,5 +31,6 @@ const CustomDollCTA = () => {
     </section>
   );
 };
+
 
 export default CustomDollCTA;

@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { allDolls, ETSY_SHOP_URL, collectionLabels } from "@/data/dolls";
 import { trackProductClick } from "@/lib/analytics";
+import EtsyTag from "@/components/EtsyTag";
+
 
 const AvailableNow = () => {
   const available = allDolls.filter((d) => !d.sold && d.etsyUrl).slice(0, 6);
@@ -68,8 +70,9 @@ const AvailableNow = () => {
                       size="sm"
                       className="w-full rounded-full border-2 bg-rust-clay text-white hover:bg-rust-clay/90 transition-colors"
                     >
-                      View on Etsy <ExternalLink className="ml-2 h-3 w-3" />
+                      View {doll.name} <ArrowRight className="ml-2 h-3 w-3" />
                     </Button>
+                    <EtsyTag />
                   </div>
                 </Card>
               </a>
@@ -78,18 +81,20 @@ const AvailableNow = () => {
         </div>
 
         <div className="text-center">
-          <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer">
+          <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
             <Button
               size="lg"
               className="rounded-full bg-rust-clay hover:bg-rust-clay/90 text-white px-10 py-7 text-lg md:text-xl font-heading shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
-              Browse the Full Etsy Shop <ArrowRight className="ml-2 h-5 w-5" />
+              Browse the Full Collection <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+            <EtsyTag label="Little Panda Acts of Kindness · on Etsy" />
           </a>
           <p className="text-xs text-muted-foreground mt-3">
             Free U.S. shipping • International collectors welcome
           </p>
         </div>
+
       </div>
     </section>
   );

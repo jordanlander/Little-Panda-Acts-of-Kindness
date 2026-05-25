@@ -1,5 +1,7 @@
 import hearthImg from "@/assets/dolls/spirit/hearth.jpg";
 import { ETSY_SHOP_URL } from "@/data/dolls";
+import EtsyTag from "@/components/EtsyTag";
+
 
 const SpiritStory = () => {
   return (
@@ -43,10 +45,14 @@ const SpiritStory = () => {
               href={`${ETSY_SHOP_URL}/section/52988996`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-heading font-bold text-rust-clay underline underline-offset-4 hover:text-rust-clay/80"
+              className="inline-block"
             >
-              See the Spirit Dolls on Etsy →
+              <span className="inline-flex items-center gap-1 text-sm font-heading font-bold text-rust-clay underline underline-offset-4 hover:text-rust-clay/80">
+                See the Spirit Dolls →
+              </span>
+              <EtsyTag className="!justify-start mt-1" />
             </a>
+
           </div>
         </div>
       </div>

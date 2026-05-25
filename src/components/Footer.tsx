@@ -54,19 +54,22 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Copyright */}
+        {/* Brand lockup + copyright */}
         <div className="text-center">
+          <p className="font-heading text-2xl md:text-3xl font-bold leading-tight">
+            Rebecca Coppock
+          </p>
+          <p className="font-heading text-[11px] md:text-xs uppercase tracking-[0.22em] opacity-90 mt-1 mb-3">
+            Little Panda Acts of Kindness
+          </p>
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Heart className="w-5 h-5 fill-current" />
-            <p className="font-heading text-lg">
-              © {new Date().getFullYear()} Rebecca Coppock
+            <Heart className="w-4 h-4 fill-current" />
+            <p className="font-accent text-sm opacity-90">
+              Hand-stitched with love · Shop available as <em>Little Panda Acts of Kindness</em> on Etsy
             </p>
           </div>
-          <p className="font-accent text-sm opacity-90 mb-1">
-            Hand-stitched with love
-          </p>
-          <p className="font-accent text-xs opacity-75">
-            rebeccacoppock.com |{" "}
+          <p className="font-accent text-xs opacity-75 mt-3">
+            © {new Date().getFullYear()} rebeccacoppock.com |{" "}
             <a href="/#/privacy" className="hover:underline">
               Privacy Policy
             </a>
@@ -85,6 +88,7 @@ const Footer = () => {
             </a>
           </p>
         </div>
+
       </div>
     </footer>
   );
