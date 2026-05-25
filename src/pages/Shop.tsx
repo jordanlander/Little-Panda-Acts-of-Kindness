@@ -237,11 +237,17 @@ const Shop = () => {
     }, 100);
   };
 
-  const filteredDolls = filter === "all" 
-    ? allDolls 
-    : filter === "adopted"
+  const filteredDolls = filter === "adopted"
     ? allDolls.filter(doll => doll.sold)
-    : allDolls.filter(doll => doll.collection === filter);
+    : filter === "all"
+    ? allDolls.filter(doll => !doll.sold)
+    : allDolls.filter(doll => doll.collection === filter && !doll.sold);
+
+  const adoptedInContext = filter === "adopted"
+    ? []
+    : filter === "all"
+    ? allDolls.filter(doll => doll.sold)
+    : allDolls.filter(doll => doll.collection === filter && doll.sold);
 
   const getSEOTitle = () => {
     if (filter === "random") return "Random Acts of Love Collection • Handmade Upcycled Dolls";
