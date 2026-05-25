@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Star } from "lucide-react";
+import { ArrowRight, Mail, Star } from "lucide-react";
+import { ETSY_SHOP_URL } from "@/data/dolls";
 import beckyPortrait from "@/assets/artist-portrait.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
