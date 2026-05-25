@@ -169,7 +169,7 @@ const Hero = () => {
             </a>
             <EtsyTag />
           </div>
-          <a href="#custom" className="block w-full sm:w-auto">
+          <a href={CUSTOM_MAILTO} className="block w-full sm:w-auto">
             <Button
               size="lg"
               variant="outline"
