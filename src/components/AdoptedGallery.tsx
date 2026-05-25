@@ -72,26 +72,33 @@ interface AdoptedGalleryProps {
 }
 
 const AdoptedGallery = ({ compact = false }: AdoptedGalleryProps) => {
-  const displayDolls = compact ? adoptedDolls.slice(0, 4) : adoptedDolls;
+  const displayDolls = compact ? adoptedDolls.slice(0, 8) : adoptedDolls;
 
   if (compact) {
     return (
-      <section className="py-12 px-4 bg-gradient-to-b from-cream-canvas/50 to-blush-pink/20">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            These Friends Found Their Forever Homes 💕
-          </h2>
-          <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto">
-            Ellie & Scott just found their forever homes! Your kindred soul is waiting.
+      <section className="py-14 md:py-16 px-4 bg-gradient-to-b from-cream-canvas/50 to-blush-pink/20">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="inline-block text-xs font-heading font-bold tracking-widest uppercase text-rust-clay bg-rust-clay/10 px-3 py-1 rounded-full mb-3">
+            Social Proof
           </p>
-          
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Recently Adopted
+          </h2>
+          <p className="text-muted-foreground font-body mb-2 max-w-xl mx-auto">
+            These handmade friends have already found their homes.
+          </p>
+          <p className="text-sm text-foreground/70 font-body italic mb-8 max-w-2xl mx-auto leading-relaxed">
+            Every Rebecca Coppock doll is one-of-a-kind. Once a doll is adopted, that exact face, fabric, story, and strange little spark is gone for good.
+          </p>
+
           <div className="flex justify-center gap-4 flex-wrap mb-8">
             {displayDolls.map((doll) => (
               <div key={doll.name} className="relative group">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-blush-pink/60 shadow-lg">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-blush-pink/60 shadow-md">
                   <img
                     src={doll.image}
-                    alt={`${doll.name} - adopted handmade doll`}
+                    alt={`${doll.name} — adopted handmade doll`}
+                    loading="lazy"
                     className="w-full h-full object-cover sepia-[0.3] brightness-95"
                   />
                 </div>
@@ -101,14 +108,16 @@ const AdoptedGallery = ({ compact = false }: AdoptedGalleryProps) => {
               </div>
             ))}
           </div>
-          
-          <Link 
-            to="/shop" 
-            className="inline-flex items-center gap-2 text-rust-clay hover:text-rust-clay/80 font-heading font-semibold transition-colors"
+
+          <a
+            href="https://littlepandaacts.etsy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-rust-clay text-white px-6 py-3 font-heading font-semibold shadow-lg hover:bg-rust-clay/90 hover:shadow-xl hover:scale-105 transition-all"
           >
             <Heart className="w-4 h-4" />
-            Visit Shop to Find Your Friend
-          </Link>
+            See Available Dolls on Etsy
+          </a>
         </div>
       </section>
     );
