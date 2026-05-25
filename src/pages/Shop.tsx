@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
 
-import AdoptedGallery from "@/components/AdoptedGallery";
+
 import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
@@ -71,7 +71,7 @@ type Doll = {
 };
 
 const allDolls: Doll[] = [
-  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", collection: "random", price: "$44" },
+  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", collection: "random", price: "$44", sold: true },
   { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424748861/bert-handmade-one-of-a-kind-art-doll", collection: "random", price: "$44" },
   { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424759918/edith-random-acts-of-love-collection", collection: "random", price: "$44" },
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection", collection: "random", price: "$44" },
@@ -79,7 +79,7 @@ const allDolls: Doll[] = [
   { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424762336/steve-random-acts-of-love-collection", collection: "random", price: "$44" },
   { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424750889/earl-handmade-one-of-a-kind-art-doll", collection: "random", price: "$44", sold: true },
   { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424761252/hugh-random-acts-of-love-collection", collection: "random", price: "$44" },
-  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407648465/scott-hand-stitched-soft-sculpture-from", collection: "random", price: "$44" },
+  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407648465/scott-hand-stitched-soft-sculpture-from", collection: "random", price: "$44", sold: true },
   { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://littlepandaacts.etsy.com/listing/4412102380/charlie-handmade-primitive-folk-art-soft", collection: "love", price: "$44", sold: true },
   { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://littlepandaacts.etsy.com/listing/4427367211/agnes-love-happens-collection-upcycled", collection: "love", price: "$44" },
   { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display.", squareUrl: "https://littlepandaacts.etsy.com/listing/4428379150/jane-love-happens-collection-upcycled", collection: "love", price: "$44", sold: true },
@@ -237,11 +237,17 @@ const Shop = () => {
     }, 100);
   };
 
-  const filteredDolls = filter === "all" 
-    ? allDolls 
-    : filter === "adopted"
+  const filteredDolls = filter === "adopted"
     ? allDolls.filter(doll => doll.sold)
-    : allDolls.filter(doll => doll.collection === filter);
+    : filter === "all"
+    ? allDolls.filter(doll => !doll.sold)
+    : allDolls.filter(doll => doll.collection === filter && !doll.sold);
+
+  const adoptedInContext = filter === "adopted"
+    ? []
+    : filter === "all"
+    ? allDolls.filter(doll => doll.sold)
+    : allDolls.filter(doll => doll.collection === filter && doll.sold);
 
   const getSEOTitle = () => {
     if (filter === "random") return "Random Acts of Love Collection • Handmade Upcycled Dolls";
@@ -438,10 +444,49 @@ const Shop = () => {
               <DollCard key={doll.name} {...doll} />
             ))}
           </div>
+
+          {/* Recently Adopted — compact strip */}
+          {adoptedInContext.length > 0 && (
+            <div className="mt-20 pt-12 border-t-2 border-dashed border-blush-pink/40 animate-fade-in">
+              <div className="text-center mb-8">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Recently Adopted — These Friends Found Their Forever Homes 💕
+                </h2>
+                <p className="text-sm text-muted-foreground font-body max-w-xl mx-auto">
+                  Thank you for the love! These dolls have flown the nest — your kindred spirit is waiting above.
+                </p>
+              </div>
+              <div className="flex justify-center gap-5 flex-wrap mb-8">
+                {adoptedInContext.map((doll) => (
+                  <div key={doll.name} className="relative group">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-blush-pink/60 shadow-md">
+                      <img
+                        src={doll.image}
+                        alt={`${doll.name} — adopted handmade doll`}
+                        loading="lazy"
+                        className="w-full h-full object-cover sepia-[0.3] brightness-95"
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full shadow text-xs font-heading font-semibold text-rust-clay whitespace-nowrap">
+                      {doll.name} 💕
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center">
+                <Button
+                  onClick={() => setFilter("adopted")}
+                  variant="outline"
+                  className="rounded-full"
+                >
+                  View all adopted dolls →
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
-      <AdoptedGallery />
       <ReturnPolicy />
       <Footer />
     </div>
