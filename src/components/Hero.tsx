@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Star } from "lucide-react";
 import { ETSY_SHOP_URL } from "@/data/dolls";
