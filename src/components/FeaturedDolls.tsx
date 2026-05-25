@@ -11,7 +11,7 @@ type Doll = {
   name: string;
   image: string;
   story: string;
-  squareUrl: string;
+  etsyUrl: string;
   collection: string;
 };
 
@@ -20,37 +20,37 @@ const featuredDolls: Doll[] = [
     name: "Ellie", 
     image: ellieImg, 
     story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", 
-    squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled",
+    etsyUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled",
     collection: "Random Acts of Love"
   },
   { 
     name: "Agnes", 
     image: agnesImg, 
     story: "Agnes is creative and expressive, a true work of art.", 
-    squareUrl: "https://littlepandaacts.etsy.com/listing/4427367211/agnes-love-happens-collection-upcycled",
+    etsyUrl: "https://littlepandaacts.etsy.com/listing/4427367211/agnes-love-happens-collection-upcycled",
     collection: "Love Happens"
   },
   { 
     name: "Astra", 
     image: astraImg, 
     story: "Woven with stardust and memory, a guide through life's deepest passages.", 
-    squareUrl: "https://littlepandaacts.etsy.com/listing/4424479727/astra-spirit-doll-collection-handmade",
+    etsyUrl: "https://littlepandaacts.etsy.com/listing/4424479727/astra-spirit-doll-collection-handmade",
     collection: "Spirit Dolls"
   }
 ];
 
-const DollCard = ({ name, image, story, squareUrl, collection }: Doll) => {
+const DollCard = ({ name, image, story, etsyUrl, collection }: Doll) => {
   const handleClick = () => {
     trackProductClick({
       dollName: name,
       collection: collection,
-      url: squareUrl
+      url: etsyUrl
     });
   };
 
   return (
   <a 
-    href={squareUrl} 
+    href={etsyUrl} 
     target="_blank" 
     rel="noopener noreferrer"
     className="block cursor-pointer"
