@@ -5,6 +5,9 @@ import { ETSY_SHOP_URL } from "@/data/dolls";
 import EtsyTag from "@/components/EtsyTag";
 import beckyPortrait from "@/assets/artist-portrait.jpg";
 
+const CUSTOM_MAILTO =
+  "mailto:littlepandaacts@gmail.com?subject=Custom%20Doll%20Request";
+
 // Etsy 5-star reviews — paste more verified quotes here to add to the rotation.
 const etsyReviews = [
   {
