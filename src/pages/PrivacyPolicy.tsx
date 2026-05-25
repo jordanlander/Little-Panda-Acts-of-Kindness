@@ -118,8 +118,8 @@ const PrivacyPolicy = () => {
                 <section className="pt-4 border-t border-rust-clay/20">
                   <p className="text-sm">
                     Questions about privacy? Feel free to reach out at{" "}
-                    <a href="mailto:contact@rebeccacoppock.com" className="text-rust-clay hover:underline">
-                      contact@rebeccacoppock.com
+                    <a href="mailto:littlepandaacts@gmail.com" className="text-rust-clay hover:underline">
+                      littlepandaacts@gmail.com
                     </a>
                     . We're always happy to chat.
                   </p>
