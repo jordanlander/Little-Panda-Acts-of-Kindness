@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
+import EtsyTag from "@/components/EtsyTag";
 import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import { allDolls, type Doll } from "@/data/dolls";
+
 
 const DollCard = ({ name, image, story, etsyUrl, sold = false, price, collection }: Doll) => {
   const originalPrice = parseFloat((price || "$95").replace('$', ''));
@@ -71,13 +73,15 @@ const DollCard = ({ name, image, story, etsyUrl, sold = false, price, collection
         >
           {sold ? "Adopted" : etsyUrl ? (
             <>
-              View on Etsy <ExternalLink className="ml-2 h-3 w-3" />
+              View {name} <ArrowRight className="ml-2 h-3 w-3" />
             </>
           ) : "Coming Soon"}
         </Button>
+        {!sold && etsyUrl && <EtsyTag />}
       </div>
     </Card>
   );
+
 
   if (etsyUrl && !sold) {
     const handleClick = () => {
