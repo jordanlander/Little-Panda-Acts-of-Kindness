@@ -444,10 +444,49 @@ const Shop = () => {
               <DollCard key={doll.name} {...doll} />
             ))}
           </div>
+
+          {/* Recently Adopted — compact strip */}
+          {adoptedInContext.length > 0 && (
+            <div className="mt-20 pt-12 border-t-2 border-dashed border-blush-pink/40 animate-fade-in">
+              <div className="text-center mb-8">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Recently Adopted — These Friends Found Their Forever Homes 💕
+                </h2>
+                <p className="text-sm text-muted-foreground font-body max-w-xl mx-auto">
+                  Thank you for the love! These dolls have flown the nest — your kindred spirit is waiting above.
+                </p>
+              </div>
+              <div className="flex justify-center gap-5 flex-wrap mb-8">
+                {adoptedInContext.map((doll) => (
+                  <div key={doll.name} className="relative group">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-blush-pink/60 shadow-md">
+                      <img
+                        src={doll.image}
+                        alt={`${doll.name} — adopted handmade doll`}
+                        loading="lazy"
+                        className="w-full h-full object-cover sepia-[0.3] brightness-95"
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full shadow text-xs font-heading font-semibold text-rust-clay whitespace-nowrap">
+                      {doll.name} 💕
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center">
+                <Button
+                  onClick={() => setFilter("adopted")}
+                  variant="outline"
+                  className="rounded-full"
+                >
+                  View all adopted dolls →
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
-      <AdoptedGallery />
       <ReturnPolicy />
       <Footer />
     </div>
