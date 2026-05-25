@@ -71,7 +71,7 @@ type Doll = {
 };
 
 const allDolls: Doll[] = [
-  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", collection: "random", price: "$44" },
+  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", collection: "random", price: "$44", sold: true },
   { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424748861/bert-handmade-one-of-a-kind-art-doll", collection: "random", price: "$44" },
   { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424759918/edith-random-acts-of-love-collection", collection: "random", price: "$44" },
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection", collection: "random", price: "$44" },
