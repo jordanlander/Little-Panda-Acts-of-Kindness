@@ -23,7 +23,8 @@ const Index = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Little Panda Acts of Kindness",
+    "name": "Rebecca Coppock",
+    "alternateName": "Little Panda Acts of Kindness",
     "founder": { "@type": "Person", "name": "Rebecca Coppock" },
     "url": "https://rebeccacoppock.com",
     "logo": "https://rebeccacoppock.com/panda-logo.jpg",
@@ -34,8 +35,9 @@ const Index = () => {
       "https://youtube.com/@littlepandaacts",
     ],
     "description":
-      "Handmade one-of-a-kind dolls crafted from recycled materials by artist Rebecca Coppock.",
+      "Handmade one-of-a-kind dolls crafted from recycled materials by artist Rebecca Coppock. Available as Little Panda Acts of Kindness on Etsy.",
   };
+
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -76,8 +78,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Rebecca Coppock • Hand-Stitched Dolls & Original Art in Erie, PA"
-        description="One-of-a-kind handmade dolls by Rebecca Coppock — hand-stitched from reclaimed fabrics with heart, humor, and a little bit of magic. Free U.S. shipping. International collectors welcome."
+        title="Rebecca Coppock — Little Panda Acts of Kindness · Handmade Dolls"
+        description="Handmade one-of-a-kind dolls by Rebecca Coppock, available as Little Panda Acts of Kindness on Etsy. Hand-stitched from reclaimed fabrics with heart, humor, and a little bit of magic."
+
         keywords="Rebecca Coppock, handmade dolls, art dolls, spirit dolls, recycled sweater dolls, plush art dolls, Erie PA artist, Little Panda Acts of Kindness, one-of-a-kind dolls, upcycled fabric art"
         canonical="/"
         jsonLd={[websiteSchema, organizationSchema, personSchema, itemListSchema]}

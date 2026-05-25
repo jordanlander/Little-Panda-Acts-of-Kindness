@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReturnPolicy from "@/components/ReturnPolicy";
+import EtsyTag from "@/components/EtsyTag";
 import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
 import { allDolls, type Doll } from "@/data/dolls";
+
 
 const DollCard = ({ name, image, story, etsyUrl, sold = false, price, collection }: Doll) => {
   const originalPrice = parseFloat((price || "$95").replace('$', ''));
@@ -71,13 +73,15 @@ const DollCard = ({ name, image, story, etsyUrl, sold = false, price, collection
         >
           {sold ? "Adopted" : etsyUrl ? (
             <>
-              View on Etsy <ExternalLink className="ml-2 h-3 w-3" />
+              View {name} <ArrowRight className="ml-2 h-3 w-3" />
             </>
           ) : "Coming Soon"}
         </Button>
+        {!sold && etsyUrl && <EtsyTag />}
       </div>
     </Card>
   );
+
 
   if (etsyUrl && !sold) {
     const handleClick = () => {
@@ -203,9 +207,11 @@ const Shop = () => {
       {/* Header */}
       <header className="py-4 px-4 border-b border-border/20 sticky top-0 bg-background/95 backdrop-blur-sm z-10">
         <div className="container mx-auto max-w-7xl flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Rebecca Coppock
+          <Link to="/" className="leading-tight hover:text-primary transition-colors">
+            <span className="block text-xl font-bold text-foreground font-heading">Rebecca Coppock</span>
+            <span className="block text-[9px] md:text-[10px] font-heading font-bold uppercase tracking-[0.2em] text-rust-clay/90">Little Panda Acts of Kindness</span>
           </Link>
+
           <nav className="flex gap-4 items-center">
             <Link to="/" className="text-sm text-foreground/70 hover:text-foreground transition-colors font-heading">
               Home

@@ -1,26 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Star } from "lucide-react";
 import { ETSY_SHOP_URL } from "@/data/dolls";
+import EtsyTag from "@/components/EtsyTag";
 import beckyPortrait from "@/assets/artist-portrait.jpg";
-import ellieImg from "@/assets/dolls/ellie.jpg";
-import bertImg from "@/assets/dolls/bert.jpg";
-import edithImg from "@/assets/dolls/edith.jpg";
-import eddieImg from "@/assets/dolls/eddie.jpg";
-import gingerImg from "@/assets/dolls/ginger.jpg";
-import steveImg from "@/assets/dolls/steve.jpg";
-import charlieImg from "@/assets/dolls/charlie.jpg";
-import agnesImg from "@/assets/dolls/agnes.jpg";
-import janeImg from "@/assets/dolls/jane.jpg";
-import timImg from "@/assets/dolls/tim.jpg";
-import leeImg from "@/assets/dolls/lee.jpg";
-import peggyImg from "@/assets/dolls/peggy.jpg";
-
-const heroImages = [
-  ellieImg, bertImg, edithImg, eddieImg, gingerImg, steveImg,
-  charlieImg, agnesImg, janeImg, timImg, leeImg, peggyImg
-];
 
 // Etsy 5-star reviews — paste more verified quotes here to add to the rotation.
 const etsyReviews = [
@@ -73,25 +56,8 @@ const etsyReviews = [
 
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [reviewIndex, setReviewIndex] = useState(0);
   const [reviewVisible, setReviewVisible] = useState(true);
-
-  // Preload hero images for faster transitions
-  useEffect(() => {
-    heroImages.forEach((image) => {
-      const img = new Image();
-      img.src = image;
-    });
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 4000); // Change image every 4 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   // Rotate reviews every 7s with a quick fade transition
   useEffect(() => {
@@ -109,7 +75,13 @@ const Hero = () => {
   const review = etsyReviews[reviewIndex];
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-cream-canvas">
+      {/* Subtle warm wash — no imagery, so the Etsy review stays readable */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_top,_hsl(var(--blush-pink)/0.35)_0%,_hsl(var(--cream))_55%,_hsl(var(--cream))_100%)]"
+      />
+
       {/* Sale Banner */}
       <div className="relative z-10 w-full py-3 bg-gradient-to-r from-rust-clay via-blush-pink to-rust-clay animate-slide-down">
         <div className="container mx-auto text-center">
@@ -121,24 +93,8 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      
-      {/* Image carousel with fade transitions */}
-      {heroImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 bg-cover bg-top transition-opacity duration-1000 ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{ backgroundImage: `url(${image})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-        </div>
-      ))}
-      
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in pt-6 md:pt-10">
-        {/* Soft vignette behind trust strip to calm the busy doll carousel */}
-        <div className="absolute inset-x-0 -top-4 h-[280px] md:h-[260px] -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,_hsl(var(--cream))_0%,_hsl(var(--cream)/0.85)_45%,_transparent_75%)]" />
 
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in pt-6 md:pt-10">
         {/* Trust strip: Becky portrait + Etsy review */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-7 mb-8 md:mb-10">
           <div className="relative shrink-0 pb-4">
@@ -185,24 +141,32 @@ const Hero = () => {
           </div>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 text-foreground">
+        {/* Brand lockup — Rebecca leads, Little Panda supports. Etsy is intentionally absent here. */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-2 md:mb-3 text-foreground">
           Rebecca Coppock
         </h1>
+        <p className="text-[11px] sm:text-xs md:text-sm font-heading font-bold uppercase tracking-[0.25em] text-rust-clay mb-5 md:mb-7">
+          Little Panda Acts of Kindness
+        </p>
+
         <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-10 text-foreground/85 font-body leading-relaxed max-w-2xl mx-auto">
           Rebecca's dolls are handmade one at a time from reclaimed fabrics, memory, humor, grief, hope, and whatever strange little spark makes a face feel alive. Some are soft and silly. Some are spiritual. Some are deeply personal.{" "}
           <span className="italic text-rust-clay">The right one usually knows before you do.</span>
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4">
-          <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer">
-            <Button
-              size="lg"
-              className="bg-rust-clay hover:bg-rust-clay/90 text-white font-heading text-base sm:text-lg px-7 sm:px-9 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full sm:w-auto"
-            >
-              See Available Dolls on Etsy <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </a>
-          <a href="#custom">
+        <div className="flex flex-col sm:flex-row gap-5 sm:gap-6 justify-center items-start sm:items-center mb-4">
+          <div className="flex flex-col items-center w-full sm:w-auto">
+            <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="bg-rust-clay hover:bg-rust-clay/90 text-white font-heading text-base sm:text-lg px-7 sm:px-9 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full sm:w-auto"
+              >
+                See Available Dolls <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <EtsyTag />
+          </div>
+          <a href="#custom" className="block w-full sm:w-auto">
             <Button
               size="lg"
               variant="outline"
@@ -212,7 +176,7 @@ const Hero = () => {
             </Button>
           </a>
         </div>
-        <p className="text-xs sm:text-sm text-foreground/70 italic font-body max-w-md mx-auto">
+        <p className="text-xs sm:text-sm text-foreground/70 italic font-body max-w-md mx-auto mt-4">
           Each doll is handmade, one-of-a-kind, and gone once adopted.
         </p>
       </div>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Heart } from "lucide-react";
+import EtsyTag from "@/components/EtsyTag";
+
 
 // Import sold doll images
 import peggyImg from "@/assets/dolls/peggy.jpg";
@@ -113,11 +115,15 @@ const AdoptedGallery = ({ compact = false }: AdoptedGalleryProps) => {
             href="https://littlepandaacts.etsy.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-rust-clay text-white px-6 py-3 font-heading font-semibold shadow-lg hover:bg-rust-clay/90 hover:shadow-xl hover:scale-105 transition-all"
+            className="inline-block"
           >
-            <Heart className="w-4 h-4" />
-            See Available Dolls on Etsy
+            <span className="inline-flex items-center gap-2 rounded-full bg-rust-clay text-white px-6 py-3 font-heading font-semibold shadow-lg hover:bg-rust-clay/90 hover:shadow-xl hover:scale-105 transition-all">
+              <Heart className="w-4 h-4" />
+              See Available Dolls
+            </span>
+            <EtsyTag />
           </a>
+
         </div>
       </section>
     );
