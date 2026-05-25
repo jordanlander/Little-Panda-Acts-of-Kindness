@@ -63,6 +63,8 @@ const adoptedDolls: AdoptedDoll[] = [
   { name: "Trevor", image: trevorImg, collection: "Love Happens" },
   { name: "Tim", image: timImg, collection: "Love Happens" },
   { name: "Earl", image: earlImg, collection: "Random Acts of Love" },
+  { name: "Ellie", image: ellieImg, collection: "Random Acts of Love" },
+  { name: "Scott", image: scottImg, collection: "Random Acts of Love" },
 ];
 
 interface AdoptedGalleryProps {
