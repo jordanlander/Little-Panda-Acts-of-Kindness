@@ -51,14 +51,12 @@ const PrivacyPolicy = () => {
                   <h2 className="text-xl font-heading font-semibold text-foreground mb-3">
                     What We Collect
                   </h2>
-                  <p className="mb-3">
-                    When you adopt a doll through our Square checkout:
+                  <p>
+                    All adoptions are completed on Etsy through the{" "}
+                    <em>Little Panda Acts of Kindness</em> shop. Etsy collects and handles your name,
+                    shipping address, and payment information under their own privacy policy. This
+                    site itself does not collect or store personal or payment data.
                   </p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Your name and shipping address (so your new companion can find you!)</li>
-                    <li>Your email address (for adoption updates)</li>
-                    <li>Payment information (securely processed by Square, not stored by us)</li>
-                  </ul>
                 </section>
 
                 <section>
@@ -77,13 +75,11 @@ const PrivacyPolicy = () => {
                     How We Use Your Information
                   </h2>
                   <p className="mb-3">
-                    Your information is used only to:
+                    The only information we directly receive is whatever you choose to send by email. We use it to:
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Fulfill your doll adoption</li>
-                    <li>Send shipping updates</li>
                     <li>Respond to your questions</li>
-                    <li>Improve your browsing experience</li>
+                    <li>Improve your browsing experience via anonymous analytics</li>
                   </ul>
                   <p className="mt-3">
                     <strong className="text-foreground">We never sell or share your personal information.</strong> Ever.
@@ -95,8 +91,17 @@ const PrivacyPolicy = () => {
                     Third-Party Services
                   </h2>
                   <p>
-                    We use Square for secure payment processing. They have their own privacy policy, 
-                    which you can review on their website. We trust them to keep your payment information safe.
+                    Purchases are handled by Etsy, which manages checkout, payment, and shipping
+                    details under their own privacy policy. You can review it at{" "}
+                    <a
+                      href="https://www.etsy.com/legal/privacy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-rust-clay hover:underline"
+                    >
+                      etsy.com/legal/privacy
+                    </a>
+                    .
                   </p>
                 </section>
 
@@ -105,16 +110,16 @@ const PrivacyPolicy = () => {
                     Your Rights
                   </h2>
                   <p>
-                    You can contact us anytime to ask about the information we have or request that we 
-                    delete it. We're a small studio, so we'll respond as quickly as we can.
+                    You can email us anytime to ask about any information you've shared with us by email,
+                    or request that we delete it. For data tied to an Etsy order, please contact Etsy directly.
                   </p>
                 </section>
 
                 <section className="pt-4 border-t border-rust-clay/20">
                   <p className="text-sm">
-                    Questions about privacy? Feel free to reach out through our{" "}
-                    <a href="/#/contact" className="text-rust-clay hover:underline">
-                      contact page
+                    Questions about privacy? Feel free to reach out at{" "}
+                    <a href="mailto:contact@rebeccacoppock.com" className="text-rust-clay hover:underline">
+                      contact@rebeccacoppock.com
                     </a>
                     . We're always happy to chat.
                   </p>
