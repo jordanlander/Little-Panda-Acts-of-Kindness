@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Star } from "lucide-react";
+import { ArrowRight, Mail, Star } from "lucide-react";
+import { ETSY_SHOP_URL } from "@/data/dolls";
 import beckyPortrait from "@/assets/artist-portrait.jpg";
 import ellieImg from "@/assets/dolls/ellie.jpg";
 import bertImg from "@/assets/dolls/bert.jpg";
@@ -187,21 +187,33 @@ const Hero = () => {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 text-foreground">
           Rebecca Coppock
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl mb-3 md:mb-4 text-rust-clay font-heading italic">
-          "Hand-stitched souls made from stories and sweaters."
+        <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-10 text-foreground/85 font-body leading-relaxed max-w-2xl mx-auto">
+          Rebecca's dolls are handmade one at a time from reclaimed fabrics, memory, humor, grief, hope, and whatever strange little spark makes a face feel alive. Some are soft and silly. Some are spiritual. Some are deeply personal.{" "}
+          <span className="italic text-rust-clay">The right one usually knows before you do.</span>
         </p>
-        <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-foreground/80 font-accent">
-          Artist • Dollmaker • Storyteller
+
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4">
+          <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              className="bg-rust-clay hover:bg-rust-clay/90 text-white font-heading text-base sm:text-lg px-7 sm:px-9 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full sm:w-auto"
+            >
+              See Available Dolls on Etsy <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </a>
+          <a href="#custom">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-rust-clay text-rust-clay hover:bg-rust-clay/10 bg-cream-canvas/80 backdrop-blur-sm font-heading text-base sm:text-lg px-7 sm:px-9 py-6 rounded-full transition-all w-full sm:w-auto"
+            >
+              <Mail className="mr-2 h-5 w-5" /> Request a Custom Doll
+            </Button>
+          </a>
+        </div>
+        <p className="text-xs sm:text-sm text-foreground/70 italic font-body max-w-md mx-auto">
+          Each doll is handmade, one-of-a-kind, and gone once adopted.
         </p>
-        
-        <Link to="/shop">
-          <Button 
-            size="lg"
-            className="bg-rust-clay hover:bg-rust-clay/90 text-white font-heading text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-7 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
-          >
-            Adopt a Doll
-          </Button>
-        </Link>
       </div>
     </section>
   );

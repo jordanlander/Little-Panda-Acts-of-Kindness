@@ -37,45 +37,45 @@ type Doll = {
   name: string;
   image: string;
   story?: string;
-  squareUrl?: string;
+  etsyUrl?: string;
   sold?: boolean;
 };
 
 const randomActsOfLove: Doll[] = [
-  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", sold: true },
-  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424748861/bert-handmade-one-of-a-kind-art-doll" },
-  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424759918/edith-random-acts-of-love-collection" },
-  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection" },
-  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407640841/ginger-hand-stitched-art-plush-from" },
-  { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424762336/steve-random-acts-of-love-collection" },
-  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424750889/earl-handmade-one-of-a-kind-art-doll", sold: true },
-  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", squareUrl: "https://littlepandaacts.etsy.com/listing/4424761252/hugh-random-acts-of-love-collection" },
-  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", squareUrl: "https://littlepandaacts.etsy.com/listing/4407648465/scott-hand-stitched-soft-sculpture-from", sold: true }
+  { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", sold: true },
+  { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424748861/bert-handmade-one-of-a-kind-art-doll" },
+  { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424759918/edith-random-acts-of-love-collection" },
+  { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection" },
+  { name: "Ginger", image: gingerImg, story: "Ginger is sweet and thoughtful, a loyal companion through and through.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4407640841/ginger-hand-stitched-art-plush-from" },
+  { name: "Steve", image: steveImg, story: "Steve loves comfort and calm, perfect for cozy evenings.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424762336/steve-random-acts-of-love-collection" },
+  { name: "Earl", image: earlImg, story: "Earl is wise and warm-hearted, a true friend to all.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424750889/earl-handmade-one-of-a-kind-art-doll", sold: true },
+  { name: "Hugh", image: hughImg, story: "Hugh is gentle and caring, always ready to listen.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424761252/hugh-random-acts-of-love-collection" },
+  { name: "Scott", image: scottImg, story: "Scott is cheerful and bright, bringing smiles to every day.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4407648465/scott-hand-stitched-soft-sculpture-from", sold: true }
 ];
 
 const loveHappens: Doll[] = [
-  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", squareUrl: "https://square.link/u/rHLp0yxR" },
-  { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", squareUrl: "https://square.link/u/csUVf69U" },
-  { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display.", squareUrl: "https://square.link/u/u3hmJuKm" },
-  { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character.", squareUrl: "https://square.link/u/k865p4uB", sold: true },
-  { name: "Lee", image: leeImg, story: "Lee is modern and stylish, a statement piece.", squareUrl: "https://square.link/u/E6mQx6CF" },
-  { name: "Peggy", image: peggyImg, story: "Peggy is vintage-inspired and whimsical.", squareUrl: "https://square.link/u/lC5jDu9C" },
-  { name: "James", image: jamesImg, story: "James is distinguished and refined.", squareUrl: "https://square.link/u/LS5qPbd0" },
-  { name: "Uli", image: uliImg, story: "Uli is artistic and unconventional.", squareUrl: "https://square.link/u/Trpk94aJ" },
-  { name: "Sue", image: sueImg, story: "Sue is graceful and poised.", squareUrl: "https://square.link/u/59A2D1PH" },
-  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", squareUrl: "https://square.link/u/Tp9qsTw1" },
-  { name: "Otis", image: otisImg, story: "Otis is fun-loving and spirited.", squareUrl: "https://square.link/u/58f0it0Y" },
-  { name: "Henry", image: henryImg, story: "Henry is classic and timeless.", squareUrl: "https://square.link/u/jq93yQBT" },
-  { name: "Stan", image: stanImg, story: "Stan is unique and memorable.", squareUrl: "https://square.link/u/MBf8Gu2u" },
-  { name: "Mary", image: maryImg, story: "Mary is sweet and endearing.", squareUrl: "https://square.link/u/ODPKUpkw" },
-  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", squareUrl: "https://square.link/u/OJnud01G" },
-  { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited.", squareUrl: "https://square.link/u/fin2BaBd" },
-  { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary.", squareUrl: "https://square.link/u/E5neD6UE" },
-  { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", squareUrl: "https://square.link/u/OUzqTUWZ" },
-  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind.", squareUrl: "https://square.link/u/Unu6v1DX" }
+  { name: "Charlie", image: charlieImg, story: "An artsy soul with a bold personality and unique flair.", etsyUrl: "https://square.link/u/rHLp0yxR" },
+  { name: "Agnes", image: agnesImg, story: "Agnes is creative and expressive, a true work of art.", etsyUrl: "https://square.link/u/csUVf69U" },
+  { name: "Jane", image: janeImg, story: "Jane is elegant and sophisticated, made for display.", etsyUrl: "https://square.link/u/u3hmJuKm" },
+  { name: "Tim", image: timImg, story: "Tim is quirky and charming, full of character.", etsyUrl: "https://square.link/u/k865p4uB", sold: true },
+  { name: "Lee", image: leeImg, story: "Lee is modern and stylish, a statement piece.", etsyUrl: "https://square.link/u/E6mQx6CF" },
+  { name: "Peggy", image: peggyImg, story: "Peggy is vintage-inspired and whimsical.", etsyUrl: "https://square.link/u/lC5jDu9C" },
+  { name: "James", image: jamesImg, story: "James is distinguished and refined.", etsyUrl: "https://square.link/u/LS5qPbd0" },
+  { name: "Uli", image: uliImg, story: "Uli is artistic and unconventional.", etsyUrl: "https://square.link/u/Trpk94aJ" },
+  { name: "Sue", image: sueImg, story: "Sue is graceful and poised.", etsyUrl: "https://square.link/u/59A2D1PH" },
+  { name: "Darrell", image: darrellImg, story: "Darrell is bold and confident.", etsyUrl: "https://square.link/u/Tp9qsTw1" },
+  { name: "Otis", image: otisImg, story: "Otis is fun-loving and spirited.", etsyUrl: "https://square.link/u/58f0it0Y" },
+  { name: "Henry", image: henryImg, story: "Henry is classic and timeless.", etsyUrl: "https://square.link/u/jq93yQBT" },
+  { name: "Stan", image: stanImg, story: "Stan is unique and memorable.", etsyUrl: "https://square.link/u/MBf8Gu2u" },
+  { name: "Mary", image: maryImg, story: "Mary is sweet and endearing.", etsyUrl: "https://square.link/u/ODPKUpkw" },
+  { name: "Baily", image: bailyImg, story: "Baily is playful and expressive.", etsyUrl: "https://square.link/u/OJnud01G" },
+  { name: "Trevor", image: trevorImg, story: "Trevor is adventurous and free-spirited.", etsyUrl: "https://square.link/u/fin2BaBd" },
+  { name: "Kim", image: kimImg, story: "Kim is stylish and contemporary.", etsyUrl: "https://square.link/u/E5neD6UE" },
+  { name: "Ann", image: annImg, story: "Ann is gentle and artistic.", etsyUrl: "https://square.link/u/OUzqTUWZ" },
+  { name: "Howard", image: howardImg, story: "Howard is distinguished and one-of-a-kind.", etsyUrl: "https://square.link/u/Unu6v1DX" }
 ];
 
-const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => {
+const DollCard = ({ name, image, story, etsyUrl, sold = false }: Doll) => {
   const CardContent = (
     <Card className="overflow-hidden group hover:scale-105 transition-transform duration-300 soft-glow bg-card">
       <div className="aspect-[3/4] overflow-hidden bg-muted">
@@ -101,10 +101,10 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => {
         <Button 
           variant="outline" 
           size="sm"
-          disabled={!squareUrl || sold}
+          disabled={!etsyUrl || sold}
           className="w-full rounded-full border-2 bg-rust-clay text-white hover:bg-rust-clay/90 transition-colors disabled:opacity-50"
         >
-          {sold ? "Adopted" : squareUrl ? (
+          {sold ? "Adopted" : etsyUrl ? (
             <>
               Buy Now <ExternalLink className="ml-2 h-3 w-3" />
             </>
@@ -114,17 +114,17 @@ const DollCard = ({ name, image, story, squareUrl, sold = false }: Doll) => {
     </Card>
   );
 
-  if (squareUrl && !sold) {
+  if (etsyUrl && !sold) {
     const handleClick = () => {
       trackProductClick({
         dollName: name,
         collection: 'Collections',
-        url: squareUrl
+        url: etsyUrl
       });
     };
     
     return (
-      <a href={squareUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer" onClick={handleClick}>
+      <a href={etsyUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer" onClick={handleClick}>
         {CardContent}
       </a>
     );
