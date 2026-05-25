@@ -26,8 +26,8 @@ const ReturnPolicy = () => {
                   <Heart className="w-4 h-4 text-rust-clay fill-current" />
                   <span>
                     Questions before adopting? Message me through the Etsy listing or email{" "}
-                    <a href="mailto:contact@rebeccacoppock.com" className="underline">
-                      contact@rebeccacoppock.com
+                    <a href="mailto:littlepandaacts@gmail.com" className="underline">
+                      littlepandaacts@gmail.com
                     </a>
                     —I'm happy to share more details about each doll to ensure they're the perfect fit for you.
                   </span>
