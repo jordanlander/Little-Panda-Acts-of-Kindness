@@ -51,6 +51,7 @@ import mirelleImg from "@/assets/dolls/spirit/mirelle.jpg";
 import rowenaImg from "@/assets/dolls/spirit/rowena.jpg";
 import lenoraImg from "@/assets/dolls/spirit/lenora.jpg";
 import pocketSpiritsImg from "@/assets/dolls/spirit/pocket-spirits.jpg";
+import pocketSpiritsTwoImg from "@/assets/dolls/spirit/pocket-spirits-two.jpg";
 
 export type DollCollection = "random" | "love" | "spirit";
 
