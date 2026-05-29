@@ -1,18 +1,16 @@
-Make the footer "Return Policy" link open a dedicated page that explains the adoption policy and sends visitors to Etsy — instead of jumping to the shop grid.
+Add the new Pocket Spirit Dolls Collection Two (Etsy listing 4513424952, variations A–J) so it shows up in "Available Now" alongside the art plush dolls.
 
 **Changes:**
 
-1. **New page `src/pages/ReturnPolicy.tsx`** — mirrors `PrivacyPolicy.tsx` structure (SEO + "Back to Home" header + Card + Footer). Content reframed away from a storefront tone:
-   - Lead: "All adoptions happen on Etsy" — every doll is purchased through the Little Panda Acts of Kindness Etsy shop, which handles checkout, payment, and shipping.
-   - "All adoptions are final" section — explains the one-of-a-kind handmade nature; no returns/refunds for change-of-mind.
-   - "If something goes wrong" — damaged-in-shipping or incorrect-item issues are resolved through Etsy messages, per Etsy's buyer protection.
-   - "Questions before adopting?" — encourage messaging through the Etsy listing or emailing `littlepandaacts@gmail.com`.
-   - Primary CTA button to `https://littlepandaacts.etsy.com` (opens in new tab) plus secondary `mailto:` link.
+1. **Save image asset** — copy `user-uploads://new_spirit_dolls_with_pouches.jpg` (the branded "Handcrafted Pocket Spirit Dolls" hero with pouches & worry stones) to `src/assets/dolls/spirit/pocket-spirits-two.jpg`. This is the cleanest card image; the F–J shot is secondary marketing and not needed for a single card.
 
-2. **Add route** in `src/App.tsx`: `<Route path="/return-policy" element={<ReturnPolicy />} />` above the catch-all.
+2. **Add doll entry in `src/data/dolls.ts`** — import the new image and insert a new `Doll` near the top of `allDolls` so `AvailableNow`'s `.slice(0, 6)` picks it up:
+   - `name`: "Pocket Spirit Dolls · Collection Two"
+   - `collection`: "spirit"
+   - `price`: "$35.70" (matches the original Pocket Spirit Dolls entry)
+   - `story`: "A new batch of tiny companions for encouragement, reflection, and heart. Each ~2 inch handmade folk art doll arrives with a fabric pouch, chakra worry stone, and handwritten message. Choose your one-of-a-kind spirit (A–J) on Etsy."
+   - `etsyUrl`: "https://littlepandaacts.etsy.com/listing/4513424952/pocket-spirit-dolls-collection-two"
 
-3. **Update Footer** (`src/components/Footer.tsx` line 77): change `href="/#/shop#return-policy"` → `href="/#/return-policy"`.
+No changes to `AvailableNow.tsx`, `SpiritStory.tsx`, or the existing original Pocket Spirit Dolls entry — both remain available so Collection One and Two are both represented.
 
-4. **Remove the embedded `<ReturnPolicy />` section from `src/pages/Shop.tsx`** (import on line 8 and usage on line 386) so the shop page no longer tries to host the policy. The existing `src/components/ReturnPolicy.tsx` component is no longer referenced after this — leave it in place or delete; safest is to leave it for now since no other refs.
-
-Result: footer link → standalone, focused policy page that explains and redirects to Etsy, matching the "entice and explain, then send to Etsy" direction.
+**Result:** the homepage Available Now grid surfaces the new Collection Two pocket dolls next to art plush dolls; the card links to the new Etsy listing where buyers pick A–J from the dropdown.

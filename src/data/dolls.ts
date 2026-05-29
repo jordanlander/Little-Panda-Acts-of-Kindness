@@ -51,6 +51,7 @@ import mirelleImg from "@/assets/dolls/spirit/mirelle.jpg";
 import rowenaImg from "@/assets/dolls/spirit/rowena.jpg";
 import lenoraImg from "@/assets/dolls/spirit/lenora.jpg";
 import pocketSpiritsImg from "@/assets/dolls/spirit/pocket-spirits.jpg";
+import pocketSpiritsTwoImg from "@/assets/dolls/spirit/pocket-spirits-two.jpg";
 
 export type DollCollection = "random" | "love" | "spirit";
 
@@ -72,6 +73,7 @@ export const collectionLabels: Record<DollCollection, string> = {
 
 export const allDolls: Doll[] = [
   { name: "Ellie", image: ellieImg, story: "Soft and snuggly, Ellie loves afternoon naps and warm hugs.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4407618752/ellie-handmade-art-doll-from-recycled", collection: "random", price: "$44", sold: true },
+  { name: "Pocket Spirit Dolls · Collection Two", image: pocketSpiritsTwoImg, story: "A new batch of tiny companions for encouragement, reflection, and heart. Each ~2 inch handmade folk art doll arrives with a fabric pouch, chakra worry stone, and handwritten message. Choose your one-of-a-kind spirit (A–J) on Etsy.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4513424952/pocket-spirit-dolls-collection-two", collection: "spirit", price: "$35.70" },
   { name: "Bert", image: bertImg, story: "Bert is curious and kind, always ready for a new adventure.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424748861/bert-handmade-one-of-a-kind-art-doll", collection: "random", price: "$44" },
   { name: "Edith", image: edithImg, story: "Gentle Edith enjoys quiet moments and bedtime stories.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424759918/edith-random-acts-of-love-collection", collection: "random", price: "$44" },
   { name: "Eddie", image: eddieImg, story: "Eddie is playful and spirited, bringing joy wherever he goes.", etsyUrl: "https://littlepandaacts.etsy.com/listing/4424752593/eddie-random-acts-of-love-collection", collection: "random", price: "$44" },
