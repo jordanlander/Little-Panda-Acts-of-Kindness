@@ -383,7 +383,7 @@ const Shop = () => {
         </div>
       </section>
 
-      <ReturnPolicy />
+      
       <Footer />
     </div>
   );
