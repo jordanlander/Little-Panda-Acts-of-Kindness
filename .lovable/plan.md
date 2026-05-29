@@ -1,11 +1,4 @@
-Update the contact email address in two policy components from `contact@rebeccacoppock.com` to `littlepandaacts@gmail.com` to match the custom orders contact.
+Update the "See the Spirit Dolls →" CTA in `src/components/SpiritStory.tsx` to link to the new Pocket Spirit Dolls Collection Two listing.
 
-## Files to edit
-
-1. **`src/pages/PrivacyPolicy.tsx`** (line 121)
-   - Change `mailto:contact@rebeccacoppock.com` → `mailto:littlepandaacts@gmail.com`
-   - Update displayed text `contact@rebeccacoppock.com` → `littlepandaacts@gmail.com`
-
-2. **`src/components/ReturnPolicy.tsx`** (line 29)
-   - Change `mailto:contact@rebeccacoppock.com` → `mailto:littlepandaacts@gmail.com`
-   - Update displayed text `contact@rebeccacoppock.com` → `littlepandaacts@gmail.com`
+- Change `href` from `https://littlepandaacts.etsy.com/listing/4470017968` to `https://littlepandaacts.etsy.com/listing/4513424952/pocket-spirit-dolls-collection-two`.
+- Leave the Pocket Spirit Dolls entry in `src/data/dolls.ts` and all other links unchanged.

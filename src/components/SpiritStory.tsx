@@ -42,7 +42,7 @@ const SpiritStory = () => {
               Each Spirit Doll is handmade from natural materials — twigs, reclaimed fabrics, beads, and intuitive design — and arrives with a free story card. They aren't products so much as small talismans, made for the tender moments we all carry.
             </p>
             <a
-              href="https://littlepandaacts.etsy.com/listing/4470017968"
+              href="https://littlepandaacts.etsy.com/listing/4513424952/pocket-spirit-dolls-collection-two"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
