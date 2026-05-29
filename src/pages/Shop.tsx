@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import ReturnPolicy from "@/components/ReturnPolicy";
+
 import EtsyTag from "@/components/EtsyTag";
 import { trackProductClick } from "@/lib/analytics";
 import dollPlaceholder from "@/assets/doll-placeholder.jpg";
