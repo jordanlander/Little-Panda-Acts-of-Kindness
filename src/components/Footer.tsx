@@ -74,7 +74,7 @@ const Footer = () => {
               Privacy Policy
             </a>
             {" "}|{" "}
-            <a href="/#/shop#return-policy" className="hover:underline">
+            <a href="/#/return-policy" className="hover:underline">
               Return Policy
             </a>
             {" "}| Managed by{" "}
