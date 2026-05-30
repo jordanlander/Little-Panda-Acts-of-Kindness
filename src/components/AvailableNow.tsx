@@ -68,9 +68,9 @@ const AvailableNow = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full rounded-full border-2 bg-rust-clay text-white hover:bg-rust-clay/90 transition-colors"
+                      className="w-full rounded-full border-2 bg-rust-clay text-white hover:bg-rust-clay/90 transition-colors whitespace-normal h-auto min-h-9 py-2 text-center"
                     >
-                      View {doll.name} <ArrowRight className="ml-2 h-3 w-3" />
+                      <span className="break-words">View {doll.name}</span> <ArrowRight className="ml-2 h-3 w-3 shrink-0" />
                     </Button>
                     <EtsyTag />
                   </div>
